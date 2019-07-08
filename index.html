@@ -3,9 +3,16 @@
     <head>
         <style>
             body {
+                height: 100%;
+                margin: 0;
+            }
+
+            .backing {
                 background-image: url("wallpaper1.jpg");
-                background-size: cover;
+                height: 100%;
+                background-position: center;
                 background-repeat: no-repeat;
+                background-size: cover;
             }
         </style>
 
@@ -14,7 +21,9 @@
     </head>
 
     <body>
-        <h1> Yup the lads </h1>
+        <div class="backing">
+            <h1> Yup the lads </h1>
+        </div>
     </body>
 
 </html>

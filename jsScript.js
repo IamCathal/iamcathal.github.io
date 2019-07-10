@@ -24,7 +24,7 @@ Y,                        '8888888888888888888P
 
 
 function showEmail(hide) {
-    emailBox = 'Click to copy my email address';
+    emailBox = 'Click to copy email address';
 
     if (hide == 1) {
         document.getElementById('emailAlertBox').innerHTML = emailBox;
@@ -32,6 +32,7 @@ function showEmail(hide) {
         // document.getElementsByTagName('emailAlertBox').style.padding = "8px 2px";
         document.getElementById('emailAlertBox').style.boxShadow = '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)';
     }   else {
+      document.getElementById('emailAlertBox').style.backgroundColor = "transparent";
         document.getElementById('emailAlertBox').innerHTML = '';
         document.getElementById('emailAlertBox').style.opacity = '0';
     }
@@ -51,4 +52,5 @@ function copyEmail() {
   document.body.removeChild(textarea)
 
   document.getElementById('emailAlertBox').innerHTML = 'Email copied to clipboard';
+  document.getElementById('emailAlertBox').style.backgroundColor = "#235c4d";
 }

@@ -8,11 +8,27 @@ table {
 body {
     /* background-image: url("wallpaper1.jpg"); */
     background-size: cover;
+    font-family: 'Roboto Condensed', sans-serif;
     height: 100%;
     margin: 0;
     background-repeat: no-repeat;
     color: #bfbfc7;
     z-index: 100;
+}
+
+#nameText {
+    text-align: center;
+    font-size: 75px;
+    color: black;
+    /* color: #3b3b47; */
+    
+    padding: 0px;
+}
+
+#subtext {
+    color: black;
+    font-size: 23px;
+    text-align: center;
 }
 
 #linkDiv {
@@ -42,24 +58,11 @@ body {
 
 #textBox {
     padding: 5px 15px 5px;
-    font-family: 'Roboto';
 }
 
-#andrewImage {
-    margin:auto;
-}
 
 #navBar {
     text-align: center;
-}
-
-#nameText {
-    text-align: center;
-    font-size: 35px;
-    color: black;
-    /* color: #3b3b47; */
-    font-family: 'Roboto', sans-serif;
-    padding: 0px;
 }
 
 #fancyBackground {
@@ -70,10 +73,10 @@ body {
 }
 
 #emailAlertBox {
+    
     text-align: center;
     padding: 8px 2px;
     font-size: 28px;
-    font-family: 'Roboto';
     color: black;
 }
 

@@ -1,32 +1,92 @@
 <!DOCTYPE html>
 <html>
     <head>
+            <script src='jsScript.js'></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+            <script src="vanta.topology.min.js"></script>
+
+            <!-- <link href="https://fonts.googleapis.com/css?family=Roboto-Medium&display=swap" rel="stylesheet"> -->
             <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+            
+            <link href="stylesheet.css" rel="stylesheet" type="text/css">
 
-        <style>
-            body {
-                background-image: url("wallpaper1.jpg");
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center;
-                font-family: 'Roboto'
-            }
-
-            .mainText {
-                position: relative;
-                bottom: 50%;
-                left: 45%;
-            }
-        </style>
-
-        <title> Yup the lads </title>
+        <title> Cathal O'Callaghan </title>
 
     </head>
 
-    <body>
-        <div id='mainText'> 
-            <h1> Yup the lads</h1>
-        </div>
-    </body>
+<body>
 
+    <div id='fancyBackground'> </div>
+
+        <script>
+            VANTA.TOPOLOGY({
+                el: "#fancyBackground",
+                color: 0xf7557,
+                backgroundColor: 0x2d3334,
+                waveSpeed: 9
+            })
+                </script>
+   
+    <table width=75%>
+
+        <tr>
+            <td id='nameText' colspan="5">
+                <h1> Cathal O'Callaghan</h1>
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+        </tr>
+
+        <tr id='navBar'> 
+            <td width=30% id='linked'>
+                <a href='https://www.linkedin.com/in/cathal-o-callaghan-2329b7175/'>
+                    <div id='linkDiv'>
+                        <img src='linkedinLogo.png' height=130px id='imageDiv'>
+                    </div>
+                </a>
+            </td>
+            
+
+            <td width=1%></td>
+
+            
+            <td width=30% id='github'> 
+                <a href='https://github.com/IamCathal'>
+                    <div id='linkDiv'>
+                        <img src='githubLogo.svg' height=130px id='imageDiv'>
+                    </div>
+                </a>
+            </td>
+            
+
+            <td width=1%></td>
+
+            
+            <td width=30% id='gmail' onmouseover='showEmail(1)' onmouseout='showEmail(0)' onclick='copyEmail()'>
+                <a href='mailto:cathalsocallaghan@gmail.com'>
+                    <div id='linkDiv'>
+                        <img src='gmailLogo.png' height=130px id='gmailDiv'>
+                    </div>
+                </a>
+            </td>
+        
+        <tr>
+            <td colspan=5 style=" padding: 10px">   </td>
+        </tr>
+
+        <tr></tr>
+            <td colspan=5 id='textBox'>
+                <div id='emailAlertBox'> </div>
+            </td>
+        </tr>
+
+    </table>
+
+    <div id='emailInvis'>cathalsocallaghan@gmail.com</div>
+   
+</body>
+        
 </html>

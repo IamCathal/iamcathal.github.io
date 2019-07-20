@@ -7,8 +7,8 @@ table {
 
 body {
     /* background-image: url("wallpaper1.jpg"); */
-    background-size: cover;
     font-family: 'Roboto Condensed', sans-serif;
+    background-size: cover;
     height: 100%;
     margin: 0;
     background-repeat: no-repeat;
@@ -16,12 +16,34 @@ body {
     z-index: 100;
 }
 
+a {
+    color: rgb(26, 163, 115);
+}
+
+#studyclixText {
+    padding: 0px 60px;
+    color: black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+
+#studyclixPreview {
+    width: 100%;
+    /* filter: blur(2px);
+  -webkit-filter: blur(2px); */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#studyclixPreview:hover {
+    filter: blur(2px), brightness(50%);
+  -webkit-filter: blur(2px); 
+}
+
 #nameText {
     text-align: center;
     font-size: 75px;
     color: black;
     /* color: #3b3b47; */
-    
     padding: 0px;
 }
 
@@ -32,15 +54,13 @@ body {
 }
 
 #linkDiv {
-    backdrop-filter: blur(10px);
     height: 100%;
     width: 100%;
 }
 
-#linked {
+#linkedin {
     /* background-color: #3b3b47; */
     padding: 15px 0px;
-    
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -75,9 +95,10 @@ body {
 #emailAlertBox {
     
     text-align: center;
-    padding: 8px 2px;
+    padding: 1.25% 0%;
     font-size: 28px;
     color: black;
+
 }
 
 #emailInvis {

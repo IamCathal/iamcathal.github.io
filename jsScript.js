@@ -25,16 +25,17 @@ Y,                        '8888888888888888888P
 
 function showEmail(hide) {
     emailBox = 'Click to copy email address';
+    divObj = document.getElementById('emailAlertBox');
 
     if (hide == 1) {
-        document.getElementById('emailAlertBox').innerHTML = emailBox;
-        document.getElementById('emailAlertBox').style.opacity = '1';
-        // document.getElementsByTagName('emailAlertBox').style.padding = "8px 2px";
-        document.getElementById('emailAlertBox').style.boxShadow = '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)';
+        divObj.innerHTML = emailBox;
+        divObj.style.opacity = '1';
+        divObj.style.padding = "1.25% 0%";
+        divObj.style.boxShadow = '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)';
     }   else {
-      document.getElementById('emailAlertBox').style.backgroundColor = "transparent";
-        document.getElementById('emailAlertBox').innerHTML = '';
-        document.getElementById('emailAlertBox').style.opacity = '0';
+        divObj.style.backgroundColor = "transparent";
+        divObj.innerHTML = '';
+        divObj.style.opacity = '0';
     }
 
 }

@@ -8,9 +8,25 @@
 
            
             <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
-
-            
             <link href="stylesheet.css" rel="stylesheet" type="text/css">
+
+            <link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
+            <link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
+            <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
+            <link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
+            <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
+            <link rel="apple-touch-icon" sizes="120x120" href="images/apple-icon-120x120.png">
+            <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
+            <link rel="apple-touch-icon" sizes="152x152" href="images/apple-icon-152x152.png">
+            <link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
+            <link rel="icon" type="image/png" sizes="192x192"  href="images/android-icon-192x192.png">
+            <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+            <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+            <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+            <link rel="manifest" href="/manifest.json">
+            <meta name="msapplication-TileColor" content="#ffffff">
+            <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
+            <meta name="theme-color" content="#ffffff">
 
         <title> Cathal O'Callaghan </title>
 
@@ -53,7 +69,7 @@
             <td width=30% id='linkedin'>
                 <a href='https://www.linkedin.com/in/cathal-o-callaghan-2329b7175/'>
                     <div id='linkDiv'>
-                        <img src='linkedinLogo.png' height=130px id='imageDiv'>
+                        <img src='images/linkedinLogo.png' height=130px id='imageDiv'>
                     </div>
                 </a>
             </td>
@@ -65,7 +81,7 @@
             <td width=30% id='github'> 
                 <a href='https://github.com/IamCathal'>
                     <div id='linkDiv'>
-                        <img src='githubLogo.svg' height=130px id='imageDiv'>
+                        <img src='images/githubLogo.svg' height=130px id='imageDiv'>
                     </div>
                 </a>
             </td>
@@ -77,13 +93,13 @@
             <td width=30% id='gmail' onmouseover='showEmail(1)' onmouseout='showEmail(0)' onclick='copyEmail()'>
                 <a href='mailto:cathalsocallaghan@gmail.com'>
                     <div id='linkDiv'>
-                        <img src='gmailLogo.png' height=130px id='gmailDiv'>
+                        <img src='images/gmailLogo.png' height=130px id='gmailDiv'>
                     </div>
                 </a>
             </td>
         
         <tr>
-            <td colspan=5 style=" padding: 10px"> </td> <!-- box above email-->
+            <td colspan=5 style=" padding: 6px"> </td> <!-- box above email-->
         </tr>
 
             <td colspan=5 id='textBox'>
@@ -92,12 +108,16 @@
         </tr>
 
         <tr>
+            <td colspan=5 style=" padding: 6px"> </td> <!-- box below email-->
+        </tr>
+
+        <tr>
 
             <div id='studyclixPreviewDiv'>
             <td colspan=1>
-                    <a href='studyclixAnalysis.pdf'>
-                     <img id='studyclixPreview' src='studyclixPreview.png'>
-                    </a>
+                    
+                     <img id='studyclixPreview' src='images/studyclixPreview.jpg'>
+                    
             </td>
             </div>
      
@@ -105,12 +125,11 @@
             <td> </td>
 
             <td id='studyclixText' colspan=3>
-                    <h1>Studyclix Userbase Analysis <br></h1>
-                    I did an analysis of <a href='https://studyclix.ie' target='_blank'>Studyclix.ie</a> to see whether their user base of students
+                    <a href='studyclixAnalysis.pdf'><span id='bigText'>Studyclix Userbase Analysis:</span></a>
+                     I did an analysis of Studyclix.ie to see whether their user base of students
                     is an accurate representation of students currently in 3rd year to 6th year around the country. I compared the 
-                    amount of students doing each subject to the official statistics released by the <a href='https://www.examinations.ie/' target='_blank'>SEC.</a> This was my first
-                    project involving any kind of 'data science' and I thoroughly enjoyed working through it. Click the image on the left to view.<br> <br>
-
+                    amount of students doing each subject to the official statistics released by the SEC. This was my first
+                    project involving any kind of 'data science' and I thoroughly enjoyed working through it. <br> 
             </td>
         </tr>
 

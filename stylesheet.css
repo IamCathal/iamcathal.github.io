@@ -107,8 +107,8 @@ a {
     opacity: 0;
 }
 
-#linkDiv:hover {
-    filter: brightness(115%);
+#linkedin:hover, #github:hover, #gmail:hover {
+    box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #imageDiv {

@@ -1,13 +1,14 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
-    <link href="newstylesheet.css" rel="stylesheet" type="text/css">
+    <link href="stylesheet.css" rel="stylesheet" type="text/css">
 
     <link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
@@ -18,7 +19,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="images/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
@@ -29,71 +30,67 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
-    <script src="vanta.topology.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/tengbao/vanta@master/dist/vanta.topology.min.js"></script>
     <script src='maintenance.js'></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    <meta property="og:image" content="https://avatars0.githubusercontent.com/u/6561327?s=460&v=4"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:url" content="https://iamcathal.github.io"/>
-    <meta property="og:title" content="Cathal O'Callaghan, CS&IT Undergrad Student"/>
-    <meta property="og:description" content="My personal website for my contact information, Github projects and online profiles such as LinkedIn."/>
-
+    <meta property="og:image" content="https://avatars0.githubusercontent.com/u/6561327?s=460&v=4" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://iamcathal.github.io" />
+    <meta property="og:title" content="Cathal O'Callaghan, CS&IT Undergrad Student" />
+    <meta property="og:description" content="My personal website for my contact information, Github projects and online profiles such as LinkedIn." />
 
     <title>Cathal O'Callaghan</title>
 
-  </head>
+</head>
 
-  <body>
+<body>
     <div id='fancyBackground'> </div>
 
     <script>
-            VANTA.TOPOLOGY({
-                el: "#fancyBackground",
-                color: 0xf7557,
-                backgroundColor: 0x2d3334,
-                waveSpeed: 9
-            })
+        VANTA.TOPOLOGY({
+            el: "#fancyBackground",
+            color: 0xF7557,
+            backgroundColor: 0x2d3334,
+            waveSpeed: 9
+        })
+    </script>
 
-                </script>
+    <script>
+        $(function() {
 
-            <script>
+            const email = 'cathalsocallaghan@gmail.com';
 
-            $(function() {
-                
-                const email = 'cathalsocallaghan@gmail.com';
-
-                $('#emailDiv').on("mouseenter", function() {
-                    infoText = "<div class='col box text-center display-4'> Click to copy my email </div>";
-                    $('#emailText').append(infoText);
-                });
-
-                $('#emailDiv').on("mouseleave", function() {
-                    infoText = '';
-                    $('#emailText').text(infoText);
-                });
-                
-                $('#emailDiv').click(function() {
-                    var textarea = document.createElement('textArea');
-                    textarea.id = 'textAreaCopying';
-                    textarea.style.height = 0;
-                    document.body.appendChild(textarea);
-                    textarea.value = email;
-                    
-                    var selector = document.querySelector('#textAreaCopying');
-                    selector.select();
-                    document.execCommand('copy');
-                    document.body.removeChild(textarea);
-                    $('#emailText').text('');
-                    infoText = "<div class='col box text-center display-4'> Email copied to clipboard </div>";
-                    $('#emailText').append(infoText);
-                });
-
+            $('#emailDiv').on("mouseenter", function() {
+                infoText = "<div class='col box text-center display-4'> Click to copy my email </div>";
+                $('#emailText').append(infoText);
             });
 
-            </script>
+            $('#emailDiv').on("mouseleave", function() {
+                infoText = '';
+                $('#emailText').text(infoText);
+            });
+
+            $('#emailDiv').click(function() {
+                var textarea = document.createElement('textArea');
+                textarea.id = 'textAreaCopying';
+                textarea.style.height = 0;
+                document.body.appendChild(textarea);
+                textarea.value = email;
+
+                var selector = document.querySelector('#textAreaCopying');
+                selector.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                $('#emailText').text('');
+                infoText = "<div class='col box text-center display-4'> Email copied to clipboard </div>";
+                $('#emailText').append(infoText);
+            });
+
+        });
+    </script>
 
     <div class="container">
         <p class="text-center display-2 mt-3 mb-0"> Cathal O'Callaghan </p>
@@ -101,85 +98,99 @@
         <div class="row mt-5">
             <div class="col-sm box text-center mr-3">
                 <a href='https://www.linkedin.com/in/cathal-o-callaghan-2329b7175/'>
-                <img class='img-fluid p-2' src='images/linkedinLogo.png'>
+                    <img class='img-fluid p-2 logos' src='images/linkedinLogo.png'>
                 </a>
             </div>
             <div class="col-sm box text-center mr-3">
                 <a href='https://github.com/IamCathal'>
-                <img class='img-fluid p-2' id='githubLogo' src='images/githubLogoPNG.png'>
+                    <img class='img-fluid p-2 logos' id='githubLogo' src='images/githubLogo.png'>
                 </a>
             </div>
             <div class="col-sm box text-center">
                 <a id='emailDiv' href='mailto:cathalsocallaghan@gmail.com'>
-                <img class='img-fluid p-2' src='images/gmailLogo.png'>
+                    <img class='img-fluid p-2 logos' src='images/gmailLogo.png'>
                 </a>
             </div>
         </div>
 
-        <div id='emailText' class="row mt-2 mb-2">
-            
-        </div>
+        <div id='emailText' class="row mt-2 mb-2"></div>
 
-        <div class="row mt-2">
-            <div class="col-9 textBox text-center mr-3">
-                <h2 class="text-left mt-2 mb-0 ml-1">
-                    <a href='studyclixAnalysis.pdf'><b>Studyclix Userbase Analysis</b><br></a> </h2>
-                <p class="text-left mt-3 mb-2 ml-1 mr-1"> I did analysis of the userbase of the popular
-                    exam related website studyclix.ie. I compiled the stats of all the users and 
-                    compared them to the average student based on official SEC (State Examinations Commision) 
-                    data. This was my first data science related project and I thoroughly enjoyed working through it.
-                </p>
-            </div>
-            <div class="col box text-center pt-0 pb-0 pr-0 pl-0">
-                <a href='StudyclixAnalysis.pdf'>
-                <img class='img-fluid' style="max-width: 100%" src='images/studyclixPreview.jpg'>
-                </a>
-            </div>
-        </div>
 
-        <div class="row mt-2">
-                <div class="col-4 embed-fluid ml-o pl-0 mt-2 pb-0"> 
-                        <video class="video-fluid z-depth-1" autoplay loop muted>
-                                <source src="images/benchmark.mp4" type="video/mp4" />
-                              </video>
-                    </div> 
-                <div class="col-8 box text-center mt-2">
-                        <h2 class="text-left mt-2 mb-0 ml-1">
-                                <a href='https://github.com/IamCathal/HumanBenchMarkHelper'><b>Humanbenchmark Helper</b><br></a> </h2>
-                            <p class="text-left mt-3 mb-2 ml-1 mr-1">A script that 'helps' the user in getting a higher score in the 
-                                word memory test hosted on HumanBenchMark. Uses pyTesseract which is a Python wrapper for Google's Tesseract 
-                                OCR. Your patience is the only limit with this 100% accuracy script. I don't usually endorse cheating but 
-                                this is just to cool to pass up.
-                            </p>
+        <div class="row">
+            <div class="col-sm box">
+                <div class="well">
+                    <h2 class="mt-0 mb-0 ml-1 pt-0 text-center">
+                        <a href='studyclixAnalysis.pdf'><b>Studyclix Userbase Analysis</b></a>
+                        <hr>
+                    </h2>
+                    <img class='img-fluid mt-2' style="max-width: 100%" src='images/studyclixPreview.jpg'>
+                </div>
+                <div class="well pt-2 pb-3 pl-3 pr-3">
+                    <hr> I did analysis of the userbase of the popular exam related website studyclix.ie. I compiled the stats of all the users and compared them to the average student based on official SEC (State Examinations Commision) data. This was my
+                    first data science related project and I thoroughly enjoyed working through it.
+
                 </div>
             </div>
 
-            <div class="row mt-2 mb-5">
-                    <div class="col textBox text-center mr-3">
-                        <h2 class="text-left mt-2 mb-0 ml-1">
-                            <a href='https://github.com/IamCathal/AirportDataBase'><b>AirportDB</b><br></a> </h2>
-                        <p class="text-left mt-3 mb-2 ml-1 mr-1"> 
-                                A program to parse and provide search functions for a global database file on 
-                                airports. I am using the data from OpenFlights which has over 10,000 entries. 
-                                Each entry has 14 data points that range from name and ICAO code to it's exact 
-                                coordinates.
-                                <br><br>
-                                I took this on as my end of year C project to strengthen my knowledge of memory allocation,
-                                use of structures and apply my work to some real world data to do something interesting.
-                        </p>
-                    </div>
-                    <div class="col-5 embed-fluid ml-o pr-0 pl-0 mt-2 pb-0 "> 
-                            <video class="video-fluid z-depth-1" autoplay loop muted>
+            <div class="col-7 box ml-3">
+                <div class="well">
+                    <h2 class="mt-0 mb-0 ml-1 pt-0 pb-2 text-center">
+                        <a href='https://github.com/IamCathal/HumanBenchMarkHelper'><b>Humanbenchmark Helper</b><br></a>
+                        <hr>
+                    </h2>
+                    <video class="video-fluid z-depth-1" autoplay loop muted>
+                        <source src="images/benchmark.mp4" type="video/mp4" />
+                      </video>
+                </div>
+                <div class="well pt-2 pb-3 pl-3 pr-3">
+                    <hr> I did analysis of the userbase of the popular exam related website studyclix.ie. I compiled the stats of all the users and compared them to the average student based on official SEC (State Examinations Commision) data. This was my
+                    first data science related project and I thoroughly enjoyed working through it.
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-7 box mt-3">
+                <div class="well">
+                    <h2 class="mt-0 mb-0 ml-1 pt-0 pb-0 text-center">
+                        <a href='https://github.com/IamCathal/AirportDataBase'><b>AirportDB</b><br></a> </h2>
+                    <hr>
+                    </h2>
+                    <video class="video-fluid z-depth-1" autoplay loop muted>
                                     <source src="images/airportDBvideo.mp4" type="video/mp4" />
                                   </video>
-                        </div> 
                 </div>
-                <footer class="page-footer font-small blue">
-                        <div class="footer-copyright text-center py-3">
-                            Cathal O'Callaghan 2019
-                        </div>
-                </footer>
+                <div class="well pt-2 pb-3 pl-3 pr-3">
+                    <hr> A program to parse and provide search functions for a global database file on airports. I am using the data from OpenFlights which has over 10,000 entries. Each entry has 14 data points that range from name and ICAO code to it's exact
+                    coordinates.
+                    <br><br> I took this on as my end of year C project to strengthen my knowledge of memory allocation, use of structures and apply my work to some real world data to do something interesting.
+
+                </div>
+            </div>
+
+            <div class="col-sm ml-3 mt-3 box">
+                <div class="well text-center">
+                    <h2 class="mt-0 mb-0 ml-1 pt-0 pb-0 text-center">
+                        <a href='CV.pdf'><b>Curriculum vitae</b><br></a> </h2>
+                    <hr>
+                    </h2>
+                    <img src="images/CV.png" class="img-fluid" style="max-width: 75%">
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <footer class="page-footer font-small blue">
+            <div class="footer-copyright text-center py-3">
+                Cathal O'Callaghan 2019
+            </div>
+        </footer>
     </div>
-    
+
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 * {
     font-family: 'Roboto Condensed', sans-serif;
+    color: rgb(140, 140, 140);
 }
 
 body {
@@ -9,12 +10,15 @@ body {
 
 a {
     display: block;
-    color: rgb(22, 116, 83);
+    color: rgb(140, 140, 140);
+    text-decoration: underline
 }
 
-#fancyBackground {
-    z-index: -5;
+#yuppa5 {
+    z-index: -50;
     position: fixed;
+    height: 100%;
+    width: 100%;
 }
 
 #benchmarkVideo {
@@ -30,6 +34,10 @@ a {
 .textBox {
     padding: 2px 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.mainText {
+    color: rgb(140, 140, 140);
 }
 
 .logos {

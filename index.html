@@ -56,14 +56,6 @@
 
     <div id="scriptHere"></div>
     <script src="loadBackground.js"></script>
-    <!-- <script>
-        VANTA.TOPOLOGY({
-            el: "#yuppa5",
-            color: 0xe60707,
-            backgroundColor: 0x2d3334,
-            waveSpeed: 9
-        })
-    </script> -->
 
     <script>
         $(function() {
@@ -99,9 +91,13 @@
         });
     </script>
 
+
     <div class="container">
+
         <p class="text-center display-2 mt-3 mb-0 mainText"> Cathal O'Callaghan </p>
         <h3 class="text-center mt-0"> 2nd year Computer Science and Information Technology NUIG </h3>
+
+
         <div class="row mt-5">
             <div class="col-sm box text-center mr-3">
                 <a href='https://www.linkedin.com/in/cathal-o-callaghan-2329b7175/'>
@@ -234,5 +230,21 @@
     </div>
     </div>
 </body>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js "></script>
+<script>
+    var lineDrawing = anime({
+        targets: '#lineDrawing .lines path',
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: 'easeInOutSine',
+        duration: 1600,
+        delay: function(el, i) {
+            return i * 180
+        },
+        direction: 'alternate',
+        loop: true,
+    });
+</script>
 
 </html>

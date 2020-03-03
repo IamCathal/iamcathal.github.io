@@ -1,6 +1,6 @@
 * {
     font-family: 'Roboto Condensed', sans-serif;
-    color: rgb(140, 140, 140);
+    color: #8c8c8c;
 }
 
 body {
@@ -12,6 +12,16 @@ a {
     display: block;
     color: rgb(140, 140, 140);
     text-decoration: underline
+}
+
+#typedJS {
+    background-color: black;
+}
+
+.my-path {
+    stroke-width: 3;
+    stroke: #8c8c8c;
+    fill: #8c8c8c;
 }
 
 #yuppa5 {

@@ -64,3 +64,18 @@ a {
     width: 38px;
     float: right;
 }
+
+.codeDiv {
+    font-family: "Lucida Console", Monaco, monospace;
+    color: #8c8c8c;
+    text-shadow: none;
+}
+
+code {
+    color: rgb(103, 145, 158);
+}
+
+.writeup {
+    text-shadow: none;
+    color: black;
+}

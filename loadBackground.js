@@ -1,4 +1,5 @@
 const colorArr = ["0xf28e00", "0x44b184", "0xe86f19", "0xe60707", "0xf2f200"]
+
 const colorChoice = Math.round((Math.random() * (10)) % 6);
 
 console.log(`  
@@ -46,7 +47,7 @@ switch (colorChoice) {
     case 3:
         VANTA.TOPOLOGY({
             el: "#yuppa5",
-            color: 0xe86f19,
+            color: 0xFF673AB7,
             backgroundColor: 0x2d3334,
             waveSpeed: 9
         })
@@ -54,7 +55,7 @@ switch (colorChoice) {
     case 4:
         VANTA.TOPOLOGY({
             el: "#yuppa5",
-            color: 0xe60707,
+            color: 0xFFBA68C8,
             backgroundColor: 0x2d3334,
             waveSpeed: 9
         })

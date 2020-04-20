@@ -1,10 +1,12 @@
 * {
     font-family: 'Roboto Condensed', sans-serif;
-    color: #8c8c8c;
+    /* color: #8c8c8c; */
+    color: white;
 }
 
 body {
-    background-color: #2D3334;
+    /* background-color: #2D3334; */
+    background-image: url('images/backgroundDarkMode2.jpg');
     color: black;
     text-shadow: 0px 0px 4px #141314;
 }
@@ -13,16 +15,6 @@ a {
     display: block;
     color: rgb(140, 140, 140);
     text-decoration: underline
-}
-
-#typedJS {
-    background-color: black;
-}
-
-.my-path {
-    stroke-width: 3;
-    stroke: #8c8c8c;
-    fill: #8c8c8c;
 }
 
 #yuppa5 {
@@ -48,7 +40,8 @@ a {
 }
 
 .mainText {
-    color: rgb(140, 140, 140);
+    /* color: rgb(140, 140, 140); */
+    color: white;
 }
 
 .logos {

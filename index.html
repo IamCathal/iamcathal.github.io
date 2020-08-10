@@ -29,10 +29,8 @@
     <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <meta property="og:image" content="https://avatars0.githubusercontent.com/u/6561327?s=460&v=4" />
@@ -46,42 +44,6 @@
 </head>
 
 <body>
-
-    <script>
-        $(function() {
-
-            // yuck JQuery I know
-            const email = 'cathalsocallaghan@gmail.com';
-
-            $('#emailDiv').on("mouseenter", function() {
-                infoText = "<div class='col box text-center display-4'> Click to copy my email </div>";
-                $('#emailText').append(infoText);
-            });
-
-            $('#emailDiv').on("mouseleave", function() {
-                infoText = '';
-                $('#emailText').text(infoText);
-            });
-
-            $('#emailDiv').click(function() {
-                var textarea = document.createElement('textArea');
-                textarea.id = 'textAreaCopying';
-                textarea.style.height = 0;
-                document.body.appendChild(textarea);
-                textarea.value = email;
-
-                var selector = document.querySelector('#textAreaCopying');
-                selector.select();
-                document.execCommand('copy');
-                document.body.removeChild(textarea);
-                $('#emailText').text('');
-                infoText = "<div class='col box text-center display-4'> Email copied to clipboard </div>";
-                $('#emailText').append(infoText);
-            });
-
-        });
-    </script>
-
 
     <div class="container">
 
@@ -146,7 +108,6 @@
                     <div class="col">
                         <div class="col">
                             <img src="svgImages/C.svg " style="width:60px">
-                            <img src="svgImages/flutter.svg " style="width:45px">
                             <img src="svgImages/java.svg " style="width:45px">
                         </div>
                     </div>
@@ -163,18 +124,20 @@
                             <img src="svgImages/tux.svg " alt="Linux "style="width:40px; ">
                             <img src="svgImages/travis.svg " alt="Travis CI "style="width:55px; ">
                             <img src="svgImages/aws.svg " alt="i3wm " style="width:55px; ">
-                            <img src="images/gcp.png" style="width:50px ">
                             <img src="svgImages/docker-seeklogo.com.svg" style="width:66px ">
+                            <img src="images/gcp.png" style="width:50px ">
+                            
                         </div>
                     </div>
                     <div class="row sm-6 " align="center ">
                         <div class="col ">
                             <div class="col ">
                                 <img src="svgImages/mongo.svg " style="width:60px " />
-                                <img src="svgImages/node.svg " style="width:60px ">
                                 <img src="svgImages/react.svg " style="width:60px ">
+                                <img src="svgImages/node.svg " style="width:60px ">
                                 <img src="images/graphql.png" style="width: 50px">
                                 <img src="svgImages/mysql.svg" style="width: 50px">
+                                <img src="svgImages/flutter.svg " style="width:45px">
                             </div>
                         </div>
                     </div>
@@ -457,6 +420,11 @@
                         <h6>
                             <b> ⭐ Read my guide on how to make this on the NUIG Compsoc wiki page! ⭐</b></a>
                     </h6>
+                    <h6 class="text-center mt-0 mb-0" >
+                        <a href="https://dev.to/iamcathal/using-google-s-tesseract-ocr-to-cheat-at-online-memory-tests-4lnl">
+                            <b> ⭐ Or on Dev.to if the compsoc page is innacessable ⭐</b>
+                        </a>
+                </h6>
                     <hr> I combined Google's Tesseract OCR alongside python to make a script that is capable of highscores of thousands compared to my own which is around 12.
 
 
@@ -511,12 +479,12 @@
                     </div>
                     
                             
-                   <span>
+                <span>
                     A chrome extension made to enable you to play your favourite songs on youtube at any BPM you desire. Youtube's default playback rate options (1.25x, 1.5x etc) work horribly with music and therefore being able to change the actual BPM of the music is much better. This extension uses the Spotify Web API to gather information such as BPM and other data points about a particular song and with that information it then enables altering of BPM.
-                   </span>
-                   <!-- another disgusting fix to get spacing working, I'm not a front end dev-->
-                   <div style="height: 2rem; "></div>
-                   <div class="col-sm ">
+                </span>
+                <!-- another disgusting fix to get spacing working, I'm not a front end dev-->
+                <div style="height: 2rem; "></div>
+                <div class="col-sm ">
                         <h3> 
                             <img src="svgImages/golang.svg " style="width: 60px; margin-top: 2vh ">
                             <b> Steam Friends Network Grapher</b>
@@ -528,7 +496,7 @@
                             <br>
                     <i>"Six degrees of separation is the idea that all people are six, or fewer, social connections away from each other. Also known as the 6 Handshakes rule. As a result, a chain of "a friend of a friend" statements can be made to connect
                                 any two people in a maximum of six steps. " </i>
-                   </span>
+                </span>
                         </div>
                     </div>
 
@@ -536,13 +504,43 @@
                 </div>
             </div>
 
-
-
-
             <div class="mt-5 ">
-            </div>
+                
         </div>
     </div>
+
+        
+    </div>
+
+    <script>
+        const email = "cathalsocallaghan@gmail.com"
+
+       document.getElementById('emailDiv').addEventListener("mouseenter", function() {
+        infoText = "<div class='col box text-center display-4'> Click to copy my email </div>";
+        emailDiv = document.getElementById('emailText');
+        emailDiv.innerHTML =infoText;
+       })
+
+       document.getElementById('emailDiv').addEventListener("mouseleave", function() {
+        emailDiv = document.getElementById('emailText');
+        emailDiv.innerHTML = ""
+       })
+
+       document.getElementById('emailDiv').addEventListener("click", function() {
+        const el = document.createElement('textarea');
+        el.value = email;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+
+        infoText = "<div class='col box text-center display-4'> Copied to clipboard </div>";
+        emailDiv = document.getElementById('emailText');
+        emailDiv.innerHTML =infoText;
+       })
+        
+    </script>
+
 
 </body>
 

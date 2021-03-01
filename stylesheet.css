@@ -46,7 +46,7 @@ a {
 }
 
 .svgBlur {
-    filter: drop-shadow(3px 0 3px rgb(61, 61, 61));
+    filter: drop-shadow(3px 0 3px rgba(0, 0, 0, 0.2));
 }
 
 .path {

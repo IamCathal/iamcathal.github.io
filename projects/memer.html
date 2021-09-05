@@ -5,11 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
-    <link href="../stylesheet.css" rel="stylesheet" type="text/css">
-
     <link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
@@ -31,14 +26,26 @@
     <meta property="og:image" content="https://avatars0.githubusercontent.com/u/6561327?s=460&v=4" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://iamcathal.github.io" />
-    <meta property="og:title" content="Cathal O'Callaghan, CS&IT Undergrad Student" />
+    <meta property="og:title" content="Cathal O'Callaghan, Final year CS&IT NUIG" />
     <meta property="og:description" content="My personal website for my contact information, Github projects and online profiles such as LinkedIn." />
 
-    <meta http-equiv="refresh" content="0; URL='https://streamable.com/d3jw8k'" />
+    <!-- <meta http-equiv="refresh" content="0; URL='https://streamable.com/d3jw8k'" /> -->
 
     <title>Cathal O'Callaghan</title>
 
 </head>
-<body>
-</body>
+    <body>
+        <script>
+            const videos = ["https://streamable.com/cm342e",
+                            "https://streamable.com/mjjhet",
+                            "https://streamable.com/fi14vu",
+                            "https://streamable.com/ef6atp",
+                            "https://streamable.com/c5am4f",
+                            "https://streamable.com/mi009f",
+                            "https://streamable.com/rv780e"
+    ]
+    console.log("Replacing with: " + videos[Math.floor(Math.random() * videos.length)])
+    window.location.replace(videos[Math.floor(Math.random() * videos.length)]);
+        </script>
+    </body>
 </html>

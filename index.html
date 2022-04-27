@@ -1,37 +1,38 @@
-<!doctype html>
-<html lang="en">
+<html>
+<html lang="en"></html>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <link href="static/stylesheets/stylesheet.css" rel="stylesheet" type="text/css">
 
-
-    <link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="images/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="images/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="images/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="static/favicons/apple-icon-57x57.webp">
+    <link rel="apple-touch-icon" sizes="60x60" href="static/favicons/apple-icon-60x60.webp">
+    <link rel="apple-touch-icon" sizes="72x72" href="static/favicons/apple-icon-72x72.webp">
+    <link rel="apple-touch-icon" sizes="76x76" href="static/favicons/apple-icon-76x76.webp">
+    <link rel="apple-touch-icon" sizes="114x114" href="static/favicons/apple-icon-114x114.webp">
+    <link rel="apple-touch-icon" sizes="120x120" href="static/favicons/apple-icon-120x120.webp">
+    <link rel="apple-touch-icon" sizes="144x144" href="static/favicons/apple-icon-144x144.webp">
+    <link rel="apple-touch-icon" sizes="152x152" href="static/favicons/apple-icon-152x152.webp">
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicons/apple-icon-180x180.webp">
+    <link rel="icon" type="image/png" sizes="192x192" href="static/favicons/android-icon-192x192.webp">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicons/favicon-32x32.webp">
+    <link rel="icon" type="image/png" sizes="96x96" href="static/favicons/favicon-96x96.webp">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicons/favicon-16x16.webp">
     <link rel="manifest" href="/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="images/ms-icon-144x144.webp">
     <meta name="theme-color" content="#ffffff">
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+    <!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.helper.ie8.js"></script><![endif]-->
 
     <meta property="og:image" content="https://avatars0.githubusercontent.com/u/6561327?s=460&v=4" />
     <meta property="og:type" content="website" />
@@ -44,690 +45,713 @@
 </head>
 
 <body>
-
-    <div class="container">
-
-        <div class="row">
-            <div class="col" style="text-align: right">
-                <div class="mt-3" id="darkModeToggle" style="width: 40px; height: 40px">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><path fill="#FFAC33" d="M16 2s0-2 2-2 2 2 2 2v2s0 2-2 2-2-2-2-2V2zm18 14s2 0 2 2-2 2-2 2h-2s-2 0-2-2 2-2 2-2h2zM4 16s2 0 2 2-2 2-2 2H2s-2 0-2-2 2-2 2-2h2zm5.121-8.707s1.414 1.414 0 2.828-2.828 0-2.828 0L4.878 8.708s-1.414-1.414 0-2.829c1.415-1.414 2.829 0 2.829 0l1.414 1.414zm21 21s1.414 1.414 0 2.828-2.828 0-2.828 0l-1.414-1.414s-1.414-1.414 0-2.828 2.828 0 2.828 0l1.414 1.414zm-.413-18.172s-1.414 1.414-2.828 0 0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0 0 2.828 0 2.828l-1.414 1.414zm-21 21s-1.414 1.414-2.828 0 0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0 0 2.828 0 2.828l-1.414 1.414zM16 32s0-2 2-2 2 2 2 2v2s0 2-2 2-2-2-2-2v-2z"/><circle fill="#FFAC33" cx="18" cy="18" r="10"/></svg>
-                    <!-- <img id="darkModeToggle" src="https://discord.com/assets/1038cee47a0a8313dc2d4006145fcee6.svg"
-                        width="40px"
-                        height="40px"
-                    > -->
-                </div>
-            </div>
-        </div>
-
-
-        <p class="text-center mainText display-2 mt-3 mb-0" style="font-weight: 400;" id="titleText">Cathal O'Callaghan</p>
-        <h3 class="text-center mt-0"> Final year Computer Science & IT NUIG</h3>
-        <div class="mt-2">
-            <!-- God forgive me for these stupid fixes that just about work -->
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <div class="row">
-                    <h3 style="font-weight: 300; font-size: 1.3em ; text-align: center;">
-                        
-                        <br /> <br /> Hi I'm Cathal, a passionate CS student who loves to apply my knowledge to convert abstract real world problems into programming based solutions.
-                        <br /> <br /> I enjoy writing the underlying infrastructure code that users never see but constantly rely on for projects such as <a class="inlineLink" style="display: inline" href="https://github.com/ReqApp/Req">Req</a>
-                        and <a class="inlineLink" style="display: inline" href="https://github.com/MLH-Fellowship/FellowshipWrapup">Fellowship Wrapup </a>(both of which came first place in their competitions).
-                        <br /> <br /> Jump straight to my:
-                    </h3>
-
-                </div>
-
-                <div class="row text-center justify-content-md-center">
-                    <div class="col-md-auto">
-                        <a href="#experience">
-                            <h5 style="font-weight: 700;">
-                                Experience
-                            </h5>
-                        </a>
+    <div style="display: flex; justify-content: center;align-items: center;text-align: center;min-height: 65vh;">
+        <div>
+            <div>
+                <div class="ml-5 pb-0 pt-1 progress-bar-debitcard" style="border-radius: 8px; height: 12rem; width: 20rem;" data-tilt data-tilt-reset="false" data-tilt-max="-15" data-tilt-startY="15" data-tilt-startX="-20" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+           
+                    <div class="row">
+                        <div class="col-5 pl-4">
+                            <p style="font-weight: bold;" class="m-0"> Bank of Cans </p>
+                        </div>
+                        <div class="col"></div>
+                        <div class="col pl-2 pr-2">
+                            <p style="font-size: 0.8rem" class="m-0"> Debit Card </p>
+                        </div>
                     </div>
-                    <div class="col-md-auto">
-                        <a href="#projects">
-                            <h5  style="font-weight: 700;">
-                                Projects
-                            </h5>
-                        </a>
+        
+                    <div class="row">
+                        <div class="col-10 pl-4">
+                        </div>
+                        <div class="col pl-0 pr-3">
+                            <img src="static/images/contactless.webp" style="width: 40%; filter: invert(100)" alt="contactless payment symbol">
+                        </div>
                     </div>
-                    <div class="col-md-auto">
-                        <a href="#incoming">
-                            <h5  style="font-weight: 700;">
-                                Incoming
-                            </h5>
-                        </a>
+        
+                    <div class="row">
+                        <div class="col-3 pl-4">
+                            <img src="static/images/simCardContact.webp" style="width: 100%" alt="sim card contact">
+                        </div>
                     </div>
-                </div>
-                <br />
-                <div class="row">
-                   
-                    <div class="col">
-                        <h3 style="font-weight: 300; font-size: 1.3em ; text-align: center;">
-                            I'm interested in:
-                            <div class="row text-center justify-content-md-center mt-2">
-                                <div class="col">
-                                    <svg class="svgBlur path" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-55 -130 590 590" style="enable-background:new 0 0 590 590;" xml:space="preserve">
-                                        <g>
-                                            <g>
-                                                <g>
-                                                    <path class="svgBlur path" d="M496,112V96h-48v-8c0-13.232-10.768-24-24-24s-24,10.768-24,24v8h-48v16h64v32h-16v16h-28.688l-16-16H140.688l-16,16H96
-                                                        v-16H80v-32h64V96H96v-8c0-13.232-10.768-24-24-24S48,74.768,48,88v8H0v16h64v32H48v80h48v-16h28.688l8.592,8.592l-29.28,36.6
-                                                        V416h-8v16h32v-16h-8V258.808L147.848,224h7.512l32,56H248h60.64l32-56h7.512L376,258.808V416h-8v16h32v-16h-8V253.192
-                                                        l-29.28-36.608l8.592-8.584H400v16h48v-80h-16v-32H496z M64,88c0-4.416,3.584-8,8-8s8,3.584,8,8v8H64V88z M80,208H64v-48h16V208z
-                                                        M400,192h-35.312l-16,16H331.36l-13.712,24H296v16h12.504l-9.144,16H248h-51.36l-9.144-16H280v-16H178.352l-13.712-24h-17.328
-                                                        l-16-16H96v-16h35.312l16-16h201.376l16,16H400V192z M432,208h-16v-48h16V208z M416,96v-8c0-4.416,3.584-8,8-8
-                                                        c4.416,0,8,3.584,8,8v8H416z"/>
-                                                    <rect  class="path" x="160" y="176" width="16" height="16"/>
-                                                    <rect  class="path" x="192" y="176" width="16" height="16"/>
-                                                    <rect  class="path" x="296" y="176" width="16" height="16"/>
-                                                    <rect  class="path"  x="328" y="176" width="16" height="16"/>
-                                                </g>
-                                            </g>
-                                        </g>
-                                       
-                                    </svg>
-                                    <!-- <img src="svgImages/drone-svgrepo-com.svg" width="100px"> -->
-                                    Drones
-                                </div>
-                                <div class="col">
-                                    <!-- <img src="svgImages/cloud-computing-data-svgrepo-com.svg" width="100px"> -->
-                                    <svg class="svgBlur" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-                                    <g>
-                                    <g>
-                                        <path class="svgBlur path"  d="M430.103,99.782c0.291-2.257,0.442-4.48,0.442-6.691c0-32.081-26.1-58.182-58.182-58.182
-                                            c-12.928,0-25.251,4.317-35.316,12.125C310.679,17.373,272.582,0,232.727,0c-59.671,0-112.884,38.47-132.038,94.476
-                                            c-44.009,7.529-77.417,46.359-77.417,91.706c0,51.328,41.763,93.091,93.079,93.091h46.545c6.423,0,11.636-5.213,11.636-11.636
-                                            S169.321,256,162.897,256h-46.545c-38.505,0-69.818-31.313-69.818-69.818c0-36.015,28.113-66.548,64-69.516
-                                            c4.852-0.396,8.937-3.77,10.24-8.46c14.022-50.013,60.067-84.934,111.953-84.934c36.911,0,72.017,17.908,93.917,47.895
-                                            c2.141,2.932,5.539,4.701,9.169,4.771c3.2-0.186,7.086-1.559,9.344-4.399c6.737-8.495,16.652-13.359,27.206-13.359
-                                            c19.247,0,34.909,15.663,34.909,34.909c0,3.305-0.628,6.831-1.932,10.787c-1.001,3.049-0.698,6.365,0.838,9.181
-                                            s4.154,4.876,7.261,5.69c30.627,8.064,52.015,35.793,52.015,67.433c0,38.505-31.314,69.818-69.818,69.818h-46.545
-                                            c-6.423,0-11.636,5.213-11.636,11.636s5.213,11.636,11.636,11.636h46.545c51.328,0,93.091-41.763,93.091-93.091
-                                            C488.727,147.793,465.117,113.711,430.103,99.782z"/>
-                                    </g>
-                                    </g>
-                                    <g>
-                                    <g>
-                                        <path class="svgBlur path" d="M209.443,197.818c-6.423,0-11.636,5.213-11.636,11.636v151.273c0,6.412-5.225,11.636-11.636,11.636h-25.414
-                                            c-4.817-13.51-17.617-23.273-32.768-23.273c-19.247,0-34.909,15.663-34.909,34.909s15.663,34.909,34.909,34.909
-                                            c15.151,0,27.951-9.763,32.768-23.273h25.425c19.247,0,34.909-15.663,34.909-34.909V209.455
-                                            C221.079,203.031,215.866,197.818,209.443,197.818z M128,395.636c-6.412,0-11.636-5.225-11.636-11.636s5.225-11.636,11.636-11.636
-                                            s11.636,5.225,11.636,11.636S134.412,395.636,128,395.636z"/>
-                                    </g>
-                                    </g>
-                                    <g>
-                                    <g>
-                                        <path class="svgBlur path" d="M267.636,444.323V186.182c0-6.423-5.213-11.636-11.636-11.636s-11.636,5.213-11.636,11.636v258.141
-                                            c-13.51,4.818-23.273,17.617-23.273,32.768C221.091,496.337,236.753,512,256,512s34.909-15.663,34.909-34.909
-                                            C290.909,461.94,281.158,449.14,267.636,444.323z M256,488.727c-6.412,0-11.636-5.225-11.636-11.636s5.225-11.636,11.636-11.636
-                                            s11.636,5.225,11.636,11.636S262.412,488.727,256,488.727z"/>
-                                    </g>
-                                    </g>
-                                    <g>
-                                    <g>
-                                        <path class="svgBlur path" d="M384,349.091c-15.151,0-27.951,9.763-32.768,23.273h-25.414c-6.412,0-11.636-5.225-11.636-11.636V209.455
-                                            c0-6.423-5.213-11.636-11.636-11.636s-11.636,5.213-11.636,11.636v151.273c0,19.247,15.663,34.909,34.909,34.909h25.414
-                                            c4.817,13.51,17.617,23.273,32.768,23.273c19.247,0,34.909-15.663,34.909-34.909S403.247,349.091,384,349.091z M384,395.636
-                                            c-6.412,0-11.636-5.225-11.636-11.636s5.225-11.636,11.636-11.636s11.636,5.225,11.636,11.636S390.412,395.636,384,395.636z"/>
-                                    </g>
-                                    </g>
-                                   </svg>
-                                    <br />Cloud Native 
-                                </div>
-                                <div class="col">
-                                    <!-- <img src="svgImages/music-cd-svgrepo-com.svg" width="100px"> -->
-                                    <svg class="svgBlur path"version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="-150 -230 910 910" style="enable-background:new 0 0 910 910;" xml:space="preserve">
-                                        <g>
-                                            <g id="CD">
-                                                <path class="svgBlur path" d="M306,0C137.001,0,0,137.001,0,306s137.001,306,306,306s306-137.001,306-306S474.999,0,306,0z M327.39,25.795
-                                                    c-4.626,60.608-9.252,121.215-13.88,181.823c-5.76-0.44-11.449-0.377-17.198,0.19c-5.968-60.491-11.936-120.98-17.904-181.47
-                                                    C294.78,24.722,310.985,24.542,327.39,25.795z M254.139,29.807c11.217,59.74,22.435,119.479,33.653,179.219
-                                                    c-19.534,3.668-37.506,13.151-51.56,27.205C193.25,193.25,150.27,150.27,107.289,107.289
-                                                    C147.317,67.26,198.502,40.253,254.139,29.807z M232.31,306c0-40.698,32.992-73.69,73.69-73.69s73.69,32.992,73.69,73.69
-                                                    s-32.992,73.69-73.69,73.69S232.31,346.698,232.31,306z M284.61,586.205c4.626-60.608,9.252-121.215,13.88-181.823
-                                                    c5.76,0.44,11.449,0.377,17.198-0.19c5.968,60.491,11.936,120.98,17.904,181.47C317.22,587.278,301.015,587.458,284.61,586.205z
-                                                    M357.861,582.193c-11.217-59.74-22.435-119.479-33.652-179.219c19.534-3.668,37.506-13.15,51.56-27.205
-                                                    c42.981,42.981,85.961,85.961,128.942,128.942C464.683,544.74,413.498,571.747,357.861,582.193z"/>
-                                                <circle class="svgBlur path" cx="306" cy="306" r="48.71"/>
-                                            </g>
-                                        </g>
-                                    </svg>
-                                    Techno
+        
+                    <div class="row">
+                        <div class="col pl-0 pr-2">
+                            <p class="cardNumbers mb-0 mt-0">4319 1054 2022 1916</p>
+                        </div>
+                        <div class="col-3"></div>
+                    </div>
+        
+                    <div class="row">
+                        <div class="col-3"></div>
+                        <div class="col-2 pl-5">
+                            <p class="mb-0 mt-0 pt-1" style="font-size: 0.6rem; line-height: 0.3rem;">Expires<br/><br/>Ends</p>
+                        </div>
+                        <div class="col-3 pl-3 pr-0">
+                            <p class="cardNumbers mb-0 mt-0" style="font-size: 0.9rem">Never</p>
+                        </div>
+                        <div class="col"></div>
 
-                                </div>
-                            </div>
-                        </h3>
                     </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="row sm-6 mt-5" align="center">
-                    <div class="col">
-                        <h4> Languages</h4>
+                    <div class="row mt-2">
+                        <div class="col-9 pl-4">
+                            <p class="mb-0 mt-0 pt-0 cardNumbers">Cathal O'Callaghan</p>
+                        </div>
+                        <div class="col pl-4">
+                            <img src="static/images/yupCardLogo.webp" style="width: 80%" alt="two smiley face emojis merged together to look like the mastercard logo">
+                        </div>
                     </div>
-                </div>
-                <div class="row sm-6" align="center">
-                    <div class="col">
-                        <img src="svgImages/golang.svg " style="width: 96px; padding-top: 36px;">
-                        <img src="svgImages/python.svg " style="width:55px">
-                        <img src="svgImages/js.svg " style="width:55px">
-                    </div>
-                </div>
-                <div class="row sm-6" align="center">
-                    <div class="col">
-                        <div class="col">
-                            <img src="svgImages/C.svg " style="width:60px">
-                            <img src="svgImages/java.svg " style="width:45px">
+                    <div class="row mt-0">
+                        <div class="col-9 pl-4">
+                            <p class="mb-0 mt-0 pt-0 cardNumbers" style="font-size: 0.7rem">cathalsocallaghan@gmail.com</p>
                         </div>
                     </div>
                 </div>
-
-            
-                <div class="row sm-6 mt-5 " align="center">
-                    <div class="col">
-                        <h4> Technologies/tools </h4>
-                    </div>
-                </div>
-                <div class="row sm-6 " align="center">
-                    <div class="col">
-                        <img src="svgImages/git.svg " alt="Git "style="width:70px; ">
-                        <img src="svgImages/tux.svg " alt="Linux "style="width:40px; ">
-                        <img src="svgImages/docker-seeklogo.com.svg" style="width:66px ">
-                        <img src="svgImages/unity.svg" style="width:46px ">
-                        
-                    </div>
-                </div>
-                <div class="row sm-6 " align="center">
-                    <div class="col">
-                            <img src="svgImages/mongo.svg " style="width:60px " />
-                            <img src="svgImages/node.svg " style="width:60px ">
-                            <img src="svgImages/mysql.svg" style="width: 50px">
-                            <img src="svgImages/flutter.svg " style="width:45px">
-                    </div>
-                </div>
             </div>
         </div>
+    </div>
 
-
-        <div class="row mt-5 ">
-            <div class="col-sm box text-center mr-3 ">
-                <a href='https://www.linkedin.com/in/cathal-o-callaghan'>
-                    <img class='img-fluid p-2 logos' src='svgImages/linkedin.svg'>
-                </a>
-            </div>
-            <div class="col-sm box text-center mr-3 ">
-                <a href='https://github.com/IamCathal'>
-                    <img class='img-fluid p-2 logos' id='githubLogo' src='svgImages/githubLogo.png'>
-                </a>
-            </div>
-            <div class="col-sm box text-center ">
-                <a id='emailDiv' href='mailto:cathalsocallaghan@gmail.com'>
-                    <img class="img-fluid p-2 logos" src="svgImages/email-svgrepo-com.svg">
-                    <!-- <img class='img-fluid p-2 logos' src='svgImages/gmail.svg'> -->
-                </a>
-            </div>
-        </div>
-
-        <div id='emailText' class="row mt-2 mb-2 "></div>
-
-        <div class="row mt-3 special " id="experience">
-            <div class="col box ">
-                <div class="well ">
-                    <p class="mt-0 mb-0 ml-1 pt-0 text-center display-4" style="font-weight: 400;">
-                        <b> Experience </b>
-                        <hr>
-                    </p>
-                </div>
-
-                <div class="row mb-3">
-                    <div class="col-3">
-                        <img src="https://1000logos.net/wp-content/uploads/2016/11/Cisco-logo.png" width="90% " alt="Cisco logo" class="ml-5 mt-3 mb-3"/>
-                    </div>
-                    <div class="col ml-3 ">
-                        <p class="mb-0 ">
-                            <h4>
-                                <b> Software Engineer Intern </b></a>
-                        </h4>
-                        <h6>
-                            📅 Febuary - August 2021 (8 months)
-                        </h6>
-                          
-                            <div>
-
-                                <ul>
-                                    <li> Worked on the search services team for <a class="inlineLink" style="display: inline;" href="https://www.webex.com/"> Cisco WebEx </a> during my college work placement</li>
-                                </ul>
-                                
-                            </div>
-
-                        </p>
-                    </div>
-                  
-                </div>
-    
-
-
-                <div class="row ">
-                    <div class="col-3">
-                        <img src="images/MLH.png" width="85% " alt="Major league hacking logo" class="ml-5 mt-5"/>
-                    </div>
-                    <div class="col ml-2 ">
-                        <p class="mb-0 ">
-                            <h4>
-                                <b> MLH Fellowship Intern </b></a>
-                        </h4>
-                        <h6>
-                            📅 June - August 2020 (3 months)
-                        </h6>
-                          
-                            <div>
-
-                                <ul>
-                                    <li>  As part of the innagural class of the MLH Fellowship I contributed full time to a range of open source projects under the guidance of a software engineer.</li>
-                                    <li>Gave technical support on issue boards and delivered general quality of life improvements to click (325,000 repositories dependant) and beego (used most notably by Huawei enterprise cloud).</li>
-                                    <li> Implemented and documented custom logging format functionality on beego. This was an important addition in the major 2.0 release</li>
-                                </ul>
-                                
-                            </div>
-
-                        </p>
-                    </div>
-                  
-                </div>
-
-               
-
-
-
-            </div>
-
-
-        </div>
-
-        <div class="row mt-3 special " id="projects">
-            <div class="col box ">
-                <div class="well ">
-                    
-                    <p class="mt-0 mb-0 ml-1 pt-0 text-center display-4" style="font-weight: 400;">
-                        <b> Projects </b>
-                        <hr>
-                    </p>
-                    <h2 class="mt-0 mb-0 ml-1 pt-0 text-center ">
-                        
-                        <a href='https://github.com/NeoSteamFriendGraphing/neo'> 
-                            <b>Neo</b>
-                            
-                            <img src="svgImages/docker-seeklogo.com.svg" style="width:66px " class="projectLanguage "> 
-                            <img src="svgImages/grafana.svg " class="projectLanguage " style="width: 45px; padding-top: 0px; ">
-                            <img src="svgImages/influxdb.svg " class="projectLanguage " style="width: 45px; padding-top: 2px; ">
-                            <img src="svgImages/rabbitMQ.svg " class="projectLanguage " style="width: 40px; padding-top: 8px;  padding-left: 5px">
-                            <img src="svgImages/postgresql.svg " class="projectLanguage " style="width: 50px; padding-top: 0px; ">
-                            <img src="svgImages/mongo.svg " class="projectLanguage ">
-                            <img src="svgImages/js.svg " class="projectLanguage " style="width:49px; padding: 4px">
-                            <img src="svgImages/golang.svg " class="projectLanguage " style="width: 60px; padding-top: 12px; "> 
-                        </a>   
-                        <hr>
-                    </h2>
-                </div>
-
-                <div class="row ">
-                    <div class="col-sm ml-2 ">
-                        <p class="mb-0 ">
-                            <span> Generate an indepth analysis of your friend network on Steam to see exactly what kind of friends you have or find the shortest distance between two steam users. This project was my NUIG CS&IT Final Year Project 2022.</span>
-                            <h4></h4>
-
-                            Neo is a distributed system deployed across 9 servers with three main microservices written in Go. Listed below is the supporting infrastructure:
-                            <div>
-                                <ul>
-                                    <li>Databases: MongoDB and PostgreSQL</li>
-                                    <li>Logging: ELK stack</li>
-                                    <li>Metrics: Grafana, InfluxDB and Uptime Kuma</li>
-                                    <li>Queue/Messaging: RabbitMQ</li>
-                                </ul>
-                            </div>
-
-                        </p>
-                    </div>
-                    <div class="col-7 ">
-                        <img src="https://i.imgur.com/YFnBviP.png" width="100% " style="padding-right:  1rem" />
-                    </div>
-                </div>
-
-
-            </div>
-
-        </div>
-
-        <div class="row mt-3 special " id="projects">
-            <div class="col box ">
-                <div class="well ">
-                    <h2 class="mt-0 mb-0 ml-1 pt-0 text-center ">
-                        
-                        <a href='https://github.com/ReqApp/Req'><b>Req<img src="svgImages/golang.svg " class="projectLanguage " style="width: 60px; padding-top: 12px; "> <img src="svgImages/node.svg " class="projectLanguage node "> <img src="svgImages/react.svg
-                                " class="projectLanguage " /> <img src="svgImages/mongo.svg " class="projectLanguage ">
-                                <img src="svgImages/docker-seeklogo.com.svg" style="width:66px " class="projectLanguage ">
-                            </b></a>
-                        <hr>
-                        </a>
-                    </h2>
-                </div>
-
-                <div class="row ">
-                    <div class="col-sm ml-2 ">
-                        <p class="mb-0 ">
-                            <h5 style="text-align: center; ">
-                                <b> 🎉 Awarded best overall group project 🎉</b></a>
-                        </h5>
-                            <span align="center "> Req is a real life based betting app made to enable anyone to bet on anything. With geolocation being an integral part of the app bets can be locked to users within certain areas which incentivizes people to go out and get some fresh air.</span>
-                            <h4></h4>
-
-                            <ul>
-                                <li>My role: Project Lead/Backend Infrastructure/Frontend UI</li>
-                                <li>Developed between January and April 2020</li>
-                            </ul>
-                            My contribution:
-                            <div>
-                                <ul>
-                                    <li>Fully functioning email service</li>
-                                    <li>Dockerized and deployed to AWS</li>
-                                    <li>CI testing of all API endpoints with Travis CI</li>
-                                    <li>Acted as scrum master for our weekly sprints</li>
-                                    <li>Automation of tedious tasks with golang scripts</li>
-                                    <li>Complete user authentication/management system</li>
-                                    <li>Used existing data for analytic graphs on user profiles</li>
-                                </ul>
-                            </div>
-
-                        </p>
-                    </div>
-                    <div class="col-7 ">
-                        <img src="https://raw.githubusercontent.com/ReqApp/Req/master/readmePic.png " width="100% " />
-                    </div>
-                </div>
-
-
-            </div>
-
-        </div>
-
-        <div class="row ">
-            <div class="col-7 box mt-3 ">
-                <div class="well ">
-                    <h2 class="mt-0 mb-0 ml-1 pt-0 pb-0 text-center ">
-                        <a href='https://github.com/MLH-Fellowship/FellowshipWrapup'><b>Fellowship Wrapup <img src="svgImages/next-js.svg" class="projectLanguage " style="width: 35px; padding-top:5px">
-                                                                                                    <img src="images/graphql.png" class="projectLanguage " style="width: 40px; padding-top:3px">
-                                                                                                    <img src="images/gcp.png" style="width:40px; padding-top:4px" class="projectLanguage">
-                                                                                                    <img src="svgImages/golang.svg " class="projectLanguage " style="width: 60px; padding-top: 12px; "> 
-                                                                                                
-                                                                                                </b><br></a>
-                    </h2>
-                    <hr>
-                    </h2>
-                    <img src="images/fellowshipwrapup.gif" class="img-fluid " style="max-width: 100% ">
-                </div>
-                <div class="well pt-2 pb-3 pl-3 pr-3 ">
-                    <h5 style="text-align: center; ">
-                       <a href="https://devpost.com/software/fellowbookwrapped"> <b> 🎉 Awarded best showcase/portfolio project 🎉</b></a>
-                </h5>
-                    <hr> A summary showcase of all your contributions made as a graduating gift from the MLH Fellowship! I came up with the project idea and worked on the backend. My team of 4 students made this project during the MLH halfway hackathon 
-                    <br><br> Backend uses a golang web server powered by gmux and utilises the GitHub graphQL API for fetching data. Frontend uses nextjs for rendering and vercel for hosting. Service is currently hosted on Google Cloud Platform
-
-                </div>
-            </div>
-
-            <div class="col-sm ml-3 mt-3 box ">
-                <div class="well ">
-                    <h2 class="mt-0 mb-0 ml-1 pt-0 pb-0 text-center ">
-                        <a href='https://github.com/MLH-Fellowship/0.5.1-howDoIDiscord'><b>Howdoi Discord Bot 
-                                                                                                        <img src="svgImages/python.svg " class="projectLanguage" style="width:45px">
-                                                                                                        <img src="svgImages/heroku.svg" class="projectLanguage " style="width: 28px "> 
-                                                                                                
-                                                                                            </b><br> </a></h2>
-                    <hr>
-                    </h2>
-                    <img src="https://camo.githubusercontent.com/d9fb8f9432c47222a0d935cff7d0ed194ee7dd4c/68747470733a2f2f692e696d6775722e636f6d2f70506f31416a362e706e67" style="width:100%">
-                    <hr>
-                    <p>
-                       A discord bot interface for the popular howdoi python cli tool that serves instant coding answers via the command line. This project was made for the initial MLH Fellowship hackathon.
-
-                       <br><br> Powered by Flask on the backend for handing queries and hosted on Heroku. Uses some light regex for parsing of queries before passing it onto howdoi. The bot can be invited to any discord
-                    </p>
-                    <div style="text-align: center;">
-                        <img src="images/howdoiExample.png" style="width:95%"/>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-
-        
-
-        <div class=" row mt-3 ">
-            <div class="col-sm box ">
-                <div class="well ">
-                    <h2 class="mt-0 mb-0 ml-1 pt-0 text-center ">
-                        <a href='https://github.com/IamCathal/NewsWebsiteScraping'><b>Article Scraper<img src="svgImages/golang.svg " class="projectLanguage " style="width: 60px; padding-top: 12px; "> <img src="svgImages/python.svg " class="projectLanguage "></b></a>
-                        <hr>
-                    </h2>
-                    <video class="video-fluid z-depth-1 " autoplay loop autobuffer muted playsinline poster="images/articleGet.png ">
-                        <source src="images/articleGet.mp4 " type="video/mp4 " />
-                      </video>
-                </div>
-                <div class="well pt-2 pb-3 pl-3 pr-3 ">
-                    <hr> Scrapes current articles from a dozens of topics off of multiple websites for later data analysis.
-
-                </div>
-            </div>
-
-            <div class="col-7 box ml-3 ">
-                <div class="well ">
-                    <h2 class="mt-0 mb-0 ml-1 pt-0 pb-2 text-center ">
-                        <a href='https://github.com/IamCathal/zipTab'><b>ZipTab<img src="svgImages/js.svg " class="projectLanguage "></b></a>
-                        <hr>
-                    </h2>
-                    <video class="video-fluid z-depth-1 " autoplay loop autobuffer muted playsinline poster="images/ZipTab.png ">
-                        <source src="images/ZipTab.mp4 " type="video/mp4 " />
-                      </video>
-                </div>
-                <div class="well pt-2 pb-3 pl-3 pr-3 ">
-                    <hr> A chrome/firefox extension designed to manage online browsing workspaces. Create snapshots of all active tabs to save for later viewing. One of my favourite projects as it solved a real life problem of keeping track of browsing sessions that I wanted to come back to at a later date. Utilizes chrome's sync storage to sync the saved snapshots across all chrome browsers a user is signed in to
-                </div>
-            </div>
-        </div>
-
-        <div class="row ">
-            <div class="col-7 box mt-3 ">
-                <div class="well ">
-                    <h2 class="mt-0 mb-0 ml-1 pt-0 pb-0 text-center ">
-                        <a href='https://github.com/IamCathal/AirportDataBase'><b>AirportDB<img src="svgImages/C.svg " class="projectLanguage "></b><br></a>
-                    </h2>
-                    <hr>
-                    </h2>
-                    <video class="video-fluid z-depth-1 " autoplay loop autobuffer muted playsinline poster="images/airportDB.png ">
-                                    <source src="images/airportDBvideo.mp4 " type="video/mp4 " />
-                                  </video>
-                </div>
-                <div class="well pt-2 pb-3 pl-3 pr-3 ">
-                    <hr> A program to parse and provide search functions for a global database file on airports. I am using the data from OpenFlights which has over 10,000 entries. Each entry has 14 data points that range from name and ICAO code to it's exact
-                    coordinates.
-                    <br><br> I took this on as my end of year C project to strengthen my knowledge of memory allocation, use of structures and apply my work to some real world data to do something interesting.
-
-                </div>
-            </div>
-
-            <div class="col-sm ml-3 mt-3 box " id="cv">
-                <div class="well text-center ">
-                    <h2 class="mt-0 mb-0 ml-1 pt-0 pb-0 text-center " >
-                        <a href='https://github.com/IamCathal/QRCodeAnywhere'><b>QR Code Anywhere <img src="svgImages/js.svg " class="projectLanguage "> </b><br></a></h2>
-                    <hr>
-                    </h2>
-                    <a href='https://github.com/IamCathal/QRCodeAnywhere'>
-                        <img src="images/QRCodePreview.png " class="img-fluid " style="width: 98%;">
+    <div class="row justify-content-md-center ml-1 mr-1 mb-1 mt-2">
+       <div class="col-7 text-center">
+            <div class="row justify-content-md-center">
+                <div class="col-3 box text-center ml-2 mr-2" style="height: 11vh; background-image: url('static/images/BrualistBacking5.webp'); background-size: contain;">
+                    <a href="https://github.com/iamcathal" target="_blank">
+                        <div>
+                            <img style="height: 100% " class="pt-1" src="static/images/githublogo.webp" alt="github logo">
+                        </div>
                     </a>
                 </div>
-                <div class="well pt-2 pb-3 pl-3 pr-3 ">
-                    <hr> 
-                    Instantly generate a QR code for any webpage to allow for easy scanning on a mobile device. 
-                    <br><br>Implemented <a style="display: inline; color: white"  href='https://www.androidpolice.com/2021/02/04/chrome-84-brings-new-dino-themed-qr-codes-to-android-and-desktops/'>532 days before Chrome officially supported this functionality</a>
+                <div class="col-3 box text-center ml-2 mr-2 progress-bar-three" style="height: 11vh; background-image: url('static/images/BrualistBacking5.webp'); background-size: cover; transform: scaleY(-1);">
+                    <a href="https://www.linkedin.com/in/cathal-o-callaghan" target="_blank">
+                        <div>
+                            <img style="height: 100%; transform: scaleY(-1);" src="static/images/linkedin.svg" alt="linkedin logo">
+                        </div>
+                    </a>
                 </div>
-
-            </div>
-        </div>
-
-        <div class="row mt-3 ">
-            <div class="col-sm box ">
-                <div class="well text-center ">
-                    <h2 class="mt-0 mb-0 ml-1 pt-0 pb-0 text-center ">
-                        <a href="projects/flutterdashboard.html "><b>Flutter Dashboard App <img src="svgImages/flutter.svg " class="projectLanguage " style="width: 35px "><img src="svgImages/golang.svg " class="projectLanguage mr-2 " style="width: 60px;
-                                padding-top: 12px; "></b><br></h2></a>
-                        <hr>
-                    </h2>
-                    <img src="images/flutterAppDemo.png " class="img-fluid " style="width: 80% ">
-                </div>
-                <div class="well pt-2 pb-3 pl-3 pr-3 ">
-                    <hr> Built my first flutter app as a means of keeping track of things such as who's hosting on the college server and the status of one of my scraping scripts from my phone. Golang API used to compile and serve the information
+                <div class="col-3 box text-center ml-2 mr-2 pt1 pb-1 progress-bar-three" style="height: 11vh; background-image: url('static/images/brutalistExample.webp'); background-size: cover; background-position: center;">
+                    <a href="mailto:cathalsocallaghan@gmail.com" target="_blank">
+                        <div>
+                            <img style="height: 90%" src="static/images/email-svgrepo-com.svg" alt="an envolope">
+                        </div>
+                    </a>
                 </div>
             </div>
+       </div>
+    </div>
 
-            <div class="col-7 box ml-3 ">
-                <div class="well ">
-                    <h2 class="mt-0 mb-0 ml-1 pt-0 pb-2 text-center ">
-                        <a href='https://github.com/IamCathal/HumanBenchMarkHelper'><b>Humanbenchmark Helper<img src="svgImages/python.svg " class="projectLanguage "></b></a>
-                        <hr>
-                    </h2>
-                    <video class="video-fluid z-depth-1 " autoplay loop autobuffer muted playsinline poster="images/benchmark.png ">
-                        <source src="images/benchmark.mp4 " type="video/mp4 " />
-                      </video>
-                </div>
-                <div class="well pt-2 pb-3 pl-3 pr-3 ">
-                    <a href="https://wiki.compsoc.ie/en/Tutorials/Using-Googles-Tesseract-OCR-to-cheat-on-online-memory-tests " class="text-center mt-0 mb-0 ">
-                        <h6>
-                            <b> ⭐ Read my guide on how to make this on the NUIG Compsoc wiki page! ⭐</b></a>
-                    </h6>
-                    <h6 class="text-center mt-0 mb-0" >
-                        <a href="https://dev.to/iamcathal/using-google-s-tesseract-ocr-to-cheat-at-online-memory-tests-4lnl">
-                            <b> ⭐ Or on Dev.to if the compsoc page is innacessable ⭐</b>
-                        </a>
-                </h6>
-                    <hr> I combined Google's Tesseract OCR alongside python to make a script that is capable of highscores of thousands compared to my own which is around 12.
+    <div style="height: 35vh"></div>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-6 mr-3">
+                <div class="row">
+                    <h1 style="font-weight: 700; font-size: 5.75rem; line-height: 32%;" class="styledTitleText mb-0"> CATHAL <br /><br /> <span style="font-size: 3.2rem; padding-left: 0.2rem;" class="styledTitleText">O'CALLAGHAN</span></h1>
+                </div>
+                <div class="row pt-3">
+                    <p style="line-height: 140%">
+                        Hi, I'm Cathal. I really like backend development (cloud native applications especially)
+                        and I love to push myself and learn new technologies and tools through new projects 
+                        like with two of my most recent projects,  
+                        <a href="https://github.com/reqapp/req">Req</a> and 
+                        <a href="https://github.com/MLH-Fellowship/FellowshipWrapup">Fellowship Wrapup</a>
+                        (both of which came first in their respective competitions).
 
-                </div>
-            </div>
-        </div>
+                        <br/><br /><br />
 
-        <div class="row ">
-            <div class="col-7 box mt-3 mr-3 ">
-                <div class="well ">
-                    <h2 class="mt-0 mb-0 ml-1 pt-0 pb-0 text-center ">
-                        <a href='https://github.com/IamCathal/i3BlocksTravisBuildStateChecker'><b>i3Blocks Travis CI Build Monitor<img src="svgImages/golang.svg " class="projectLanguage mr-2 " style="width: 60px; padding-top: 12px; "></b><br></a>
-                    </h2>
-                    <hr>
-                    </h2>
-                    <img src="images/i3blocks.jpg " class="img-fluid " style="max-width: 100% ">
-                </div>
-                <div class="well pt-2 pb-3 pl-3 pr-3 ">
-                    <hr> This is a nice little i3blocks indicator script to help you monitor the current build state of a github repository.
-                </div>
-            </div>
+                        My favorite project is Neo, a distributed system I developed for my final year project.
+                        Definitely was not the best idea to develop something so ambitous on top of all
+                        my other responsibilities for my final year but I think the sacrifice my other subjects
+                        took was well worth it. Read more about in the projects section 
 
-            <div class="col-sm box mt-3 ">
-                <div class="well ">
-                    <h2 class="mt-0 mb-0 ml-1 pt-0 text-center ">
-                        <a href='studyclixAnalysis.pdf'><b>Studyclix Userbase Analysis<img src="svgImages/python.svg " class="projectLanguage "></b></a>
-                        <hr>
-                    </h2>
-                    <img class='img-fluid mt-2' style="max-width: 100% " src='images/studyclixPreview.jpg'>
-                </div>
-                <div class="well pt-2 pb-3 pl-3 pr-3 ">
-                    <hr> I did analysis of the userbase of the popular exam related website studyclix.ie. I compiled the stats of all the users and compared them to the average student based on official SEC (State Examinations Commision) data. This was my
-                    first data science related project and I thoroughly enjoyed working through it.
+                        <br/><br /><br />
 
+                        Outside of programming I'm big into gaming, and 
+                        techno. Click <a href="" id="technoLink" style="text-decoration: underline"> here</a> 
+                        for a random whopper.
+                    </p>
                 </div>
-            </div>
-        </div>
 
-        <div class="row mt-3 ">
-            <div class="col-sm box " id="incoming">
-                <div class="well text-center ">
-                    <h2 class="mt-0 mb-0 ml-1 pt-0 pb-0 text-center ">
-                        <b>In the pipeline</b><br>
-                    </h2>
-                </div>
-                <div class="well pt-2 pb-3 pl-3 pr-3 ">
-                    <div class="col-sm " style="margin-bottom: 2vh ">
-                        <h3> 
-                            <img src="svgImages/js.svg " style="width: 30px; margin-right: 1vh ">
-                            <b> <a style="display: inline; color: white" href="https://github.com/IamCathal/pumpUpTheJam"> Pump Up The Jam</a></b>
-                        </h3>
+                <div style="height: 6vh"></div>
+
+                <div class="row" style="border: 1px solid greyl; border-radius: 2px;">
+                    <div class="col-4 p-1 pl-2 progress-bar-tools-and-tech">
+                       <p class="m-0 pt-3 " style="line-height: 30%; letter-spacing: 20%; font-size: 4.7vh; font-weight: bold;">
+                        TOOLS &
+                        <br /><br />
+                        <span class="" style="font-weight: bold; font-size: 5.2vh; line-height: 80%;">TECHNO</span>
+                        <span class="pl-1" style="font-weight: bold; font-size: 6vh; line-height: 80%;">LOGIES</span>
+                       </p>
                     </div>
-                    
-                            
-                <span>
-                    A chrome extension made to enable you to play your favourite songs on youtube at any BPM you desire. Youtube's default playback rate options (1.25x, 1.5x etc) work horribly with music and therefore being able to change the actual BPM of the music is much better. This extension uses the Spotify Web API to gather information such as BPM and other data points about a particular song and with that information it then enables altering of BPM.
-                </span>
+                    <div class="col" style="border-right: 1px solid grey; border-top: 1px solid grey; border-bottom: 1px solid grey">
+                        <div id="loveGroup" class="row" style="height: 5.5vh;">
+                            <div class="col">
+                                <div class="row justify-content-md-center" >
+                                    <p style="font-size: 0.7rem" class="p-0 m-0">I love</p>
+                                </div>
+                                <div class="row justify-content-md-center" >
+                                    <a href="https://github.com/IamCathal?tab=repositories&q=&type=&language=go&sort=">
+                                        <img src="static/images/goLogo.webp" style="width: 1.7rem"   class="ml-2 mr-2" alt="golang logo" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                                    </a>
+                                    <a href="https://github.com/NeoSteamFriendGraphing/neo">
+                                        <img src="static/images/dockerLogo.webp" style="width: 1.9rem" class="ml-2 mr-2" alt="docker logo" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                                    </a>
+                                    <a href="https://github.com/IamCathal?tab=repositories">
+                                        <img src="static/images/linux.webp" style="width: 1.4rem" class="ml-2 mr-2" alt="java logo" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" style="height: 5.5vh">
+                            <div class="col">
+                                <div class="row justify-content-md-center" >
+                                    <p style="font-size: 0.7rem" class="p-0 m-0">Honourable mentions</p>
+                                </div>
+                                <div class="row justify-content-md-center" >
+                                    <a href="https://github.com/IamCathal?tab=repositories&q=&type=&language=python&sort=">
+                                        <img src="static/images/python.webp" style="width: 1.2rem" class="ml-2 mr-2 mt-2" alt="python logo" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                                    </a>
+                                    <a href="https://github.com/IamCathal?tab=repositories&q=&type=&language=javascript&sort=">
+                                        <img src="static/images/javascript.webp" style="width: 1.2rem" class="ml-2 mr-2 mt-2" alt="javascript logo" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                                    </a>
+                                    <a href="https://github.com/IamCathal?tab=repositories&q=&type=&language=java&sort=">
+                                        <img src="static/images/java.webp" style="width: 1.4rem" class="ml-2 mr-2 mt-2" alt="java logo" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                                    </a>
+                                    <a href="https://github.com/ReqApp/Req">
+                                        <img src="static/images/node.webp" style="width: 1.2rem" class="ml-2 mr-2 mt-2" alt="node logo" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                                    </a>
+                                    <a href="https://github.com/NeoSteamFriendGraphing/neo">
+                                        <img src="static/images/mongodb.webp" style="width: 1.4rem" class="ml-2 mr-2 mt-2" alt="mongodb logo" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                                    </a>
+                                    <a href="https://github.com/NeoSteamFriendGraphing/neo">
+                                        <img src="static/images/postgres.webp" style="width: 1.2rem" class="ml-2 mr-2 mt-2" alt="postgres logo" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                                    </a>
+                                    <a href="https://github.com/NeoSteamFriendGraphing/neo">
+                                        <img src="static/images/rabbitmq.webp" style="width: 1.2rem" class="ml-2 mr-2 mt-2" alt="rabbitmq logo" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                                    </a>
+                                    <a href="https://github.com/NeoSteamFriendGraphing/neo">
+                                        <img src="static/images/influxdb.svg" style="width: 1.2rem" class="ml-2 mr-2 mt-2" alt="influxdb logo" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                                    </a>
+                                    <a href="https://github.com/NeoSteamFriendGraphing/neo">
+                                        <img src="static/images/grafana.webp" style="width: 1.2rem" class="ml-2 mr-2 mt-2" alt="grafana logo" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                                    </a>
+                                    <a href="https://github.com/NeoSteamFriendGraphing/neo">
+                                        <img src="static/images/kibana.webp" style="width: 1.2rem" class="ml-2 mr-2 mt-2" alt="kibana logo" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="hateGroup" class="row" style="height: 5.5vh;">
+                            <div class="col">
+                                <div class="row justify-content-md-center">
+                                    <p style="font-size: 0.7rem" class="p-0 m-0">I hate</p>
+                                </div>
+                                <div class="row justify-content-md-center" >
+                                    <img src="static/images/Matlab_logo.webp" style="width: 1.4rem" class="ml-2 mr-2 mt-1" alt="matlab logo" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                                    <img src="static/images/r.svg" style="width: 1.4rem" class="ml-2 mr-2 mt-1" alt="r programming language logo" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                                    <img src="static/images/jsp.svg" style="width: 1.4rem;" class="ml-2 mr-2 mt-1" alt="jsp logo" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
 
-            <div class="mt-5 ">
-                
+            <div class="col text-center ml-3">
+                <div class="row justify-content-md-center">
+                    <div style="width: 45vh; height: 70vh">
+                        <!-- https://www.gq.com/story/9-brutalist-wonders-of-the-architecture-world -->
+                        <img src="static/images/brutalistExample.webp" style="width: 45vh; height: 70vh" alt="black and white image of a concrete brutalist style building">
+                   </div>
+   
+                   <div>
+                       <div class="progress-bar-tools-and-tech" style="position: absolute; z-index: -50; padding: 0.4rem; top: -1.6rem; left: 6rem; width: 45vh; height: 70vh">
+                           <div style="background-color: #141314; height: 100%; width: 100%"></div>
+                      </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="height: 12vh"></div>
+
+    </div>
+
+
+    <div class="row justify-content-md-center mt-2 mb-5 justify-content-md-end" style="height: 18rem">
+        <div style="width: 90vh; height: 25vh; background-image: url('static/images/brutalistWideView.webp'); background-size: cover;">
+            <h3 style="font-size: 6rem; font-weight: bold; mix-blend-mode:difference; color: #ffffff;" class="mt-5 dividerTextBar styledTitleText text-center">Projects</h3>
+        </div>
+    </div>
+    
+    <div class="mt-5 mb-5"></div>
+
+    <div class="container mt-5">
+
+        <!-- <div class="row justify-content-md-center mb-0">
+            <p style="font-size: 2rem;" class="mb-2"> My <span style="font-weight: bold; font-size: 2.2rem">BEST</span> project yet :) </p>
+        </div> -->
+
+        <div class="row">
+            <div class="col pl-4 pr-4 pt-0 pb-1 boxWithBorder mb-5" style="border-top-left-radius: 2rem; border-bottom-right-radius: 2rem;"  >
+                <div class="row justify-content-md-center">
+                   <h2 style="font-weight: bold; font-size: 2.7rem;"> <a href="https://github.com/NeoSteamFriendGraphing/neo"> Neo </a> </h2>
+                </div>
+                <hr class="mt-0 mb-1" />
+                <div class="row">
+                    <div class="col">
+                        Generate an indepth analysis of your friend network on Steam to see exactly 
+                        what kind of friends you have or find the shortest distance between two steam 
+                        users. This project was my NUIG CS&IT Final Year Project 2022.
+
+                        <br /> <br />
+                        Neo is a distributed system deployed across 9 servers with three main microservices 
+                        written in Go. Listed below is the supporting infrastructure: 
+                        <ul>
+                            <li>Databases: MongoDB and PostgreSQL</li>
+                            <li>Logging: ELK stack</li>
+                            <li>Metrics: Grafana, InfluxDB and Uptime Kuma</li>
+                            <li>Queue/Messaging: RabbitMQ</li>
+                        </ul>
+                        <div class="row justify-content-md-center ml-1 mr-1 mb-2 box lightBorder">
+                            <img src="static/images/goLogo.webp" class="ml-3" style="width: 1.7rem" alt="go logo" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                            <img src="static/images/javascript.webp" class="ml-3" style="width: 1.7rem; height: 1.7rem" alt="javascript logo" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                            <img src="static/images/mongodb.webp" class="ml-3" style="width: 1.7rem; height: 1.7rem" alt="mongoDB logo" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                            <img src="static/images/postgres.webp" class="ml-3" style="width: 1.7rem; height: 1.7rem" alt="postgres logo" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                            <img src="static/images/rabbitmq.webp" class="ml-3" style="width: 1.7rem; height: 1.7rem" alt="rabbitmq logo" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                            <img src="static/images/grafana.webp" class="ml-3" style="width: 1.7rem; height: 1.7rem" alt="grafana logo" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                            <img src="static/images/influxdb.svg" class="ml-3" style="width: 1.7rem; height: 1.7rem" alt="influxdb logo" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                            <img src="static/images/dockerLogo.webp" class="ml-3" style="width: 1.7rem; height: 1.7rem" alt="docker logo" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                            <img src="static/images/ovh.webp" class="ml-3" style="width: 2rem; height: 2rem" alt="ovh logo" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                        </div>
+
+                    </div>
+                    <div class="col">
+                        <div class="my-slider">
+                            <div>
+                                <img 
+                                    style="width: 100%"
+                                    alt="screenshot of the landing page of neo"
+                                    src="https://camo.githubusercontent.com/a0465f836b8f0f0ce7dabf18aec0adc7b365582ea12686c63713b12d65fd7a9b/68747470733a2f2f692e696d6775722e636f6d2f59466e427669502e706e67">
+                            </div>
+                            <div>
+                                <img 
+                                    style="width: 100%"
+                                    alt="screenshot of a generated statistics page in neo for a given crawl"
+                                    src="https://camo.githubusercontent.com/ab728bece21bf03bc76a878b152de0d377226b2328b0dd11318bb935384cda50/687474703a2f2f6e656f6679702e636f6d2f7374617469632f696d616765732f4e656f4578616d706c652e6a7067">
+                            </div>
+                        </div>
+                          
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col pl-4 pr-4 pt-0 pb-1 boxWithBorder" style="border-top-right-radius: 2rem; border-bottom-left-radius: 2rem;"  >
+                <div class="row justify-content-md-center">
+                   <h2 style="font-weight: bold; font-size: 2.7rem;"> <a href="https://github.com/ReqApp/Req"> Req  </a> </h2>
+                </div>
+                <hr class="mt-0 mb-1" />
+                <div class="row pb-2">
+                    <div class="col">
+                        <img 
+                            style="width: 95%"
+                            alt="three mobile phones showcasing the UI for the Req application"
+                            src="static/images/readmePic.webp"
+                        >
+                    </div>
+                    <div class="col">
+                        Req is a real life based betting app made to enable anyone to bet on anything. With 
+                        geolocation being an integral part of the app bets can be locked to users within 
+                        certain areas which incentivizes people to go out and get some fresh air. This was
+                        my first group project and I acted as the project lead. The following was my 
+                        contribution:
+
+                        <br />
+
+                        <ul>
+                            <li>Email alert service (authentication and newsletters)</li>
+                            <li>Dockerized and deployed to AWS</li>
+                            <li>CI testing for all features through Travis CI</li>
+                            <li>User authentication/management system</li>
+
+                          
+                        </ul>
+                        <div class="row justify-content-md-center ml-1 mr-1 mb-2 box lightBorder">
+                            <img src="static/images/node.webp" alt="node logo" class="ml-3" style="width: 1.7rem; height: 1.7rem" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                            <img src="static/images/goLogo.webp" alt="go logo" class="ml-3" style="width: 1.7rem"  data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                            <img src="static/images/mongodb.webp" alt="mongoDB logo" class="ml-3" style="width: 1.7rem; height: 1.7rem" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                            <img src="static/images/react.webp" alt="react logo" class="ml-3" style="width: 1.7rem; height: 1.7rem" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                            <img src="static/images/dockerLogo.webp" alt="docker logo" class="ml-3" style="width: 1.7rem; height: 1.7rem" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                            <img src="static/images/aws.webp" alt="aws logo" class="ml-3" style="width: 1.7rem; height: 1.7rem" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="row mt-4">
+        <div class="col-7 boxWithBorder mr-3 pl-2 pr-2" style="border-top-left-radius: 2rem; border-bottom-right-radius: 2rem;"  >
+            <div class="row justify-content-md-center">
+                <h2 style="font-weight: bold; font-size: 2.7rem;"> <a href="https://github.com/MLH-Fellowship/FellowshipWrapup"> Fellowship Wrapup  </a> </h2>
+             </div>
+             <hr class="mt-0 mb-1" />
+             <div class="row pb-2 pl-3 pr-3">
+                <img src="static/images/fellowshipWrapup.webp" style="width: 100%" alt="a gif scrolling through the website for the fellowship wrapup project">
+            </div>  
+            <div class="row pb-2">
+                 <div class="col">
+                    A summary showcase of all your contributions made as a graduating gift 
+                    from the MLH Fellowship! I came up with the project idea and worked on 
+                    the backend. My team of 4 students made this project during the MLH 
+                    halfway hackathon
+
+                    Backend uses a Go web server powered by Gmux and utilises the 
+                    GitHub GraphQL API for fetching data. Frontend uses Nextjs for 
+                    rendering and Vercel for hosting. Service is currently hosted on 
+                    GCP 
+
+                 </div>
+             </div>
+             <div class="row justify-content-md-center  pb-2 ml-2 mb-3 mr-4 box lightBorder" style="position: absolute; bottom: 0; width: 95%; border-bottom-right-radius: 2rem">
+                <img src="static/images/goLogo.webp" alt="go logo" class="ml-3" style="width: 1.7rem"  data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                <img src="static/images/gcp.webp" alt="google cloud platform logo" class="ml-3" style="width: 1.7rem; height: 1.7rem" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                <img src="static/images/graph-ql.webp" alt="graphql logo" class="ml-3" style="width: 1.7rem; height: 1.7rem" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                <img src="static/images/next-js.svg" alt="next js logo" class="ml-3" style="width: 1.7rem; height: 1.7rem" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+            </div>
+        </div>
+
+        <div class="col boxWithBorder" style="height:75vh; border-top-right-radius: 2rem; border-bottom-left-radius: 2rem;"> 
+            <div class="row justify-content-md-center">
+                <h2 style="font-weight: bold; font-size: 2.7rem;"> <a href="https://github.com/MLH-Fellowship/0.5.1-howDoIDiscord"> Howdoi Discord Bot </a> </h2>
+             </div>
+             <hr class="mt-0 mb-1" />
+             <div class="row pb-2 pr-3">
+                <img style="width: 92%" alt="image showing the discord logo and howdoi name" src="https://camo.githubusercontent.com/d9fb8f9432c47222a0d935cff7d0ed194ee7dd4c/68747470733a2f2f692e696d6775722e636f6d2f70506f31416a362e706e67" style="width: 100%">
+            </div>  
+            <div class="row pb-2">
+                 <div class="col">
+                    A discord bot interface for the popular howdoi python cli tool that serves instant 
+                    coding answers via the command line. This project was made for the initial MLH 
+                    Fellowship hackathon. Powered by Flask on the backend for handing queries and 
+                    hosted on Heroku. Uses some light regex for parsing of queries before passing 
+                    it onto howdoi. The bot can be invited to any discord 
+                 </div>
+             </div>
+             <div class="row pb-3 justify-content-md-center pl-3 pr-3">
+                 <img src="static/images/howdoiExample.webp" alt="screenshot of a discord message from the bot" style="width: 82%">
+             </div>
+             <div class="row justify-content-md-center pb-2 ml-2 mb-3 mr-4 box lightBorder" style="position: absolute; bottom: 0; width: 95%;  border-bottom-left-radius: 2rem">
+                <img src="static/images/python.webp" alt="python logo" class="ml-3" style="width: 1.7rem; height: 1.7rem" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                <img src="static/images/heroku.webp" alt="heroku logo" class="ml-3" style="width: 1.7rem; height: 1.7rem" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+            </div>
         </div>
     </div>
 
-        
+    <div class="row mt-4">
+        <div class="col-5 boxWithBorder" style="height: 79vh; border-top-right-radius: 2rem; border-bottom-left-radius: 2rem;">
+            <div class="row justify-content-md-center">
+                <h2 style="font-weight: bold; font-size: 2.7rem;"> <a href="https://github.com/IamCathal/NewsWebsiteScraping"> Article Scraper </a> </h2>
+             </div>
+             <hr class="mt-0 mb-1" />
+             <div class="row pb-3 justify-content-md-center pl-3 pr-3">
+                <video class="video-fluid" style="width: 100%" autoplay loop autobuffer muted playsinline poster="static/images/articleGet.webp">
+                    <source src="static/images/articleGet.mp4 " alt="video showing the application running and crawling various article sources" type="video/mp4 " />
+                </video>
+             </div>
+            <div class="row pb-2">
+                <div class="col">
+                    Scrapes current articles from a dozens of topics off of multiple websites for later data analysis. 
+                </div>
+            </div>
+            <div class="row justify-content-md-center pb-2 ml-1 mb-3 mr-3 box lightBorder" style="position: absolute; bottom: 0; right: 0; width: 94%; border-bottom-left-radius: 2rem">
+                <img src="static/images/goLogo.webp" alt="go logo" class="ml-3" style="width: 1.7rem"  data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                <img src="static/images/python.webp" alt="python logo" class="ml-3" style="width: 1.7rem; height: 1.7rem" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+            </div>
+        </div>
+
+
+        <div class="col boxWithBorder ml-3 pl-3 pr-2" style="border-top-left-radius: 2rem; border-bottom-right-radius: 2rem;">
+            <div class="row justify-content-md-center">
+                <h2 style="font-weight: bold; font-size: 2.7rem;"> <a href="https://github.com/IamCathal/zipTab"> ZipTab  </a> </h2>
+             </div>
+             <hr class="mt-0 mb-1" />
+             <div class="row pb-2 pr-3">
+                <video class="video-fluid pl-2" style="width: 100%" autoplay loop autobuffer muted playsinline poster="static/images/ZipTab.webp">
+                    <source src="static/images/ZipTab.mp4 " alt="video showcasing the use of the application e.g saving all current tabs to enable them to be opened later" type="video/mp4 " />
+                </video>
+            </div>  
+            <div class="row pb-2">
+                 <div class="col mb-2">
+                    A chrome/firefox extension designed to manage online browsing workspaces. 
+                    Create snapshots of all active tabs to save for later viewing. One of my 
+                    favourite projects as it solved a real life problem of keeping track of 
+                    browsing sessions that I wanted to come back to at a later date. Utilizes 
+                    chrome's sync storage to sync the saved snapshots across all chrome 
+                    browsers a user is signed in to.
+
+                    <br /> <br />
+                    This feature is officially supported now in Firefox when browsing bookmark folders
+                 </div>
+             </div>
+             <div class="row justify-content-md-center pb-2 ml-0 mb-3 mr-4 box lightBorder" style="position: absolute; bottom: 0; width: 95%; border-bottom-right-radius: 2rem">
+                <img src="static/images/javascript.webp" alt="javascript logo" class="ml-3" style="width: 1.7rem; height: 1.7rem" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+            </div>
+        </div>
     </div>
 
-    <script>
-        let root = document.documentElement;
+    <div class="row mt-4">
+        <div class="col-7 boxWithBorder mr-3 pl-4 pr-2" style="border-top-right-radius: 2rem; border-bottom-left-radius: 2rem;">
+            <div class="row justify-content-md-center">
+                <h2 style="font-weight: bold; font-size: 2.7rem;"> <a href="https://github.com/IamCathal/HumanBenchMarkHelper"> HumanBenchMark Helper  </a> </h2>
+             </div>
+             <hr class="mt-0 mb-1" />
+             <div class="row pb-2 pr-3">
+                <img src="static/images/humanbenchmark.gif" alt="gif showing the automated use of the program to the humanbenchmark minigame" style="width: 100%">
+            </div>  
+            <div class="row pb-2">
+                 <div class="col mb-4">
+                    A summary showcase of all your contributions made as a graduating gift 
+                    from the MLH Fellowship! I came up with the project idea and worked on 
+                    the backend. My team of 4 students made this project during the MLH 
+                    halfway hackathon
 
-        const email = "cathalsocallaghan@gmail.com"
-        var backgrounds = ["url('images/backgroundDarkMode.jpg')", "url('images/backgroundLightMode.jpg')"];
-        var toggleSwitches = ["<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\"><path fill=\"#FFAC33\" d=\"M16 2s0-2 2-2 2 2 2 2v2s0 2-2 2-2-2-2-2V2zm18 14s2 0 2 2-2 2-2 2h-2s-2 0-2-2 2-2 2-2h2zM4 16s2 0 2 2-2 2-2 2H2s-2 0-2-2 2-2 2-2h2zm5.121-8.707s1.414 1.414 0 2.828-2.828 0-2.828 0L4.878 8.708s-1.414-1.414 0-2.829c1.415-1.414 2.829 0 2.829 0l1.414 1.414zm21 21s1.414 1.414 0 2.828-2.828 0-2.828 0l-1.414-1.414s-1.414-1.414 0-2.828 2.828 0 2.828 0l1.414 1.414zm-.413-18.172s-1.414 1.414-2.828 0 0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0 0 2.828 0 2.828l-1.414 1.414zm-21 21s-1.414 1.414-2.828 0 0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0 0 2.828 0 2.828l-1.414 1.414zM16 32s0-2 2-2 2 2 2 2v2s0 2-2 2-2-2-2-2v-2z\"/><circle fill=\"#FFAC33\" cx=\"18\" cy=\"18\" r=\"10\"/></svg>", "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 36 36\"><circle fill=\"#66757F\" cx=\"18\" cy=\"18\" r=\"18\"/><g fill=\"#5B6876\"><circle cx=\"10.5\" cy=\"8.5\" r=\"3.5\"/><circle cx=\"20\" cy=\"16\" r=\"3\"/><circle cx=\"21.5\" cy=\"27.5\" r=\"3.5\"/><circle cx=\"21\" cy=\"6\" r=\"2\"/><circle cx=\"3\" cy=\"18\" r=\"1\"/><circle cx=\"30\" cy=\"9\" r=\"1\"/><circle cx=\"15\" cy=\"31\" r=\"1\"/><circle cx=\"32\" cy=\"19\" r=\"2\"/><circle cx=\"10\" cy=\"23\" r=\"2\"/></g></svg>"]
-        var textColors = ["white", "black"];
-        var textShadow = ["0px 0px 4px #141314", "none"]
-        let i = 0;
+                    Backend uses a Go web server powered by Gmux and utilises the 
+                    GitHub GraphQL API for fetching data. Frontend uses Nextjs for 
+                    rendering and Vercel for hosting. Service is currently hosted on 
+                    GCP 
 
-        root.style.setProperty("textColor", textColors[i]);
+                 </div>
+             </div>
+             <div class="row justify-content-md-center pb-2 ml-1 mb-3 mr-3 box lightBorder" style="position: absolute; bottom: 0; right: 0; width: 96%; border-bottom-left-radius: 2rem">
+                <img src="static/images/python.webp" alt="python logo" class="ml-3" style="width: 1.7rem; height: 1.7rem" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+            </div>
+        </div>
 
-        document.getElementById('emailDiv').addEventListener("mouseenter", function() {
-        infoText = "<div class='col box text-center display-4'> Click to copy my email </div>";
-        emailDiv = document.getElementById('emailText');
-        emailDiv.innerHTML =infoText;
-       })
+        <div class="col boxWithBorder" style="height: 77vh; border-top-left-radius: 2rem; border-bottom-right-radius: 2rem;">
+            <div class="row justify-content-md-center">
+                <h2 style="font-weight: bold; font-size: 2.7rem;"> <a href="https://cathaloc.dev/projects/flutterdashboard.html"> Flutter Dashboard App  </a> </h2>
+             </div>
+             <hr class="mt-0 mb-1" />
+             <div class="row pb-2 pl-3 pr-3">
+                <img src="static/images/flutterAppDemo.webp" alt="two mobile phones showing the UI for the mobile app. One screen with the ports being used and the other showing line counts for tracked csv files" style="width: 100%">
+            </div>  
+            <div class="row pl-2 pb-2">
+                 <div class="col">
+                    Built my first flutter app as a means of keeping track of 
+                    things such as who's hosting on the college server and the 
+                    status of one of my scraping scripts from my phone. Golang 
+                    API used to compile and serve the information 
+                 </div>
+             </div>
+             <div class="row justify-content-md-center ml-1 mr-1 mb-3 box lightBorder" style="position: absolute; bottom: 0; width: 96%; border-bottom-right-radius: 2rem">
+                <img src="static/images/goLogo.webp" alt="go logo" class="ml-3" style="width: 1.7rem"  data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+                <img src="static/images/flutter.webp" alt="flutter logo" class="ml-3" style="width: 1.7rem; height: 1.7rem" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+            </div>
+        </div>
+    </div>
 
-       document.getElementById('emailDiv').addEventListener("mouseleave", function() {
-        emailDiv = document.getElementById('emailText');
-        emailDiv.innerHTML = ""
-       })
 
-       document.getElementById('emailDiv').addEventListener("click", function() {
-        const el = document.createElement('textarea');
-        el.value = email;
-        document.body.appendChild(el);
-        el.select();
-        document.execCommand('copy');
-        document.body.removeChild(el);
+    <div class="row mt-4">
+        <div class="col-5 boxWithBorder ml-3 p-2 pb-5" style="border-top-left-radius: 2rem; border-bottom-right-radius: 2rem;">
+            <div class="row justify-content-md-center">
+                <h2 style="font-weight: bold; font-size: 2.1rem;"> <a href="static/pdfs/studyclixAnalysis.pdf"> StudyClix Userbase Analysis  </a> </h2>
+             </div>
+             <hr class="mt-0 mb-1" />
+             <div class="row pb-2 pr-3 pl-3">
+                <img src="static/images/studyclixPreview.webp" alt="decorative screenshot of a graph that acts as a thumbnail for the pdf report" style="width: 100%">
+            </div>  
+            <div class="row pb-2">
+                 <div class="col mb-5">
+                    I did analysis of the userbase of the popular exam related website studyclix.ie,
+                    compiled the stats of all the users and compared them to the average student 
+                    based on official SEC (State Examinations Commision) data. 
+                 </div>
+             </div>
+             <div class="row pb-2 ml-1 mb-3 mr-4 justify-content-md-center box lightBorder" style="position: absolute; bottom: 0; width: 95%; border-bottom-right-radius: 2rem">
+                <img src="static/images/javascript.webp" alt="javascript logo" class="ml-3" style="width: 1.7rem; height: 1.7rem" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+            </div>
+        </div>
 
-        infoText = "<div class='col box text-center display-4'> Copied to clipboard </div>";
-        emailDiv = document.getElementById('emailText');
-        emailDiv.innerHTML =infoText;
-       })
+        <div class="col boxWithBorder ml-3 p-2 pb-5" style="height: 62vh; border-top-left-radius: 2rem; border-bottom-right-radius: 2rem;">
+            <div class="row justify-content-md-center pl-3">
+                <h2 style="font-weight: bold; font-size: 2.7rem;"> <a href="https://github.com/IamCathal/i3BlocksTravisBuildStateChecker"> i3Blocks Travis CI Build Monitor </a> </h2>
+            </div>
+            <hr class="mt-0 mb-1" />
+            <div class="row pb-3 justify-content-md-center pl-3 pr-3">
+                <img src="static/images/i3blocks.webp" alt="decorative screenshot acting as a thumbnail. One half has a test report output fom travisCI and other other has the name of the project" style="width: 100%">
+            </div>
+            <div class="row pb-2">
+                <div class="col">
+                    This is a nice little i3blocks indicator script to help 
+                    you monitor the current build state of a github repository. 
+                    <br /> <br />
+                </div>
+            </div>
+            <div class="row pb-2 ml-1 mb-3 mr-4 justify-content-md-center m-0 box lightBorder" style="position: absolute; bottom: 0; width: 96%; border-bottom-right-radius: 2rem;">
+                <img src="static/images/goLogo.webp" alt="go logo" class="ml-3" style="width: 1.7rem"  data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+            </div>
+        </div>
 
-       document.getElementById("darkModeToggle").addEventListener("click", () => {
-            i++;
-            let root = document.documentElement;
-            document.body.style.backgroundImage = backgrounds[i % (backgrounds.length)];
-            document.getElementById("darkModeToggle").innerHTML = toggleSwitches[i % (toggleSwitches.length)];
-            root.style.setProperty("--text-color", textColors[i % (toggleSwitches.length)]);
-            root.style.setProperty("--text-shadow", textShadow[i % (toggleSwitches.length)])
-       })
-        
-    </script>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-7 boxWithBorder mr-3 pl-4 pr-2" style="border-top-right-radius: 2rem; border-bottom-left-radius: 2rem;">
+            <div class="row justify-content-md-center">
+                <h2 style="font-weight: bold; font-size: 2.7rem;"> <a href="https://github.com/IamCathal/AirportDataBase"> AirportDB </a> </h2>
+             </div>
+             <hr class="mt-0 mb-1" />
+             <div class="row pb-2 pr-3">
+                <video class="video-fluid pl-2" style="width: 100%" autoplay loop autobuffer muted playsinline poster="static/images/airportDB.webp">
+                    <source src="static/images/airportDBvideo.mp4 "  alt="video showing use of the application to search airports by name and then all airports within a country and all airports within 170km of belfast international airport" type="video/mp4 " />
+                </video>
+            </div>  
+            <div class="row pb-2">
+                 <div class="col mb-4">
+                    A program to parse and provide search functions for a global database 
+                    file on airports. I am using the data from OpenFlights which has over 
+                    10,000 entries. Each entry has 14 data points that range from name and 
+                    ICAO code to it's exact coordinates.
+                    I took this on as my end of year C project to strengthen my knowledge 
+                    of memory allocation, use of structures and apply my work to some real 
+                    world data to do something interesting.
+
+                 </div>
+             </div>
+             <div class="row justify-content-md-center pb-2 ml-1 mb-3 mr-3 box lightBorder" style="position: absolute; bottom: 0; right: 0; width: 96%; border-bottom-left-radius: 2rem">
+                <img src="static/images/c.webp" alt="c logo" class="ml-3" style="width: 1.7rem; height: 1.7rem" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+            </div>
+        </div>
+
+        <div class="col boxWithBorder" style="height: 80vh; border-top-left-radius: 2rem; border-bottom-right-radius: 2rem;">
+            <div class="row justify-content-md-center">
+                <h2 style="font-weight: bold; font-size: 2.7rem;"> <a href="https://github.com/IamCathal/QRCodeAnywhere"> QR Code Anywhere </a> </h2>
+             </div>
+             <hr class="mt-0 mb-1" />
+             <div class="row pb-2 pl-3 pr-3">
+                <img src="static/images/QRCodePreview.webp" alt="decorative screenshot showing the extension displaying the QR code for a soundcloud page" style="width: 100%">
+            </div>  
+            <div class="row pb-2 pl-2">
+                 <div class="col">
+                    Instantly generate a QR code for any webpage to allow 
+                    for easy scanning on a mobile device.
+                    <br /><br />
+                    Implemented <a href="https://www.androidpolice.com/2021/02/04/chrome-84-brings-new-dino-themed-qr-codes-to-android-and-desktops/">
+                    532 days before Chrome officially supported this functionality</a>
+                 </div>
+             </div>
+             <div class="row justify-content-md-center ml-1 mr-1 mb-3 box lightBorder" style="position: absolute; bottom: 0; width: 96%; border-bottom-right-radius: 2rem">
+                <img src="static/images/javascript.webp" alt="javascript logo" class="ml-3" style="width: 1.7rem; height: 1.7rem" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">
+            </div>
+        </div>
+    </div>
+
+
+
+
+    </div>
+    
+    <div style="height: 12vh"></div>
+
+    <div class="row justify-content-md-center mt-2 mb-5 justify-content-md-end" style="height: 18rem">
+        <!-- https://www.idealwork.com/the-brutalist-charm/ -->
+        <div style="width: 90vh; height: 25vh; background-image: url('static/images/BrualistBacking5.webp'); background-size: cover; background-position: 1;">
+            <h3 style="font-size: 6rem; font-weight: bold; mix-blend-mode:difference; color: #ffffff;" class="mt-5 dividerTextBar styledTitleText text-center">Blog Posts</h3>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-5 boxWithBorder p-4" style="border-top-right-radius: 2rem; border-bottom-left-radius: 2rem;"  >
+               <p class="mb-0">
+                I plan on starting to write blog posts if I ever feel like I can: 
+               </p>
+               <ul class="mb-1">
+                   <li>offer some insight into something thats not available already</li>
+                   <li>give a comprehensive tutorial on something that people would
+                    actually benefit from</li>
+               </ul>
+               Until then you can browse my <a href="https://dev.to/iamcathal">dev.to</a> profile
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4 mb-5"></div>
+
+    <div id="slider-controls" style="visibility: none;"></div>
+
+        <script src="static/javascript/vanilla-tilt.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+
+        <script type="module">
+            var slider = tns({
+            container: '.my-slider',
+            items: 1,
+            "mouseDrag": true,
+            center: true,
+            slideBy: 'page',
+            autoplay: true,
+            controls: false,
+            autoplayButtonOutput: false,
+            });
+        </script>
+
+        <script>
+            document.getElementById("technoLink").addEventListener("click", () => {
+                const tunes = [
+                 "https://soundcloud.com/possessiontechno/premiere-fractions-what-doesnt-kill-me-poss014",
+                 "https://soundcloud.com/mallgrab/take-down-enemies",
+                 "https://soundcloud.com/skin0nskin/skin-on-skin-x-club-dont-fuck",
+                 "https://soundcloud.com/technowereld/premiere-753-coherenceless",
+                 "https://soundcloud.com/dj_reiz/premiere-dj-reiz-the-city-of-lights-utmva007",
+                 "https://soundcloud.com/txrecords/die-antwoord-future-baby-peter-effe-edit",
+                 "https://soundcloud.com/vk2018/premiere-dica-roller-coaster-tx011",
+                 "https://soundcloud.com/jadedlondon/premiere-franky-b-nasty-milkshake-cltx-remix-tr034",
+                 "https://soundcloud.com/matiere-production/riot-code-only4u",
+                 "https://soundcloud.com/gtownrecs/x-club-inna-trance",
+                 "https://soundcloud.com/official-flaws/nelly-furtado-maneater-aurel-x-flaws-customisation-edit",
+                 "https://soundcloud.com/anascbn/anas-memories-of-future",
+                 "https://soundcloud.com/txrecords/terminal-trax-ba-blastaz-tx012"
+                ]
+                window.open(
+                    window.location.href = tunes[Math.floor(Math.random() * (tunes.length-1))],
+                    "_blank"
+                );
+            });
+
+            document.getElementById("loveGroup").addEventListener("mouseenter", () => {
+                document.getElementById("loveGroup").classList.add("danceHeartsBackground");
+            });
+            document.getElementById("loveGroup").addEventListener("mouseleave", () => {
+                document.getElementById("loveGroup").classList.remove("danceHeartsBackground");
+            });
+            document.getElementById("hateGroup").addEventListener("mouseenter", () => {
+                document.getElementById("hateGroup").classList.add("fireBackground");
+            });
+            document.getElementById("hateGroup").addEventListener("mouseleave", () => {
+                document.getElementById("hateGroup").classList.remove("fireBackground");
+            });
+
+            // https://stackoverflow.com/a/4713197
+            function selectedText() {
+                if (typeof window.getSelection != "undefined") {
+                    return window.getSelection().toString();
+                } else if (typeof document.selection != "undefined" && document.selection.type == "Text") {
+                    return document.selection.createRange().text;
+                }
+            }
+            function alertWithGoodJokeWarning() {
+                if (selectedText() === "cathalsocallaghan@gmail.com") {
+                    alert("If you're cold emailing me please send a funny joke along with it")
+                }
+            }
+            document.onmouseup = alertWithGoodJokeWarning;
+            document.onkeyup = alertWithGoodJokeWarning;
+        </script>
 
 
 </body>

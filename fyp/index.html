@@ -1,0 +1,808 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;800;900&display=swap" rel="stylesheet"> 
+    <link href="static/stylesheets/stylesheet.css" rel="stylesheet" type="text/css">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="static/images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="static/images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="static/images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="static/images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="static/images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="static/images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="static/images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="static/images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="static/images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="static/images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="static/images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/images/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="fyp/static/images/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+
+    <meta property="og:image" content="https://i.imgur.com/3DH7xYd.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cathaloc.dev/fyp" />
+    <meta property="og:title" content="Neo (snapshot), generate analytics based on your Steam friend networks" />
+    <meta property="og:description" content="NUIG Computer Science & IT Final Year Project 2022 developed by Cathal O'Callaghan" />
+
+    <title>Neo (Snapshot)</title>
+
+</head>
+
+<body>
+<!-- 
+    <div id="splashScreen" style="position: absolute; width: 100%; height: 100vh; z-index: 100">
+        <div class="row" style="height: 30vh"></div>
+        <div class="row justify-content-md-center">
+            <div class="col-3 pt-2 text-center" style="border: 2px solid black; background-color: white;">
+                <p style="color: green">
+                    This is a static snapshot of Neo which serves to showcase the main features
+                    of the service without having to host the entire distributed system indefinitely. 
+                    No new crawls can be initiated but two existing single user and one dual user 
+                    crawl can be viewed.
+                </p>
+                <p style="color: green; border: 2px solid black">
+                    View
+                </p>
+            </div>
+        </div>
+    </div> -->
+
+    <div id="navbar">
+        <div class="row" >
+            <div class="col-sm- text-center ml-5 mr-3">
+                <a href="javascript:window.location.href=window.location.href">
+                    <img src="static/images/android-icon-48x48.png">
+                </a>
+            </div>
+            <div class="col pl-1">
+                <p style="font-size: 2.2rem; font-weight: 600;" class="mt-0 mb-0">
+                    neo
+                </p>
+            </div>
+            <div class="col align-self-end pl-1 pb-1">
+                <p style="font-size: 1.2rem; float: right; align-self: right" class="mt-0 mb-2">
+                    <a href="https://github.com/NeoSteamFriendGraphing" style="text-decoration:none">
+                        <img src="static/images/github.svg" width="30rem" id="steamLogo" style="-webkit-filter: invert(100%); filter: invert(100%);">
+                    </a>
+                </p>
+            </div>
+            <div class="col-sm- align-self-end pl-1">
+                <p style="font-size: 1.2rem; float: right" class="mt-0 mb-2 mr-5">
+                    <a href="http://status.neofyp.com/status" style="text-decoration:none">Status Page</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="row justify-content-md-center" style="background-color: #dfe700">
+            <p class="pl-5 pr-3 m-0" style="color: black; font-weight: 400;">
+                This is a static snapshot of Neo. No new crawls can be created but some <a style="display:inline" href="#recentGenGraphs"> example crawls </a>can be explored
+            </p>
+        </div>
+    </div>
+
+
+    <div class="container mt-5">
+
+        <div class="row">
+        </div>
+        <div class="mt-2">
+        </div>
+
+        <div class="row" class="mb-2" style="height: 40rem">
+            <div class="col">
+                <div class="row">
+
+                    <div class="col-7">
+
+                        <div class="row">
+                            <p id="steamLogoSVG" style="font-weight: 500; font-size: 5rem; line-height: 97%;">
+                                Explore your network of friends on <br/> <span><?xml version="1.0" encoding="UTF-8"?>
+                                   <img src="static/images/steamLogo.svg" width="60rem" id="steamLogo" style="-webkit-filter: invert(100%); filter: invert(100%);"> </span> Steam
+                            </p> 
+                        </div>
+                    
+                        <div class="row mt-4 mb-5">
+                            <div class="col">
+                                <p style="font-size: 1.3rem;">
+                                    Generate an indepth analysis of your friend network on Steam to see exactly what kind of friends you have or find the shortest distance between two steam users
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row mt-5 justify-content-md-center">
+                                <div class="col-4 text-center" style="border: 2px solid white; border-radius: 12px;">
+                                    <a href="#crawlConfigBox" style="text-decoration: none;">
+                                        <p style="font-size: 1.5rem" class="pt-3">Start Now</p>
+                                    </a>
+                                </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col">
+                        <img 
+                            style="position: absolute; width: 280%; padding-left: 15rem"; 
+                            src="static/images/NeoExample.webp"
+                        >
+                        <div class="col mt-5 mb-5">
+                            <br/>
+                        </div>
+                        <div class="col mt-5 box" style=" position: absolute; border-radius: 12px;">
+                            <div class="row justify-content-md-center">
+                                <p id="totalUsersCrawled" style="font-size: 4rem; font-weight: 500;" class="mb-0 pb-0">
+                                    2,783,541
+                                </p>
+                            </div>
+                            <div class="row justify-content-md-center">
+                                individual users crawled
+                            </div>
+
+                            <div class="row justify-content-md-center">
+                                <p id="totalCrawls" style="font-size: 4rem; font-weight: 500;" class="mb-0 pb-0">
+                                    329
+                                </p>
+                            </div>
+                            <div class="row justify-content-md-center">
+                                crawls generated
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row box mt-4">
+            <div class="col text-center pl-4 mb-3">
+                <div class="row">
+                    <h4 style="font-weight:600" class="h4"> Recently Crawled Users </h4>
+                </div> 
+            
+                <div class="row mt-1 justify-content-md-center" id="newUserDiv">
+
+
+
+                    <div class="col-auto newUserEventBox ${animationClasses}">
+                        <div class="row-2" style="height: 11rem; width: 9rem">
+                            <div class="row" >
+                            <div class="col pt-2">
+                                <img 
+                                    src="static/images/kettama.webp"
+                                    style="height: 8.5rem; padding-left: 0.5rem"
+                                >
+                            </div>
+                            </div>
+                            <div class="row" style="width: 10.7rem; padding-left: 0.5rem">
+                                <div class="col truncate" style="font-size: 1rem;">
+                                    <span class="bolder"> Kettama </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col pl-2 pb-2 pt-0" style="width: 8rem; font-size: 1.2rem;">
+                                    <p class="pr-1">🇮🇪</p>
+                                </div>
+                                <div class="col pt-1" style="width: 8rem; font-size: 0.9rem;">
+                                    <p style="float: right" 
+                                        class="pr-1" 
+                                        id="${newUser.steamid}" > 
+                                        12s ago
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-auto newUserEventBox ${animationClasses}">
+                        <div class="row-2" style="height: 11rem; width: 9rem">
+                            <div class="row" >
+                            <div class="col pt-2">
+                                <img 
+                                    src="static/images/riotCode.webp"
+                                    style="height: 8.5rem; padding-left: 0.5rem"
+                                >
+                            </div>
+                            </div>
+                            <div class="row" style="width: 10.7rem; padding-left: 0.5rem">
+                                <div class="col truncate" style="font-size: 1rem;">
+                                    <span class="bolder"> Riot Code </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col pl-2 pb-2 pt-0" style="width: 8rem; font-size: 1.2rem;">
+                                    <p class="pr-1">🇮🇪</p>
+                                </div>
+                                <div class="col pt-1" style="width: 8rem; font-size: 0.9rem;">
+                                    <p style="float: right" 
+                                        class="pr-1" 
+                                        id="${newUser.steamid}" > 
+                                        13s ago
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-auto newUserEventBox ${animationClasses}">
+                        <div class="row-2" style="height: 11rem; width: 9rem">
+                            <div class="row" >
+                            <div class="col pt-2">
+                                <img 
+                                    src="static/images/FJAAK.webp"
+                                    style="height: 8.5rem; padding-left: 0.5rem"
+                                >
+                            </div>
+                            </div>
+                            <div class="row" style="width: 10.7rem; padding-left: 0.5rem">
+                                <div class="col truncate" style="font-size: 1rem;">
+                                    <span class="bolder"> FJAAK </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col pl-2 pb-2 pt-0" style="width: 8rem; font-size: 1.2rem;">
+                                    <p class="pr-1">🇩🇪</p>
+                                </div>
+                                <div class="col pt-1" style="width: 8rem; font-size: 0.9rem;">
+                                    <p style="float: right" 
+                                        class="pr-1" 
+                                        id="${newUser.steamid}" > 
+                                        13s ago
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-auto newUserEventBox ${animationClasses}">
+                        <div class="row-2" style="height: 11rem; width: 9rem">
+                            <div class="row" >
+                            <div class="col pt-2">
+                                <img 
+                                    src="static/images/partiboi69.webp"
+                                    style="height: 8.5rem; padding-left: 0.5rem"
+                                >
+                            </div>
+                            </div>
+                            <div class="row" style="width: 10.7rem; padding-left: 0.5rem">
+                                <div class="col truncate" style="font-size: 1rem;">
+                                    <span class="bolder"> Partiboi69 </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col pl-2 pb-2 pt-0" style="width: 8rem; font-size: 1.2rem;">
+                                    <p class="pr-1">🇦🇺</p>
+                                </div>
+                                <div class="col pt-1" style="width: 8rem; font-size: 0.9rem;">
+                                    <p style="float: right" 
+                                        class="pr-1" 
+                                        id="${newUser.steamid}" > 
+                                        14s ago
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-auto newUserEventBox ${animationClasses}">
+                        <div class="row-2" style="height: 11rem; width: 9rem">
+                            <div class="row" >
+                            <div class="col pt-2">
+                                <img 
+                                    src="static/images/floorplan.webp"
+                                    style="height: 8.5rem; padding-left: 0.5rem"
+                                >
+                            </div>
+                            </div>
+                            <div class="row" style="width: 10.7rem; padding-left: 0.5rem">
+                                <div class="col truncate" style="font-size: 1rem;">
+                                    <span class="bolder"> Floorplan </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col pl-2 pb-2 pt-0" style="width: 8rem; font-size: 1.2rem;">
+                                    <p class="pr-1">🇺🇸</p>
+                                </div>
+                                <div class="col pt-1" style="width: 8rem; font-size: 0.9rem;">
+                                    <p style="float: right" 
+                                        class="pr-1" 
+                                        id="${newUser.steamid}" > 
+                                        15s ago
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-auto newUserEventBox ${animationClasses}">
+                        <div class="row-2" style="height: 11rem; width: 9rem">
+                            <div class="row" >
+                            <div class="col pt-2">
+                                <img 
+                                    src="static/images/tommyholohan.webp"
+                                    style="height: 8.5rem; padding-left: 0.5rem"
+                                >
+                            </div>
+                            </div>
+                            <div class="row" style="width: 10.7rem; padding-left: 0.5rem">
+                                <div class="col truncate" style="font-size: 1rem;">
+                                    <span class="bolder"> Tommy Holohan </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col pl-2 pb-2 pt-0" style="width: 8rem; font-size: 1.2rem;">
+                                    <p class="pr-1">🇮🇪</p>
+                                </div>
+                                <div class="col pt-1" style="width: 8rem; font-size: 0.9rem;">
+                                    <p style="float: right" 
+                                        class="pr-1" 
+                                        id="${newUser.steamid}" > 
+                                        15s ago
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-auto newUserEventBox ${animationClasses}">
+                        <div class="row-2" style="height: 11rem; width: 9rem">
+                            <div class="row" >
+                            <div class="col pt-2">
+                                <img 
+                                    src="static/images/XCLUB.webp"
+                                    style="height: 8.5rem; padding-left: 0.5rem"
+                                >
+                            </div>
+                            </div>
+                            <div class="row" style="width: 10.7rem; padding-left: 0.5rem">
+                                <div class="col truncate" style="font-size: 1rem;">
+                                    <span class="bolder"> X CLUB </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col pl-2 pb-2 pt-0" style="width: 8rem; font-size: 1.2rem;">
+                                    <p class="pr-1">🇦🇺</p>
+                                </div>
+                                <div class="col pt-1" style="width: 8rem; font-size: 0.9rem;">
+                                    <p style="float: right" 
+                                        class="pr-1" 
+                                        id="${newUser.steamid}" > 
+                                        17s ago
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+
+
+
+                </div>  
+            </div>
+        </div>
+
+
+        <div class="row crawlConfigBox" id="crawlConfigBox">
+            <div class="col sm-2"></div>
+            <div class="col box mt-5" style="height: 49rem">
+                <div  id="crawlConfigInnerBox">
+                    <div class="row text-center">
+                        <div class="col mb-0">
+                            <h4 style="font-weight:600" class="h4"> Get started </h4>
+                        </div>
+                    </div>
+                    
+                    <hr class="mt-0 mb-2">
+                    
+                    <div class="row text-center mb-2">
+                        <div class="col">
+                            Select a target
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col text-center">
+                            <button
+                                id="oneUserButton"
+                                type="button"
+                                class="btn btn-light btn-rounded"
+                                data-mdb-ripple-color="dark"
+                                >
+                                One user
+                            </button>
+                        </div>
+                        <div class="col text-center">
+                            <button
+                                id="twoUsersButton"
+                                type="button"
+                                class="btn btn-outline-light btn-rounded"
+                                data-mdb-ripple-color="dark"
+                                >
+                                Two users
+                            </button>
+                        </div>
+                    </div>
+
+                    <div style="height: 7rem;">
+                        <div class="group mt-4 ml-2 mr-2 align-middle" id="firstUserInputBox">      
+                            <input type="text" required id="firstSteamID">
+                            <span class="bar"></span>
+                            <label class="ml-2">SteamID64</label>
+                        </div>
+    
+                        <div class="alert alert-info mt-3 p-1" id="steamIDChoiceFirstErrorBox" style="display: none">
+                            <div class="icon ">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <span id="steamIDChoiceFirstErrorBoxMessage" class="pl-5" style="font-size: 0.8rem"></span>
+                        </div>
+        
+                        <div class="group mt-3 ml-2 mr-2" id="secondUserInputBox" style="visibility: hidden">      
+                            <input type="text" required id="secondSteamID">
+                            <span class="bar"></span>
+                            <label class="ml-2">SteamID64</label>
+                        </div>
+
+                        <div class="alert alert-info mt-3 p-1" id="steamIDChoiceSecondErrorBox" style="display: none">
+                            <div class="icon ">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <span id="steamIDChoiceSecondErrorBoxMessage" class="pl-5" style="font-size: 0.8rem"></span>
+                        </div>
+    
+                        <div class="row mt-2">
+                            <div class="col text-center">
+                                <a href="#howToGetSteamID64" class="muted"> How do I get a steamID64?</a>
+                            </div>
+                        </div>
+    
+                        <hr  class="mt-2 mb-2">
+        
+                        <div class="row text-center">
+                            <div class="col">
+                                Choose crawling level
+                            </div>
+                        </div>
+        
+                        <div class="row">
+                            <div class="col ml-2 mr-2 mt-2">
+                                <div class="text-center"> Level: <span id="chosenLevel">2</span>  
+                                    <a href="" style="display: inline"><i class="far fa-question-circle" ></i> </a>
+                                </div>
+                              
+                                
+                                <div class="text-center">
+                                    <input type="range" class="form-range" min="2" max="3" value="2" id="levelChoice" style="width: 70%">
+                                </div>
+                                <script>
+                                    // The slider is sticks to whatever previous value
+                                    // the user had before refresh so this is necessary
+                                    // to enforce a default visual position
+                                    document.getElementById("levelChoice").value = 2;
+                                </script>
+
+                                <div class="text-center">
+                                    <img id="levelHelpImage" src="https://i.imgur.com/6LbbJoV.png" style="border-radius: 12px">
+                                </div>
+        
+                                    <div class="alert alert-info mt-3 pb-1 pt-1 pr-1 pl-5" id="levelChoiceInfoBox" style="display: block; height: 5rem">
+                                        <div class="icon ">
+                                            <i class="fa fa-info-circle"></i>
+                                        </div>
+                                        <span id="levelHelpText">Crawl the given user(s) and all of their immediate friends</span>
+                                    </div>
+        
+                                    
+                            </div>
+                        </div>
+    
+                        <div class="row" style="position: relative; bottom: 0">
+                            <div class="col">
+                                <div class="mt-3 text-center h6">
+                                    <button class="btn btn-outline-light btn-rounded" id="crawlButton" role="button" data-mdb-toggle="button" aria-pressed="false" style="text-shadow: none;">Crawl</button>
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+               
+                </div>
+                <div class="crawlConfigLoadingElement" id="crawlConfigLoadingElement" style="visibility: hidden; z-index: 20;" >
+                <div class="row" style="height: 20rem"></div>
+                    <div class="text-center" styl>
+                        <div class="row box ml-4 mr-4 pl-4 pr-1" style="background-color: #161616b8">
+                            <div class="row">
+                                <div class="col">
+                                    <img id="isPrivateCheckMark" src="/static/images/checkmark.svg" style="width: 5rem; filter: invert(50%)">
+                                </div>
+                                <div class="col">
+                                    <img id="isCrawledBeforeCheckMark" src="/static/images/checkmark.svg" style="width: 5rem; filter: invert(50%)">
+                                </div>
+                            </div>
+                            <div class="row mb-2 text-center" style="height: 2rem">
+                                <p style="font-size: 1.2rem" id="crawlingInterfaceStatusText">Verifying user details </p>
+                            </div>
+                         
+                        </div>
+                    </div>
+                </div> 
+        </div>
+        
+        <div class="col sm-2"></div>
+
+        <div class="row mt-5"></div>
+        <div class="row mt-5" id="faq">
+            <div class="col box ">
+                <div>
+                    <p class="mt-0 mb-0 ml-1 pt-0 text-center display-4" style="font-weight: 400;">
+                        <b> FAQ </b>
+                        <hr>
+                    </p>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col ml-3 ">
+                        <p class="mb-0 ">
+                            <h4>
+                                <b> What is this project? </b></a>
+                        </h4>
+                        
+                            <div>
+                            Neo is an NUIG Computer Science and Information Technology final year project built to analyse friend networks on the Steam platform
+                            </div>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row mb-3" id="howToGetSteamID64">
+                    <div class="col ml-3 ">
+                        <p class="mb-0 ">
+                            <h4>
+                                <b> How do I get a steamID64 for a Steam account? </b></a>
+                            </h4>
+                            <div>
+                                Each Steam account has a ID associated with it thats used behind the scenes to uniquely identify a given account. The easiest way to get the associated steamID64 for a given account is through <a href="https://www.steamidfinder.com/" style="display: inline">steamIDFinder</a>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col ml-3 ">
+                        <p class="mb-0 ">
+                            <h4>
+                                <b> What is Neo built with? </b></a>
+                        </h4>
+                        
+                            <div class="row mr-2">
+                                <div class="col" >
+
+                                    <div>
+                                        <p style="font-weight: 500" class="mb-0 mt-0">Microservices</p>
+                                        <ul>
+                                            <li> Frontend: Go with vanilla Javascript and Bootstrap</li>
+                                            <li> Crawler: Go</li>
+                                            <li> Datastore: Go</li>
+                                        </ul>
+                                        <p style="font-weight: 500" class="mb-0 mt-0">Infrastructure</p>
+                                        <ul>
+                                            <li> Messaging: RabbitMQ</li>
+                                            <li> Data Persistence: MongoDB and PostgreSQL</li>
+                                            <li> Logging: ELK stack (Elasticsearch, Logstash and Kibana)</li>
+                                            <li> Metrics: Grafan and InfluxDB</li>
+                                            <li> Uptime Monitoring: Uptime Kuma</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div>
+                                        <img src="static/images/NeoArchitectureFinal.webp" width="100%">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col ml-3 ">
+                        <p class="mb-0 ">
+                            <h4>
+                                <b> Is this project FOSS? </b></a>
+                        </h4>
+                        
+                            <div>
+                                Yes, Neo is is licensed under MIT and the source code is available on <a style="display: inline;" href="https://github.com/NeoSteamFriendGraphing">Github</a>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col ml-3 ">
+                        <p class="mb-0 ">
+                            <h4>
+                                <b> Where can I read about the internals of the project? </b></a>
+                        </h4>
+                        
+                            <div>
+                                My <a href="" style="display:inline">final year project report</a> details everything from planning, implementation to evaluation for all aspects of the project
+                            </div>
+                        </p>
+                    </div>
+                </div>
+
+
+               
+            </div>
+        </div>
+        
+        <div class="row mt-3" id="recentGenGraphs" style="width: 100%">
+            <div class="col box p-3 pl-5 pr-5" >
+                <div>
+                    <p class="mt-0 mb-0 ml-1 pt-0 text-center display-4" style="font-weight: 400;">
+                        <b> Recently Generated Graphs </b>
+                        <hr>
+                    </p>
+                </div>
+                <div class="row pt-1 pb-1 mt-1" style="border-radius: 8px;">
+                    <div class="col-sm- ml-2">
+                        
+                    </div>
+                    <div class="col-sm- ml-2">
+                        
+                    </div>
+                    <div class="col-5 ml-5">
+                        <p style="font-size: 0.8rem; margin-bottom: 0">Username</p>
+                    </div>
+                    <div class="col-2">
+                        <p style="font-size: 0.8rem; margin-bottom: 0">Crawl length</p>
+                    </div>
+                    <div class="col-sm- mr-2">
+                        <p style="font-size: 0.8rem; margin-bottom: 0">Level</p>
+                    </div>
+                    <div class="col-2">
+                        <p style="font-size: 0.8rem; margin-bottom: 0">Time Started</p>
+                    </div>
+                    <div class="col-sm- ml-5 align-self-end">
+                        
+                    </div>
+                </div>
+                <div id="finishedCrawlsDiv">
+                  
+
+                    <div class="row pt-1 pb-1 mt-1" style="border-radius: 8px; background-color:#414141;">
+                        <div class="col-sm- ml-2">
+                            <img src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/f7/f7b6b9b6ec0898d936628aed176cc6861218c9a9.jpg">
+                        </div>
+                        <div class="col-sm- ml-2">
+                            🇨🇳
+                        </div>
+                        <div class="col-5">
+                            XC3N
+                        </div>
+                        <div class="col-2">
+                            159 users
+                        </div>
+                        <div class="col-sm- mr-2">
+                            2
+                        </div>
+                        <div class="col-2 pl-5">
+                            5m ago
+                        </div>
+                        <div class="col-sm- ml-5 align-self-end">
+                            <div class="col-3 pr-5" style="border: 2px solid white; border-radius: 6px;">
+                                <a href="graph/26IflgFB0DwB8lKxsgDZ7zDEgRc.html" style="text-decoration: none">
+                                    View
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row pt-1 pb-1 mt-1" style="border-radius: 8px; background-color:#292929;">
+                        <div class="col-sm- ml-2">
+                            <img src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/85/859c2d465f8e2326b9a1809302e6390c26ff21a8.jpg"">
+                        </div>
+                        <div class="col-sm- ml-2">
+                            🇨🇦
+                        </div>
+                        <div class="col-5">
+                            .TV | VINECARS
+                        </div>
+                        <div class="col-2">
+                            148 users
+                        </div>
+                        <div class="col-sm- mr-2">
+                            2
+                        </div>
+                        <div class="col-2 pl-5">
+                            5m ago
+                        </div>
+                        <div class="col-sm- ml-5 align-self-end">
+                            <div class="col-3 pr-5" style="border: 2px solid white; border-radius: 6px;">
+                                <a href="graph/26IhMk98i1l9Eduj9qHUUA83ttt.html" style="text-decoration: none">
+                                    View
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row mt-3" style="width: 100%">
+            <div class="col box p-3 pl-5 pr-5" >
+                <div>
+                    <p class="mt-0 mb-0 ml-1 pt-0 text-center display-4" style="font-weight: 400;">
+                        <b> Recent Shortest Distance Graphs </b>
+                        <hr>
+                    </p>
+                </div>
+                <div class="row justify-content-md-center" id="finishedShortestDistanceCrawlsDiv">
+                
+                    <div class="col-5 m-3 box" style="border: 2px solid white; border-radius: 8px;">
+                        <div class="row pt-2">
+                            <div class="col text-center">
+                                <img 
+                                    src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/85/859c2d465f8e2326b9a1809302e6390c26ff21a8_medium.jpg"
+                                >
+                            </div>
+                            <div class="col text-center">
+                                <img 
+                                    src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/f7/f7b6b9b6ec0898d936628aed176cc6861218c9a9_medium.jpg"
+                                >
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-center">
+                                🇨🇳 XC3N 
+                            </div>
+                            <div class="col text-center">
+                                🇨🇦 .TV | VINECARS 
+                            </div>
+                        </div>
+                        <div class="row justify-content-md-center">
+                            <div class="col text-center">
+                                <p style="font-size: 1.3rem;">310 users</p>
+                            </div>
+                        </div>
+                        <div class="row justify-content-md-center mb-2">
+                            <div class="col-3 text-center ml-2 mr-2 mt-1 mb-1" style="background-color: aqua; border-radius: 6px;">
+                                <a href="shortestdistance/26IflgFB0DwB8lKxsgDZ7zDEgRcand26IhMk98i1l9Eduj9qHUUA83ttt.html" style="text-decoration: none"> View </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div> <!-- end of shortest distance graphs -->
+
+    </div>
+    <script src="static/javascript/crawlInterface.js"></script>
+</body>
+</html>

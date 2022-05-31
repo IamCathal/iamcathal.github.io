@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;800;900&display=swap" rel="stylesheet"> 
+    <link href="../static/stylesheets/stylesheet.css" rel="stylesheet" type="text/css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.2.2/dist/echarts.js" integrity="sha256-RySf951sAEWQzKl5M+wHL5OQrVfQu/FmEfbSbBpP740=" crossorigin="anonymous"></script>
+
+
+    <link rel="apple-touch-icon" sizes="57x57" href="static/images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="static/images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="static/images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="static/images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="static/images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="static/images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="static/images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="static/images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="static/images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="static/images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="static/images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/images/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="fyp/static/images/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+
+    <meta property="og:image" content="https://i.imgur.com/3DH7xYd.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cathaloc.dev/fyp" />
+    <meta property="og:title" content="Neo (snapshot), generate analytics based on your Steam friend networks" />
+    <meta property="og:description" content="NUIG Computer Science & IT Final Year Project 2022 developed by Cathal O'Callaghan" />
+
+    <title>Neo (Snapshot)</title>
+
+</head>
+
+<body>
+
+    <div id="navbar">
+        <div class="row">
+            <div class="col-4">
+                <div class="row">
+                    <div class="col-1 text-center ml-4 mr-3 pt-1">
+                        <a href="../index.html">
+                            <img src="../static/images/android-icon-48x48.png">
+                        </a>
+                    </div>
+                    <div class="col pl-1">
+                        <p style="font-size: 2.2rem; font-weight: 600;" class="mt-0 mb-0">
+                            neo
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col pt-2 mr-4">
+                <p style="font-size: 1.2rem; float: right; display: inline" class="mt-0 mb-2 mr-5">
+                    <a href="http://status.neofyp.com/status" style="text-decoration:none">Status Page</a>
+                </p>
+                <p style="font-size: 1.2rem; float: right; align-self: right; display: inline" class="mt-0 mb-2 mr-4">
+                    <a href="https://github.com/NeoSteamFriendGraphing" style="text-decoration:none">
+                        <img src="../static/images/github.svg" width="30rem" id="steamLogo" style="-webkit-filter: invert(100%); filter: invert(100%);">
+                    </a>
+                </p>
+            </div>
+           
+        </div>
+    </div>
+
+    <div>
+        <div class="row justify-content-md-center" style="background-color: #dfe700">
+            <p class="pl-5 pr-3 m-0" style="color: black; font-weight: 400;">
+                This is a static snapshot of Neo. No new crawls can be created but some <a style="display:inline" href="../index.html#recentGenGraphs"> example crawls </a>can be explored
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row">
+        </div>
+       
+        <!-- <h3 class="text-center mt-0"> bottom text </h3> -->
+        <div class="mt-2">
+        </div>
+
+        <div id="shortestPathExists" style="visibility: visible;">
+            <div class="row box pt-3 pb-3" id="graphBox">
+                <div class="col">
+                    <div id="graphContainer" style="width: 100%; height: 20rem">
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row mt-2">
+                <div class="col-3 box">
+                    <div class="row pl-1 ml-1 mr-1">
+                        <p id="networkSpan" style="font-size: 4rem; height: 5rem; font-weight: 600"></p>
+                    </div>
+                    <div class="row ml-1">
+                        <p style="bottom: 0" class="mb-0">total users crawled</p>
+                    </div>
+                </div>
+    
+                <div class="col-2 box ml-2">
+                    <div class="row pl-1 ml-1 mr-1">
+                        <p id="shortestPathCountrySpan" style="font-size: 4rem; height: 5rem; font-weight: 600"></p>
+                    </div>
+                    <div class="row ml-1">
+                        <p style="bottom: 0" class="mb-0">countries spanned</p>
+                    </div>
+                </div>
+    
+                <div class="col box ml-2">
+                    <div class="row pl-1 ml-1 mr-1">
+                        <p id="spanLength"  style="font-size: 4rem; height: 5rem; font-weight: 600"></p>
+                    </div>
+                    <div class="row ml-1">
+                        <p style="bottom: 0" class="mb-0">users in shortest path </p>
+                    </div>
+                </div>
+    
+                <div class="col-4 box ml-2">
+                    <div class="row pl-1 ml-1 mr-1">
+                        <p id="totalDistanceTravelled" style="font-size: 4rem; height: 5rem; font-weight: 600"></p>
+                    </div>
+                    <div class="row ml-1">
+                        <div class="col-10">
+                            <p style="bottom: 0" class="mb-0">between start and finish</p>
+                        </div>
+                        <div class="col">
+                            <svg version="1.1" height="18px" width="18px" viewBox="0 0 460 460" style="enable-background:new 0 0 460 460;" xml:space="preserve">
+                                <g>
+                                    <g title="The shortest distance you could travel between all users in the shortest path">
+                                        <title>The shortest distance you could travel between all users in the shortest path</title>
+                                        <path fill="#ffffff" title="Percentage of the 195 UN recognised countries where one or more of your friends lives" d="M230,0C102.975,0,0,102.975,0,230s102.975,230,230,230s230-102.974,230-230S357.025,0,230,0z M268.333,377.36
+                                            c0,8.676-7.034,15.71-15.71,15.71h-43.101c-8.676,0-15.71-7.034-15.71-15.71V202.477c0-8.676,7.033-15.71,15.71-15.71h43.101
+                                            c8.676,0,15.71,7.033,15.71,15.71V377.36z M230,157c-21.539,0-39-17.461-39-39s17.461-39,39-39s39,17.461,39,39
+                                            S251.539,157,230,157z"/>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>        
+    
+            <div class="row mt-5">
+                <div class="col-2"></div> <!-- Spacer -->
+                <div class="col-8 box pl-4 pr-4 pb-4 pt-2">
+                    <div class="row">
+                        <div class="col text-center mt-0">
+                            <p style="font-size: 1.4rem" class="mb-0 mt-0">
+                                Shortest distance between
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center mt-2">
+                            <p id="secondUserUsername" style="font-size: 2rem; font-weight: 600" class="mb-0">
+                                
+                            </p>
+                        </div>
+                        <div class="col-1 text-center mt-2">
+                            <p style="font-size: 1rem" class="pb-0 pt-3 mb-0">
+                                and
+                            </p>
+                        </div>
+                        <div class="col text-center mt-2" >
+                            <p id="firstUserUsername" style="font-size:2rem;  font-weight: 600" class="mb-0">
+                                
+                            </p>
+                        </div>
+                    </div>
+    
+                    <hr>
+    
+                    <div id="shortestPathDiv" class="col">
+                       
+                    </div>
+                </div>
+                <div class="col sm-2 mt-5"></div>
+            </div>
+    
+            <div class="row mt-5">
+                <div class="col-2"></div>
+    
+                <div class="col box">
+                    <div class="row">
+                        <div class="col text-center">
+                           <p style="font-size: 1.4rem"> View individual crawl data for</p>
+                        </div>
+                    </div>
+                    <div id="indivCrawlData" class="row justify-content-md-center mb-3">
+    
+                    </div>
+                </div>
+    
+                <div class="col-2"></div>
+            </div>
+    
+            <div class="row mt-5">
+                <div class="col-2"></div>
+                <div class="col box">
+                    <div class="row justify-content-md-center">
+                        <p style="font-size: 2rem">View the combined interactive graph</p>
+                    </div>
+                    <div class="row mt-2">
+                        <a id="interactiveGraphLink" href="">
+                            <video 
+                                width="100%"
+                                autoplay loop autobuffer muted playsinline
+                                src="../static/images/finished.mp4"
+                                style="border-radius: 12px;"
+                            >
+                        </a>
+                    </div>
+                </div>
+                <div class="col-2"></div>
+            </div>
+    
+            <div class="mt-5 mb-4"></div>
+        </div>
+
+        <div id="shortestPathDoesntExist" style="z-index: 20; position: absolute; top: 12rem; width: 60rem; visibility: hidden; ">
+            <div class="row">
+                <div class="col text-center mt-3">
+                    <p style="font-size: 1.5rem;" id="noPathInfoText"></p>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-2"></div>
+                
+                <div class="col box">
+                    <div class="row">
+                        <div class="col text-center">
+                           <p style="font-size: 1.4rem"> View individual crawl data for</p>
+                        </div>
+                    </div>
+                    <div id="indivCrawlDataNotExist" class="row justify-content-md-center mb-3">
+    
+                    </div>
+                </div>
+    
+                <div class="col-2"></div>
+            </div>
+        </div>
+        
+        
+
+    </div>
+
+    <script>
+
+    const crawlIDs = ["26IflgFB0DwB8lKxsgDZ7zDEgRc", "26IhMk98i1l9Eduj9qHUUA83ttt"]
+    const shortestDistanceInfo = JSON.parse(`{"crawlids":["26IhMk98i1l9Eduj9qHUUA83ttt","26IflgFB0DwB8lKxsgDZ7zDEgRc"],"firstuser":{"accdetails":{"steamid":"76561198043024283","personaname":".TV | VINECARS","profileurl":"https://steamcommunity.com/id/Vinecars/","avatar":"https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/85/859c2d465f8e2326b9a1809302e6390c26ff21a8.jpg","timecreated":1307642674,"loccountrycode":"CA"},"friendids":["76561198018932505","76561198079101571","76561198205177785","76561198204052688","76561198029650815","76561198034459654","76561198020579544","76561197979730879","76561198147395288","76561198047699589","76561198077716766","76561198075936452","76561197972384789","76561198072386408","76561198203937435","76561198089154790","76561198027760342","76561198015841861","76561198027130145","76561198119019953","76561198090827225","76561197999304930","76561198079071627","76561198134699634","76561198179978933","76561198097561774","76561198121147387","76561198008078635","76561198076737055","76561198080334126","76561198092004855","76561198044294177","76561198021229587","76561198050242730","76561198123278211","76561198092374667","76561198144336702","76561198043791104","76561198126963312","76561198081244591","76561198087794419","76561198000061205","76561198068124404","76561198164536226","76561198040667549","76561198200406147","76561198090618055","76561198064524187","76561198071484359","76561198052622299","76561198073506608","76561198046195108","76561198190695410","76561198070588964","76561198214358980","76561198119319731","76561198100941313","76561198120204698","76561198067217173","76561198080157576","76561198144944894","76561198119559376","76561198188049565","76561197981273302","76561198074211274","76561197990510369","76561197979695746","76561198076247541","76561197965349473","76561198107916469","76561198191877457","76561198149220615","76561197999919557","76561198191596715","76561197986261619","76561198094251693","76561198070878613","76561197969524514","76561198087020581","76561198014772713","76561198170688277","76561198204452681","76561198081865768","76561198199898382","76561198050909478","76561198158439130","76561198082322535","76561198047788905","76561198202368265","76561198091277591","76561198317615364","76561198371734979","76561198297729852","76561198855008275","76561198258247239","76561198219213944","76561198749870997","76561198321881234","76561198253524420","76561198994813222","76561198341952178","76561198441231084","76561198832881597","76561198834131122","76561198282584132","76561198371642820","76561198243550748","76561198365697708","76561198406423162","76561198845971552","76561198312814802","76561198260446093","76561198829026984","76561199126283495","76561199138386816","76561198338983028","76561199097479382","76561198293990459","76561198281033867","76561199124099509","76561198296012348","76561198238096500","76561198247506494","76561198257102776","76561198628422731","76561198236523276","76561198260809555","76561199175879840","76561198272312116","76561198295252733","76561198820961939","76561198850330912","76561198364386722","76561198283840852","76561198286527653","76561198373451563","76561198256251395","76561198340004319","76561199164443470","76561198246605776","76561198225434856","76561198271174832","76561198349810993","76561199197078770","76561198259521058","76561198271733598","76561198274698151","76561198387635903","76561198280650213","76561198299048920"],"gamesowned":[{"appid":240,"playtime_forever":122208},{"appid":271590,"playtime_forever":93423},{"appid":730,"playtime_forever":90708},{"appid":381210,"playtime_forever":31226},{"appid":377160,"playtime_forever":17730},{"appid":239140,"playtime_forever":15602},{"appid":311210,"playtime_forever":14664},{"appid":4000,"playtime_forever":13944},{"appid":1080110,"playtime_forever":11641},{"appid":460930,"playtime_forever":10534},{"appid":1551360,"playtime_forever":10343},{"appid":218620,"playtime_forever":9333},{"appid":648350,"playtime_forever":8771},{"appid":755790,"playtime_forever":7079},{"appid":421020,"playtime_forever":7019},{"appid":928600,"playtime_forever":6113},{"appid":1134570,"playtime_forever":5849},{"appid":365590,"playtime_forever":5351},{"appid":1085660,"playtime_forever":5183},{"appid":1091500,"playtime_forever":4024},{"appid":1449560,"playtime_forever":3439},{"appid":550,"playtime_forever":2728},{"appid":440900,"playtime_forever":2395},{"appid":431960,"playtime_forever":2243},{"appid":228380,"playtime_forever":2090},{"appid":304930,"playtime_forever":2085},{"appid":12210,"playtime_forever":2018},{"appid":750920,"playtime_forever":1786},{"appid":613100,"playtime_forever":1714},{"appid":236870,"playtime_forever":1709},{"appid":273110,"playtime_forever":1674},{"appid":641990,"playtime_forever":1558},{"appid":1233570,"playtime_forever":1550},{"appid":107410,"playtime_forever":1400},{"appid":1222680,"playtime_forever":1386},{"appid":375910,"playtime_forever":1323},{"appid":10090,"playtime_forever":1282},{"appid":47920,"playtime_forever":1264},{"appid":945360,"playtime_forever":1231},{"appid":70,"playtime_forever":1166}],"insertiontime":1647116962},"seconduser":{"accdetails":{"steamid":"76561197988112799","personaname":"XC3N","profileurl":"https://steamcommunity.com/id/xc3n/","avatar":"https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/f7/f7b6b9b6ec0898d936628aed176cc6861218c9a9.jpg","timecreated":1171257044,"loccountrycode":"CN"},"friendids":["76561197980933706","76561197989969348","76561198000383948","76561197998626991","76561198019428702","76561197994505775","76561197960535875","76561197995145544","76561197968520316","76561198001213186","76561197995498375","76561197987011561","76561197971154267","76561197995513219","76561197987835369","76561198019819899","76561198014978832","76561198008778234","76561197970612880","76561197975995523","76561197961427161","76561197965349511","76561198021199919","76561197960794843","76561197970732951","76561198009000854","76561198019229723","76561198000798363","76561197960930084","76561197997620297","76561198001751064","76561198010491781","76561197964083486","76561197997936428","76561197993380595","76561198006935843","76561197990217555","76561197996505893","76561197960766006","76561197982748373","76561197998556981","76561197993128565","76561197987090744","76561197969940137","76561197996248442","76561198001781163","76561198022375866","76561197982126853","76561197989722872","76561198004465612","76561197984287979","76561197962208538","76561197970782853","76561197979162449","76561197986257663","76561197996741892","76561197987959805","76561197985577875","76561197968474074","76561197960455990","76561197993648797","76561197999175173","76561198002125413","76561197970652298","76561197960890753","76561198000061205","76561198005544273","76561197993427777","76561198009516676","76561197985320053","76561197960873431","76561197991430027","76561197998866660","76561197961146957","76561197992496414","76561198013676495","76561197973546950","76561197998363443","76561198017248306","76561198002555689","76561198028688407","76561198074165151","76561198395435075","76561198127633360","76561198059499356","76561198025017417","76561198131508392","76561198111627480","76561198313408059","76561198025861800","76561198067374304","76561198081134400","76561198125522413","76561198250699758","76561198253599318","76561198031547615","76561198151381219","76561199014640535","76561198882880134","76561198077104149","76561198055332762","76561198089655086","76561198037178921","76561198084348912","76561198032144314","76561198031007969","76561198099958248","76561198038920620","76561198137072093","76561198091931548","76561198339544961","76561198158117978","76561198135803470","76561198035986061","76561198796075925","76561198024336683","76561198028122281","76561198028135278","76561198037917568","76561198077179450","76561198080503314","76561198074645484","76561198037608676","76561198024692410","76561198025213693","76561198066936363","76561198155844336","76561198043757149","76561198076155976","76561198035013754","76561198027089998","76561198040715440","76561198232724652","76561198066955481","76561198025820753","76561198035783853","76561198202124648","76561198027538448","76561198026776468","76561198033213131","76561198035939860","76561198113615824","76561198097114364","76561198166288175","76561198052468041","76561198158401468","76561198031882581","76561198797637510","76561198028642626","76561198032117464","76561198162071931","76561198039989054","76561198125742879","76561198036601046","76561198040779921","76561198058288121","76561198113376176","76561198039503730","76561198049224040"],"gamesowned":[{"appid":250820,"playtime_forever":73763},{"appid":359320,"playtime_forever":22092},{"appid":215280,"playtime_forever":20434},{"appid":388080,"playtime_forever":20010},{"appid":275850,"playtime_forever":15741},{"appid":49520,"playtime_forever":14396},{"appid":294100,"playtime_forever":14108},{"appid":268500,"playtime_forever":11509},{"appid":892970,"playtime_forever":10686},{"appid":373420,"playtime_forever":9776},{"appid":200510,"playtime_forever":9581},{"appid":698640,"playtime_forever":9576},{"appid":47540,"playtime_forever":9454},{"appid":239140,"playtime_forever":9046},{"appid":22320,"playtime_forever":9016},{"appid":339850,"playtime_forever":8682},{"appid":291650,"playtime_forever":8669},{"appid":435150,"playtime_forever":8479},{"appid":219990,"playtime_forever":7247},{"appid":233270,"playtime_forever":6978},{"appid":72850,"playtime_forever":6408},{"appid":113200,"playtime_forever":5667},{"appid":212680,"playtime_forever":5432},{"appid":461840,"playtime_forever":5399},{"appid":646570,"playtime_forever":5369},{"appid":205710,"playtime_forever":4872},{"appid":1174180,"playtime_forever":4771},{"appid":489830,"playtime_forever":4766},{"appid":751780,"playtime_forever":4093},{"appid":370360,"playtime_forever":4021},{"appid":1070710,"playtime_forever":3917},{"appid":228280,"playtime_forever":3744},{"appid":476460,"playtime_forever":3645},{"appid":396750,"playtime_forever":3630},{"appid":379720,"playtime_forever":3572},{"appid":251730,"playtime_forever":3462},{"appid":300550,"playtime_forever":3460},{"appid":391540,"playtime_forever":3327},{"appid":893680,"playtime_forever":3257},{"appid":400430,"playtime_forever":3244}],"insertiontime":1647116027},"shortestdistance":[{"accdetails":{"steamid":"76561198043024283","personaname":".TV | VINECARS","profileurl":"https://steamcommunity.com/id/Vinecars/","avatar":"https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/85/859c2d465f8e2326b9a1809302e6390c26ff21a8.jpg","timecreated":1307642674,"loccountrycode":"CA"},"friendids":["76561198018932505","76561198079101571","76561198205177785","76561198204052688","76561198029650815","76561198034459654","76561198020579544","76561197979730879","76561198147395288","76561198047699589","76561198077716766","76561198075936452","76561197972384789","76561198072386408","76561198203937435","76561198089154790","76561198027760342","76561198015841861","76561198027130145","76561198119019953","76561198090827225","76561197999304930","76561198079071627","76561198134699634","76561198179978933","76561198097561774","76561198121147387","76561198008078635","76561198076737055","76561198080334126","76561198092004855","76561198044294177","76561198021229587","76561198050242730","76561198123278211","76561198092374667","76561198144336702","76561198043791104","76561198126963312","76561198081244591","76561198087794419","76561198000061205","76561198068124404","76561198164536226","76561198040667549","76561198200406147","76561198090618055","76561198064524187","76561198071484359","76561198052622299","76561198073506608","76561198046195108","76561198190695410","76561198070588964","76561198214358980","76561198119319731","76561198100941313","76561198120204698","76561198067217173","76561198080157576","76561198144944894","76561198119559376","76561198188049565","76561197981273302","76561198074211274","76561197990510369","76561197979695746","76561198076247541","76561197965349473","76561198107916469","76561198191877457","76561198149220615","76561197999919557","76561198191596715","76561197986261619","76561198094251693","76561198070878613","76561197969524514","76561198087020581","76561198014772713","76561198170688277","76561198204452681","76561198081865768","76561198199898382","76561198050909478","76561198158439130","76561198082322535","76561198047788905","76561198202368265","76561198091277591","76561198317615364","76561198371734979","76561198297729852","76561198855008275","76561198258247239","76561198219213944","76561198749870997","76561198321881234","76561198253524420","76561198994813222","76561198341952178","76561198441231084","76561198832881597","76561198834131122","76561198282584132","76561198371642820","76561198243550748","76561198365697708","76561198406423162","76561198845971552","76561198312814802","76561198260446093","76561198829026984","76561199126283495","76561199138386816","76561198338983028","76561199097479382","76561198293990459","76561198281033867","76561199124099509","76561198296012348","76561198238096500","76561198247506494","76561198257102776","76561198628422731","76561198236523276","76561198260809555","76561199175879840","76561198272312116","76561198295252733","76561198820961939","76561198850330912","76561198364386722","76561198283840852","76561198286527653","76561198373451563","76561198256251395","76561198340004319","76561199164443470","76561198246605776","76561198225434856","76561198271174832","76561198349810993","76561199197078770","76561198259521058","76561198271733598","76561198274698151","76561198387635903","76561198280650213","76561198299048920"],"gamesowned":[{"appid":240,"playtime_forever":122208},{"appid":271590,"playtime_forever":93423},{"appid":730,"playtime_forever":90708},{"appid":381210,"playtime_forever":31226},{"appid":377160,"playtime_forever":17730},{"appid":239140,"playtime_forever":15602},{"appid":311210,"playtime_forever":14664},{"appid":4000,"playtime_forever":13944},{"appid":1080110,"playtime_forever":11641},{"appid":460930,"playtime_forever":10534},{"appid":1551360,"playtime_forever":10343},{"appid":218620,"playtime_forever":9333},{"appid":648350,"playtime_forever":8771},{"appid":755790,"playtime_forever":7079},{"appid":421020,"playtime_forever":7019},{"appid":928600,"playtime_forever":6113},{"appid":1134570,"playtime_forever":5849},{"appid":365590,"playtime_forever":5351},{"appid":1085660,"playtime_forever":5183},{"appid":1091500,"playtime_forever":4024},{"appid":1449560,"playtime_forever":3439},{"appid":550,"playtime_forever":2728},{"appid":440900,"playtime_forever":2395},{"appid":431960,"playtime_forever":2243},{"appid":228380,"playtime_forever":2090},{"appid":304930,"playtime_forever":2085},{"appid":12210,"playtime_forever":2018},{"appid":750920,"playtime_forever":1786},{"appid":613100,"playtime_forever":1714},{"appid":236870,"playtime_forever":1709},{"appid":273110,"playtime_forever":1674},{"appid":641990,"playtime_forever":1558},{"appid":1233570,"playtime_forever":1550},{"appid":107410,"playtime_forever":1400},{"appid":1222680,"playtime_forever":1386},{"appid":375910,"playtime_forever":1323},{"appid":10090,"playtime_forever":1282},{"appid":47920,"playtime_forever":1264},{"appid":945360,"playtime_forever":1231},{"appid":70,"playtime_forever":1166}],"insertiontime":1647116962},{"accdetails":{"steamid":"76561198000061205","personaname":"Kingkong","profileurl":"https://steamcommunity.com/id/kingkon678/","avatar":"https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/54/54ca2ee0f29c12acd15241c1978ce23e68a7f12b.jpg","timecreated":1216777816,"loccountrycode":"CA"},"friendids":["76561197996574165","76561197966872370","76561198004535161","76561198035783853","76561198022031778","76561197960272597","76561198046887745","76561197975847268","76561197985685291","76561198006530110","76561197964502095","76561198006736439","76561198355615659","76561198261321765","76561198079547728","76561198043024283","76561197971243128","76561197974005502","76561198236523276","76561198019322965","76561197988112799","76561197963218382","76561197996360951","76561197968520316","76561197999601598","76561198025001878","76561198287378113","76561198123278211","76561197987835369","76561198035777501","76561198030336919","76561198797637510","76561198015268225","76561198015511971","76561197970676645","76561197994372935","76561198038454752","76561198015841861","76561198019269366","76561198030402868","76561198014076705","76561197969420923","76561198008060539","76561198253599318","76561197960449352","76561198072065379","76561197980197489","76561197995210210","76561198008783621","76561198280650213","76561198042311628","76561197998866660","76561197980188695","76561198018948239","76561197993291888","76561198014719400"],"gamesowned":[{"appid":240,"playtime_forever":0},{"appid":280,"playtime_forever":0},{"appid":360,"playtime_forever":0},{"appid":320,"playtime_forever":0},{"appid":1200,"playtime_forever":0},{"appid":1230,"playtime_forever":0},{"appid":1280,"playtime_forever":0},{"appid":3920,"playtime_forever":0},{"appid":8000,"playtime_forever":0},{"appid":2200,"playtime_forever":0},{"appid":2270,"playtime_forever":0},{"appid":2280,"playtime_forever":0},{"appid":2290,"playtime_forever":0},{"appid":2300,"playtime_forever":0},{"appid":2310,"playtime_forever":0},{"appid":2320,"playtime_forever":0},{"appid":2330,"playtime_forever":0},{"appid":2340,"playtime_forever":0},{"appid":2350,"playtime_forever":0},{"appid":2360,"playtime_forever":0},{"appid":2370,"playtime_forever":0},{"appid":2390,"playtime_forever":0},{"appid":9000,"playtime_forever":0},{"appid":9010,"playtime_forever":0},{"appid":9030,"playtime_forever":0},{"appid":9040,"playtime_forever":0},{"appid":9050,"playtime_forever":0},{"appid":9060,"playtime_forever":0},{"appid":9070,"playtime_forever":0},{"appid":9160,"playtime_forever":0},{"appid":9180,"playtime_forever":0},{"appid":220,"playtime_forever":0},{"appid":340,"playtime_forever":0},{"appid":380,"playtime_forever":0},{"appid":400,"playtime_forever":0},{"appid":420,"playtime_forever":0},{"appid":2590,"playtime_forever":0},{"appid":12100,"playtime_forever":0},{"appid":12110,"playtime_forever":0},{"appid":12120,"playtime_forever":0}],"insertiontime":1647116195},{"accdetails":{"steamid":"76561197988112799","personaname":"XC3N","profileurl":"https://steamcommunity.com/id/xc3n/","avatar":"https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/f7/f7b6b9b6ec0898d936628aed176cc6861218c9a9.jpg","timecreated":1171257044,"loccountrycode":"CN"},"friendids":["76561197980933706","76561197989969348","76561198000383948","76561197998626991","76561198019428702","76561197994505775","76561197960535875","76561197995145544","76561197968520316","76561198001213186","76561197995498375","76561197987011561","76561197971154267","76561197995513219","76561197987835369","76561198019819899","76561198014978832","76561198008778234","76561197970612880","76561197975995523","76561197961427161","76561197965349511","76561198021199919","76561197960794843","76561197970732951","76561198009000854","76561198019229723","76561198000798363","76561197960930084","76561197997620297","76561198001751064","76561198010491781","76561197964083486","76561197997936428","76561197993380595","76561198006935843","76561197990217555","76561197996505893","76561197960766006","76561197982748373","76561197998556981","76561197993128565","76561197987090744","76561197969940137","76561197996248442","76561198001781163","76561198022375866","76561197982126853","76561197989722872","76561198004465612","76561197984287979","76561197962208538","76561197970782853","76561197979162449","76561197986257663","76561197996741892","76561197987959805","76561197985577875","76561197968474074","76561197960455990","76561197993648797","76561197999175173","76561198002125413","76561197970652298","76561197960890753","76561198000061205","76561198005544273","76561197993427777","76561198009516676","76561197985320053","76561197960873431","76561197991430027","76561197998866660","76561197961146957","76561197992496414","76561198013676495","76561197973546950","76561197998363443","76561198017248306","76561198002555689","76561198028688407","76561198074165151","76561198395435075","76561198127633360","76561198059499356","76561198025017417","76561198131508392","76561198111627480","76561198313408059","76561198025861800","76561198067374304","76561198081134400","76561198125522413","76561198250699758","76561198253599318","76561198031547615","76561198151381219","76561199014640535","76561198882880134","76561198077104149","76561198055332762","76561198089655086","76561198037178921","76561198084348912","76561198032144314","76561198031007969","76561198099958248","76561198038920620","76561198137072093","76561198091931548","76561198339544961","76561198158117978","76561198135803470","76561198035986061","76561198796075925","76561198024336683","76561198028122281","76561198028135278","76561198037917568","76561198077179450","76561198080503314","76561198074645484","76561198037608676","76561198024692410","76561198025213693","76561198066936363","76561198155844336","76561198043757149","76561198076155976","76561198035013754","76561198027089998","76561198040715440","76561198232724652","76561198066955481","76561198025820753","76561198035783853","76561198202124648","76561198027538448","76561198026776468","76561198033213131","76561198035939860","76561198113615824","76561198097114364","76561198166288175","76561198052468041","76561198158401468","76561198031882581","76561198797637510","76561198028642626","76561198032117464","76561198162071931","76561198039989054","76561198125742879","76561198036601046","76561198040779921","76561198058288121","76561198113376176","76561198039503730","76561198049224040"],"gamesowned":[{"appid":250820,"playtime_forever":73763},{"appid":359320,"playtime_forever":22092},{"appid":215280,"playtime_forever":20434},{"appid":388080,"playtime_forever":20010},{"appid":275850,"playtime_forever":15741},{"appid":49520,"playtime_forever":14396},{"appid":294100,"playtime_forever":14108},{"appid":268500,"playtime_forever":11509},{"appid":892970,"playtime_forever":10686},{"appid":373420,"playtime_forever":9776},{"appid":200510,"playtime_forever":9581},{"appid":698640,"playtime_forever":9576},{"appid":47540,"playtime_forever":9454},{"appid":239140,"playtime_forever":9046},{"appid":22320,"playtime_forever":9016},{"appid":339850,"playtime_forever":8682},{"appid":291650,"playtime_forever":8669},{"appid":435150,"playtime_forever":8479},{"appid":219990,"playtime_forever":7247},{"appid":233270,"playtime_forever":6978},{"appid":72850,"playtime_forever":6408},{"appid":113200,"playtime_forever":5667},{"appid":212680,"playtime_forever":5432},{"appid":461840,"playtime_forever":5399},{"appid":646570,"playtime_forever":5369},{"appid":205710,"playtime_forever":4872},{"appid":1174180,"playtime_forever":4771},{"appid":489830,"playtime_forever":4766},{"appid":751780,"playtime_forever":4093},{"appid":370360,"playtime_forever":4021},{"appid":1070710,"playtime_forever":3917},{"appid":228280,"playtime_forever":3744},{"appid":476460,"playtime_forever":3645},{"appid":396750,"playtime_forever":3630},{"appid":379720,"playtime_forever":3572},{"appid":251730,"playtime_forever":3462},{"appid":300550,"playtime_forever":3460},{"appid":391540,"playtime_forever":3327},{"appid":893680,"playtime_forever":3257},{"appid":400430,"playtime_forever":3244}],"insertiontime":1647116027}],"totalnetworkspan":310,"timestarted":1647117008}`)
+
+    fillInStatBoxes(shortestDistanceInfo)
+    fillInShortestPathMenu(shortestDistanceInfo)
+    initEchartsGraph(shortestDistanceInfo)
+    fillInIndivCrawlDataBoxes(shortestDistanceInfo, "indivCrawlData")
+
+    initLinkForInteractiveGraphPage()
+
+    function fillInStatBoxes(shortestDistanceInfo) {
+        document.getElementById("networkSpan").textContent = shortestDistanceInfo.totalnetworkspan
+        document.getElementById("spanLength").textContent = shortestDistanceInfo.shortestdistance.length
+        document.getElementById("shortestPathCountrySpan").textContent = countUniqueCountriesInShortestPath(shortestDistanceInfo.shortestdistance)
+        document.getElementById("totalDistanceTravelled").textContent = getTotalDistanceTravelled(shortestDistanceInfo.shortestdistance)
+    }
+
+    function countUniqueCountriesInShortestPath(shortestdistancePath) {
+        return new Set(getAllCountriesInShortestPath(shortestdistancePath)).size
+    }
+
+    function getTotalDistanceTravelled(shortestDistancePath) {
+        const countryCodeToCoords={"AD":{"latitude":42.546245,"longitude":1.601554},"AE":{"latitude":23.424076,"longitude":53.847818},"AF":{"latitude":33.93911,"longitude":67.709953},"AG":{"latitude":17.060816,"longitude":-61.796428},"AI":{"latitude":18.220554,"longitude":-63.068615},"AL":{"latitude":41.153332,"longitude":20.168331},"AM":{"latitude":40.069099,"longitude":45.038189},"AN":{"latitude":12.226079,"longitude":-69.060087},"AO":{"latitude":-11.202692,"longitude":17.873887},"AQ":{"latitude":-75.250973,"longitude":-.071389},"AR":{"latitude":-38.416097,"longitude":-63.616672},"AS":{"latitude":-14.270972,"longitude":-170.132217},"AT":{"latitude":47.516231,"longitude":14.550072},"AU":{"latitude":-25.274398,"longitude":133.775136},"AW":{"latitude":12.52111,"longitude":-69.968338},"AZ":{"latitude":40.143105,"longitude":47.576927},"BA":{"latitude":43.915886,"longitude":17.679076},"BB":{"latitude":13.193887,"longitude":-59.543198},"BD":{"latitude":23.684994,"longitude":90.356331},"BE":{"latitude":50.503887,"longitude":4.469936},"BF":{"latitude":12.238333,"longitude":-1.561593},"BG":{"latitude":42.733883,"longitude":25.48583},"BH":{"latitude":25.930414,"longitude":50.637772},"BI":{"latitude":-3.373056,"longitude":29.918886},"BJ":{"latitude":9.30769,"longitude":2.315834},"BM":{"latitude":32.321384,"longitude":-64.75737},"BN":{"latitude":4.535277,"longitude":114.727669},"BO":{"latitude":-16.290154,"longitude":-63.588653},"BR":{"latitude":-14.235004,"longitude":-51.92528},"BS":{"latitude":25.03428,"longitude":-77.39628},"BT":{"latitude":27.514162,"longitude":90.433601},"BV":{"latitude":-54.423199,"longitude":3.413194},"BW":{"latitude":-22.328474,"longitude":24.684866},"BY":{"latitude":53.709807,"longitude":27.953389},"BZ":{"latitude":17.189877,"longitude":-88.49765},"CA":{"latitude":56.130366,"longitude":-106.346771},"CC":{"latitude":-12.164165,"longitude":96.870956},"CC":{"latitude":-12.164165,"longitude":96.870956},"CD":{"latitude":-4.038333,"longitude":21.758664},"CF":{"latitude":6.611111,"longitude":20.939444},"CG":{"latitude":-.228021,"longitude":15.827659},"CH":{"latitude":46.818188,"longitude":8.227512},"CI":{"latitude":7.539989,"longitude":-5.54708},"CK":{"latitude":-21.236736,"longitude":-159.777671},"CL":{"latitude":-35.675147,"longitude":-71.542969},"CM":{"latitude":7.369722,"longitude":12.354722},"CN":{"latitude":35.86166,"longitude":104.195397},"CO":{"latitude":4.570868,"longitude":-74.297333},"CR":{"latitude":9.748917,"longitude":-83.753428},"CU":{"latitude":21.521757,"longitude":-77.781167},"CV":{"latitude":16.002082,"longitude":-24.013197},"CX":{"latitude":-10.447525,"longitude":105.690449},"CY":{"latitude":35.126413,"longitude":33.429859},"CZ":{"latitude":49.817492,"longitude":15.472962},"DE":{"latitude":51.165691,"longitude":10.451526},"DJ":{"latitude":11.825138,"longitude":42.590275},"DJ":{"latitude":11.825138,"longitude":42.590275},"DK":{"latitude":56.26392,"longitude":9.501785},"DM":{"latitude":15.414999,"longitude":-61.370976},"DO":{"latitude":18.735693,"longitude":-70.162651},"DZ":{"latitude":28.033886,"longitude":1.659626},"EC":{"latitude":-1.831239,"longitude":-78.183406},"EE":{"latitude":58.595272,"longitude":25.013607},"EG":{"latitude":26.820553,"longitude":30.802498},"EH":{"latitude":24.215527,"longitude":-12.885834},"ER":{"latitude":15.179384,"longitude":39.782334},"ES":{"latitude":40.463667,"longitude":-3.74922},"ET":{"latitude":9.145,"longitude":40.489673},"FI":{"latitude":61.92411,"longitude":25.748151},"FJ":{"latitude":-16.578193,"longitude":179.414413},"FK":{"latitude":-51.796253,"longitude":-59.523613},"FM":{"latitude":7.425554,"longitude":150.550812},"FO":{"latitude":61.892635,"longitude":-6.911806},"FR":{"latitude":46.227638,"longitude":2.213749},"GA":{"latitude":-.803689,"longitude":11.609444},"GB":{"latitude":55.378051,"longitude":-3.435973},"GD":{"latitude":12.262776,"longitude":-61.604171},"GE":{"latitude":42.315407,"longitude":43.356892},"GF":{"latitude":3.933889,"longitude":-53.125782},"GG":{"latitude":49.465691,"longitude":-2.585278},"GH":{"latitude":7.946527,"longitude":-1.023194},"GI":{"latitude":36.137741,"longitude":-5.345374},"GL":{"latitude":71.706936,"longitude":-42.604303},"GM":{"latitude":13.443182,"longitude":-15.310139},"GN":{"latitude":9.945587,"longitude":-9.696645},"GP":{"latitude":16.995971,"longitude":-62.067641},"GQ":{"latitude":1.650801,"longitude":10.267895},"GR":{"latitude":39.074208,"longitude":21.824312},"GS":{"latitude":-54.429579,"longitude":-36.587909},"GT":{"latitude":15.783471,"longitude":-90.230759},"GU":{"latitude":13.444304,"longitude":144.793731},"GW":{"latitude":11.803749,"longitude":-15.180413},"GY":{"latitude":4.860416,"longitude":-58.93018},"GZ":{"latitude":31.354676,"longitude":34.308825},"HK":{"latitude":22.396428,"longitude":114.109497},"HM":{"latitude":-53.08181,"longitude":73.504158},"HN":{"latitude":15.199999,"longitude":-86.241905},"HR":{"latitude":45.1,"longitude":15.2},"HT":{"latitude":18.971187,"longitude":-72.285215},"HU":{"latitude":47.162494,"longitude":19.503304},"ID":{"latitude":-.789275,"longitude":113.921327},"IE":{"latitude":53.41291,"longitude":-8.24389},"IL":{"latitude":31.046051,"longitude":34.851612},"IM":{"latitude":54.236107,"longitude":-4.548056},"IN":{"latitude":20.593684,"longitude":78.96288},"IO":{"latitude":-6.343194,"longitude":71.876519},"IQ":{"latitude":33.223191,"longitude":43.679291},"IR":{"latitude":32.427908,"longitude":53.688046},"IS":{"latitude":64.963051,"longitude":-19.020835},"IT":{"latitude":41.87194,"longitude":12.56738},"JE":{"latitude":49.214439,"longitude":-2.13125},"JM":{"latitude":18.109581,"longitude":-77.297508},"JO":{"latitude":30.585164,"longitude":36.238414},"JP":{"latitude":36.204824,"longitude":138.252924},"KE":{"latitude":-.023559,"longitude":37.906193},"KG":{"latitude":41.20438,"longitude":74.766098},"KH":{"latitude":12.565679,"longitude":104.990963},"KI":{"latitude":-3.370417,"longitude":-168.734039},"KM":{"latitude":-11.875001,"longitude":43.872219},"KN":{"latitude":17.357822,"longitude":-62.782998},"KP":{"latitude":40.339852,"longitude":127.510093},"KR":{"latitude":35.907757,"longitude":127.766922},"KW":{"latitude":29.31166,"longitude":47.481766},"KY":{"latitude":19.513469,"longitude":-80.566956},"KZ":{"latitude":48.019573,"longitude":66.923684},"LA":{"latitude":19.85627,"longitude":102.495496},"LB":{"latitude":33.854721,"longitude":35.862285},"LC":{"latitude":13.909444,"longitude":-60.978893},"LI":{"latitude":47.166,"longitude":9.555373},"LK":{"latitude":7.873054,"longitude":80.771797},"LR":{"latitude":6.428055,"longitude":-9.429499},"LS":{"latitude":-29.609988,"longitude":28.233608},"LT":{"latitude":55.169438,"longitude":23.881275},"LU":{"latitude":49.815273,"longitude":6.129583},"LV":{"latitude":56.879635,"longitude":24.603189},"LY":{"latitude":26.3351,"longitude":17.228331},"MA":{"latitude":31.791702,"longitude":-7.09262},"MC":{"latitude":43.750298,"longitude":7.412841},"MD":{"latitude":47.411631,"longitude":28.369885},"ME":{"latitude":42.708678,"longitude":19.37439},"MG":{"latitude":-18.766947,"longitude":46.869107},"MH":{"latitude":7.131474,"longitude":171.184478},"MK":{"latitude":41.608635,"longitude":21.745275},"ML":{"latitude":17.570692,"longitude":-3.996166},"MM":{"latitude":21.913965,"longitude":95.956223},"MN":{"latitude":46.862496,"longitude":103.846656},"MO":{"latitude":22.198745,"longitude":113.543873},"MP":{"latitude":17.33083,"longitude":145.38469},"MQ":{"latitude":14.641528,"longitude":-61.024174},"MR":{"latitude":21.00789,"longitude":-10.940835},"MS":{"latitude":16.742498,"longitude":-62.187366},"MT":{"latitude":35.937496,"longitude":14.375416},"MU":{"latitude":-20.348404,"longitude":57.552152},"MV":{"latitude":3.202778,"longitude":73.22068},"MW":{"latitude":-13.254308,"longitude":34.301525},"MX":{"latitude":23.634501,"longitude":-102.552784},"MY":{"latitude":4.210484,"longitude":101.975766},"MZ":{"latitude":-18.665695,"longitude":35.529562},"NA":{"latitude":-22.95764,"longitude":18.49041},"NC":{"latitude":-20.904305,"longitude":165.618042},"NE":{"latitude":17.607789,"longitude":8.081666},"NF":{"latitude":-29.040835,"longitude":167.954712},"NG":{"latitude":9.081999,"longitude":8.675277},"NI":{"latitude":12.865416,"longitude":-85.207229},"NL":{"latitude":52.132633,"longitude":5.291266},"NO":{"latitude":60.472024,"longitude":8.468946},"NP":{"latitude":28.394857,"longitude":84.124008},"NR":{"latitude":-.522778,"longitude":166.931503},"NU":{"latitude":-19.054445,"longitude":-169.867233},"NZ":{"latitude":-40.900557,"longitude":174.885971},"OM":{"latitude":21.512583,"longitude":55.923255},"PA":{"latitude":8.537981,"longitude":-80.782127},"PE":{"latitude":-9.189967,"longitude":-75.015152},"PF":{"latitude":-17.679742,"longitude":-149.406843},"PG":{"latitude":-6.314993,"longitude":143.95555},"PH":{"latitude":12.879721,"longitude":121.774017},"PK":{"latitude":30.375321,"longitude":69.345116},"PL":{"latitude":51.919438,"longitude":19.145136},"PM":{"latitude":46.941936,"longitude":-56.27111},"PN":{"latitude":-24.703615,"longitude":-127.439308},"PR":{"latitude":18.220833,"longitude":-66.590149},"PS":{"latitude":31.952162,"longitude":35.233154},"PT":{"latitude":39.399872,"longitude":-8.224454},"PW":{"latitude":7.51498,"longitude":134.58252},"PY":{"latitude":-23.442503,"longitude":-58.443832},"QA":{"latitude":25.354826,"longitude":51.183884},"RE":{"latitude":-21.115141,"longitude":55.536384},"RO":{"latitude":45.943161,"longitude":24.96676},"RS":{"latitude":44.016521,"longitude":21.005859},"RU":{"latitude":61.52401,"longitude":105.31875},"RW":{"latitude":-1.940278,"longitude":29.873888},"SA":{"latitude":23.885942,"longitude":45.079162},"SB":{"latitude":-9.64571,"longitude":160.156194},"SC":{"latitude":-4.679574,"longitude":55.491977},"SD":{"latitude":12.862807,"longitude":30.217636},"SE":{"latitude":60.128161,"longitude":18.643501},"SG":{"latitude":1.352083,"longitude":103.819836},"SH":{"latitude":-24.143474,"longitude":-10.030696},"SI":{"latitude":46.151241,"longitude":14.995463},"SJ":{"latitude":77.553604,"longitude":23.670272},"SK":{"latitude":48.669026,"longitude":19.699024},"SL":{"latitude":8.460555,"longitude":-11.779889},"SM":{"latitude":43.94236,"longitude":12.457777},"SN":{"latitude":14.497401,"longitude":-14.452362},"SO":{"latitude":5.152149,"longitude":46.199616},"SR":{"latitude":3.919305,"longitude":-56.027783},"ST":{"latitude":.18636,"longitude":6.613081},"SV":{"latitude":13.794185,"longitude":-88.89653},"SY":{"latitude":34.802075,"longitude":38.996815},"SZ":{"latitude":-26.522503,"longitude":31.465866},"TC":{"latitude":21.694025,"longitude":-71.797928},"TD":{"latitude":15.454166,"longitude":18.732207},"TF":{"latitude":-49.280366,"longitude":69.348557},"TG":{"latitude":8.619543,"longitude":.824782},"TH":{"latitude":15.870032,"longitude":100.992541},"TJ":{"latitude":38.861034,"longitude":71.276093},"TJ":{"latitude":38.861034,"longitude":71.276093},"TK":{"latitude":-8.967363,"longitude":-171.855881},"TL":{"latitude":-8.874217,"longitude":125.727539},"TM":{"latitude":38.969719,"longitude":59.556278},"TN":{"latitude":33.886917,"longitude":9.537499},"TO":{"latitude":-21.178986,"longitude":-175.198242},"TR":{"latitude":38.963745,"longitude":35.243322},"TT":{"latitude":10.691803,"longitude":-61.222503},"TV":{"latitude":-7.109535,"longitude":177.64933},"TW":{"latitude":23.69781,"longitude":120.960515},"TZ":{"latitude":-6.369028,"longitude":34.888822},"UA":{"latitude":48.379433,"longitude":31.16558},"UG":{"latitude":1.373333,"longitude":32.290275},"US":{"latitude":37.09024,"longitude":-95.712891},"UY":{"latitude":-32.522779,"longitude":-55.765835},"UZ":{"latitude":41.377491,"longitude":64.585262},"VA":{"latitude":41.902916,"longitude":12.453389},"VC":{"latitude":12.984305,"longitude":-61.287228},"VE":{"latitude":6.42375,"longitude":-66.58973},"VG":{"latitude":18.420695,"longitude":-64.639968},"VI":{"latitude":18.335765,"longitude":-64.896335},"VN":{"latitude":14.058324,"longitude":108.277199},"VU":{"latitude":-15.376706,"longitude":166.959158},"WF":{"latitude":-13.768752,"longitude":-177.156097},"WS":{"latitude":-13.759029,"longitude":-172.104629},"XK":{"latitude":42.602636,"longitude":20.902977},"YE":{"latitude":15.552727,"longitude":48.51638},"YT":{"latitude":-12.8275,"longitude":45.166244},"ZA":{"latitude":-30.559482,"longitude":22.937506},"ZM":{"latitude":-13.133897,"longitude":27.849332},"ZW":{"latitude":-19.015438,"longitude":29.154857}}
+        const countries = getAllCountriesInShortestPath(shortestDistancePath)
+        let totalDistance = 0
+        for (let i = 0; i < countries.length - 1; i++) {
+            let firstCountryCoords = countryCodeToCoords[countries[i].toUpperCase()]
+            let secondCountryCoords = countryCodeToCoords[countries[i+1].toUpperCase()]
+            const diff = totalDistance += getDistanceBetweenCoordsInKM(firstCountryCoords, secondCountryCoords)
+            totalDistance += diff
+        }
+        return Math.floor(totalDistance) + `km`
+    }
+
+    function fillInShortestPathMenu(shortestDistanceInfo) {
+        document.getElementById("firstUserUsername").textContent = shortestDistanceInfo.firstuser.accdetails.personaname
+        document.getElementById("secondUserUsername").textContent = shortestDistanceInfo.seconduser.accdetails.personaname
+        shortestDistanceInfo.shortestdistance.forEach(user => {
+
+        let fullResProfiler = user.accdetails.avatar.split(".jpg").join("") + "_full.jpg";
+        const creationDate = new Date(user.accdetails.timecreated*1000);
+        const dateString = `${creationDate.getDate()} ${creationDate.toLocaleString('default', { month: 'long' })} ${creationDate.getFullYear()}`;
+        const timeSinceString = `(${timeSinceShort(creationDate)})`
+
+        document.getElementById("shortestPathDiv").innerHTML += `
+        <div class="row pl-3 pr-3 mt-4">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="text-center">
+                                <a href="${user.accdetails.profileurl}">
+                                    <img class="mr-1 skeleton" style="border-radius: 10px; height: 10rem; width: 10rem" src="${fullResProfiler}"></img>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row m-0">
+                                <p class="truncate mb-0" style="font-size: 3rem; font-weight: 500;">
+                                    ${user.accdetails.personaname}
+                                </p>
+                            </div>
+                            <div class="row m-0 mt-0">
+                                <p class="mb-0">
+                                    ${user.friendids.length} friends
+                                </p>
+                            </div>
+                            <div class="row m-0">
+                                <p class="mb-0">
+                                    From ${getFlagEmoji(user.accdetails.loccountrycode)}
+                                </p>
+                            </div>
+                            <div class="row m-0">
+                                <p class="mb-0">
+                                    Created: ${dateString} ${timeSinceString}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `;
+        });
+    }
+
+    function initLinkForInteractiveGraphPage() {
+        document.getElementById("interactiveGraphLink").href = `../interactivegraph/${crawlIDs[0]}and${crawlIDs[1]}.html`
+        return
+    }
+
+    function getAllCountriesInShortestPath(shortestDistancePath) {
+        let countries = []
+        shortestDistancePath.forEach(user => {
+            if (user.accdetails.loccountrycode != "") {
+                countries.push(user.accdetails.loccountrycode)
+            }
+        })
+        return countries
+    }
+
+    // COMMON
+    function timeSinceShort(targetDate) {
+        let seconds = Math.floor((new Date()-targetDate)/1000)
+        let interval = seconds / 31536000 
+        if (interval > 1) {
+            return Math.floor(interval) + " years";
+        }
+        interval = seconds / 2592000; // months
+        if (interval > 1) {
+            return Math.floor(interval) + " months";
+        }
+        interval = seconds / 86400; // days
+        if (interval > 1) {
+        return Math.floor(interval) + "d ago";
+        }
+        interval = seconds / 3600;
+        if (interval > 1) {
+        return Math.floor(interval) + "h ago";
+        }
+        interval = seconds / 60;
+        if (interval > 1) {
+        return Math.floor(interval) + "m ago";
+        }
+        return Math.floor(seconds) + "s";
+    }
+
+    function getShortestDistance(bothCrawlIDs) {
+        return new Promise((resolve, reject) => {
+            fetch(`http://localhost:2590/api/getshortestdistanceinfo`, {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({"crawlids":bothCrawlIDs})
+            }).then((res => res.json()))
+            .then(data => {
+                if (data.error) {
+                    reject(data)
+                }
+                resolve(data.shortestdistanceinfo)
+            }).catch(err => {
+                console.error(err);
+            })
+        })
+    }
+
+
+    function getCrawlIDsFromShortestDistanceURL() {
+        const queryParams = new URLSearchParams(window.location.search);
+        const firstCrawlID = queryParams.get("firstcrawlid")
+        const secondCrawlID = queryParams.get("secondcrawlid")
+
+        return [firstCrawlID, secondCrawlID]
+    }
+
+    function initEchartsGraph(shortestDistanceData) {
+        let myChart = echarts.init(document.getElementById('graphContainer'));
+        let nodes = []
+        let links = []
+
+        shortestDistanceData.shortestdistance.forEach(user => {
+            nodes.push({
+                "id": user.accdetails.steamid,
+                "name": user.accdetails.personaname,
+                "value": user.accdetails.profileurl,
+                "symbol": `image://${user.accdetails.avatar}`
+            });
+        });
+        
+        for (let i = 0; i < shortestDistanceData.shortestdistance.length - 1; i++) {
+            links.push({
+                "source": shortestDistanceData.shortestdistance[i].accdetails.steamid,
+                "target": shortestDistanceData.shortestdistance[i+1].accdetails.steamid
+            })
+        }
+
+        var option;
+        myChart.showLoading();
+        myChart.hideLoading()
+        nodes.forEach(function (node) {
+            node.symbolSize = 80;
+        });
+        option = {
+            title: {
+                text: 'Your friend network',
+                subtext: 'Default layout',
+                top: 'bottom',
+                left: 'right',
+                textStyle: {
+                    color: '#ffffff'
+                }
+            },
+
+            tooltip: {
+                show: true,
+                showContent: true,
+                triggerOn: 'click',
+                enterable: true,
+                renderMode: 'html',
+                formatter: function(params, ticket, callback) {
+                    return `<div>
+                                <p style="font-weight: bold; color: black" class="tooltipText">${params["name"]}:</p> 
+                                <a href="${params["data"].value}" target="_blank">
+                                    <button class="tooltipButton" style="color: black; background-color: #27b8f0;">Profile</button>
+                                </a>
+                            </div>`
+                }
+            },
+            legend: [
+            {
+                show: true,
+                left: 'left',
+                textStyle: {
+                    color: '#ffffff'
+                }
+            }
+            ],
+            series: [
+            {
+                name: 'Friend Network',
+                type: 'graph',
+                layout: 'force',
+                data: nodes,
+                links: links,
+                // categories: graph.categories,
+                roam: true,
+                draggable: true,
+                label: {
+                    position: 'right'
+                },
+                force: {
+                    gravity: 0.2,
+                    repulsion: 5500,
+                    friction: 0.2,
+                }
+            }
+            ]
+        };
+        myChart.setOption(option);
+        option && myChart.setOption(option);
+    }
+
+    // COMMON
+    // https://dev.to/jorik/country-code-to-flag-emoji-a21
+    function getFlagEmoji(countryCode) {
+        const codePoints = countryCode
+        .toUpperCase()
+        .split('')
+        .map(char =>  127397 + char.charCodeAt());
+        return String.fromCodePoint(...codePoints);
+    }
+
+    function fillInIndivCrawlDataBoxes(shortestDistanceInfo, id) {
+        document.getElementById(id).innerHTML += `
+        <div class="col-5">
+            <a href="../graph/${shortestDistanceInfo.crawlids[0]}.html">
+                <div class="row pt-2 pb-2" style="border-radius: 5px">
+                    <div class="col-2">
+                        <img src="${shortestDistanceInfo.firstuser.accdetails.avatar}">
+                    </div>
+                    <div class="col">
+                        <p style="font-weight: 500; font-size: 1.4rem" class="mb-0">${shortestDistanceInfo.firstuser.accdetails.personaname}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        `
+
+        document.getElementById(id).innerHTML += `
+        <div class="col-5 ml-4">
+            <a href="../graph/${shortestDistanceInfo.crawlids[1]}.html">
+                <div class="row pt-2 pb-2" style="border-radius: 5px">
+                    <div class="col-2">
+                        <img src="${shortestDistanceInfo.seconduser.accdetails.avatar}">
+                    </div>
+                    <div class="col">
+                        <p style="font-weight: 500; font-size: 1.4rem" class="mb-0">${shortestDistanceInfo.seconduser.accdetails.personaname}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        `
+    }
+
+    function fillInNoPathInfoText(shortestDistanceInfo) {
+        document.getElementById("noPathInfoText").textContent = `After crawling ${shortestDistanceInfo.totalnetworkspan} users no path between ${shortestDistanceInfo.firstuser.accdetails.personaname}
+            and ${shortestDistanceInfo.seconduser.accdetails.personaname} could be found at this level`
+    }
+
+    function getDistanceBetweenCoordsInKM(firstCoord, secondCoord) {
+        const radius = 6371 
+        const latitudeDiff = toRadians(secondCoord.latitude - firstCoord.latitude)
+        const longitudeDiff = toRadians(secondCoord.longitude - firstCoord.longitude)
+        let firstCoordLatitude = toRadians(firstCoord.latitude)
+        let secondCoordLatitude = toRadians(secondCoord.latitude)
+
+        let a = Math.sin(latitudeDiff/2) * Math.sin(latitudeDiff/2) + Math.sin(longitudeDiff/2) * Math.sin(longitudeDiff/2) * 
+            Math.cos(firstCoordLatitude) * Math.cos(secondCoordLatitude)
+        let distance = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a))
+        return radius * distance
+    }
+
+    function toRadians(degrees) {
+        return degrees * Math.PI / 180;
+    }
+
+
+    </script>
+
+</body>
+</html>

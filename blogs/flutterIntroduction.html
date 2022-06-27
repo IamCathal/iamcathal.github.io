@@ -1,0 +1,142 @@
+<html>
+<html lang="en"></html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="../static/stylesheets/stylesheet.css" rel="stylesheet" type="text/css">
+    <link href="../static/stylesheets/blogstylesheet.css" rel="stylesheet" type="text/css">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="../static/favicons/apple-icon-57x57.webp">
+    <link rel="apple-touch-icon" sizes="60x60" href="../static/favicons/apple-icon-60x60.webp">
+    <link rel="apple-touch-icon" sizes="72x72" href="../static/favicons/apple-icon-72x72.webp">
+    <link rel="apple-touch-icon" sizes="76x76" href="../static/favicons/apple-icon-76x76.webp">
+    <link rel="apple-touch-icon" sizes="114x114" href="../static/favicons/apple-icon-114x114.webp">
+    <link rel="apple-touch-icon" sizes="120x120" href="../static/favicons/apple-icon-120x120.webp">
+    <link rel="apple-touch-icon" sizes="144x144" href="../static/favicons/apple-icon-144x144.webp">
+    <link rel="apple-touch-icon" sizes="152x152" href="../static/favicons/apple-icon-152x152.webp">
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/favicons/apple-icon-180x180.webp">
+    <link rel="icon" type="image/png" sizes="192x192" href="../static/favicons/android-icon-192x192.webp">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/favicons/favicon-32x32.webp">
+    <link rel="icon" type="image/png" sizes="96x96" href="../static/favicons/favicon-96x96.webp">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/favicons/favicon-16x16.webp">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/ms-icon-144x144.webp">
+    <meta name="theme-color" content="#ffffff">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+    <!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.helper.ie8.js"></script><![endif]-->
+
+    <meta property="og:image" content="https://avatars0.githubusercontent.com/u/6561327?s=460&v=4" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cathaloc.dev" />
+    <meta property="og:title" content="Cathal O'Callaghan, Final year CS&IT NUIG" />
+    <meta property="og:description" content="Personal website showcasing all of my past projects. Designed 100% by me" />
+
+    <title>Cathal O'Callaghan</title>
+
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col">
+                <div tabindex="1" class="col boxWithBorder pl-3" style="border-top-left-radius: 2rem; border-bottom-right-radius: 2rem;">
+                    <div class="row justify-content-md-center pl-3 pr-3">
+                        <h1 tabindex="1" style="font-weight: bold; font-size: 2.7rem;">My Introduction To Flutter</h1>
+                     </div>
+
+                     <div class="row mt-2 mb-2">
+                         <div class="col text-center">
+                             <img src="https://i.imgur.com/oQHlrvD.png" style="width: 70%">
+                         </div>
+                     </div>
+    
+                   
+                     <div class="row pt-3">
+                        <div class="col pl-5 pr-5">
+                            <span style="font-weight: bold;">TLDR: </span> This is just a little synopsis based on my
+                            experience using flutter to make my first app. The app is a simple GUI for a data monitoring
+                            API that I had previously developed.
+
+                            <br /><br />
+                            Before I had thought about flutter and how amazing it is I had gone head first into React with a huge 
+                            amount of work to do for a group project and little time to do it. I learnt quite a lot about how to 
+                            use React and slap together things found in online examples but I never really understood some of the 
+                            core mechanics and I definitely had no idea about state management.
+
+                            Instead of continuing with React I wanted to give flutter a go. The main advantage of write once and 
+                            deploy to android and ios was a huge incentive for me. Apart from my minimal React experience I had 
+                            done no mobile app development and I thought it'd be interesting to dive into that side of software 
+                            development since the type of design challenges are very different to what I had previously done.
+
+                            <br /><br />
+                            This app acts as a dashboard for myself to monitor various things that I usually monitor through 
+                            terminals on my desktop. The first thing I wanted to monitor was the list of people currently 
+                            hosting web apps on the NUIG college server (danu7). I already had a script to do this but it 
+                            was just a simple golang script with cli interface and was obviously inaccessible from anywhere 
+                            other than the terminal. Also running on danu7 was my <a href="https://github.com/IamCathal/NewsWebsiteScraping"> news article web scraping script.</a>
+
+                            I had this running on a cronjob daily for a good few months now and I'd occasionally check it 
+                            when I remembered every few days to make sure that the error log wasn't full of error messages 
+                            and that the most recent articles were saving correctly. After quickly throwing together a quick 
+                            and simple golang API I had the data that I wanted to monitor and the means to access it through 
+                            HTTP requests in an app and was ready to dive right into flutter.
+
+                            <br /><br />
+                            
+                            After finding <a href="https://www.youtube.com/watch?v=h-igXZCCrrc"> a nice UI tutorial </a> on youtube I had the design but functionality behind it. The work 
+                            that I had done with React involved a lot of making requests to get data to then build components 
+                            with so the basic idea behind using the ListView in flutter was no stranger to me.
+
+                            <div class="codeDiv">
+                                <script src="https://gist.github.com/IamCathal/692974866e7a9ad5b2c2b6b474207b1c.js"></script>
+                            </div>
+
+                            As you can see retrieving the data from the API is very simple and I never had any trouble with it. 
+                            The json.decode() does most of the heavy lifting in converting the JSON response into a List which is 
+                            usable in flutter.
+
+                            <br /><br />
+                            <div class="row">
+                                <div class="col text-center">
+                                    <img src="https://i.imgur.com/hhoQglY.png" style="width:35%">
+                                </div>
+                            </div>
+                            <br /><br />
+                            However when writing the logic behind the screen selector I ran into a situation where a good state management 
+                            solution was needed. As shown above in the rough diagram of my widget tree I had the selected screen being 
+                            kept in the stateful screen selector widget. This was fine if no other widget needed to access this but 
+                            this isn't the case. The content of the current screen is based off which one of these three options is 
+                            selected. Therefore I needed a way to efficiently share this variable to the the current page widget which 
+                            then rendered the correct content. 
+
+                            <br /><br />
+                            In the end I went with <a href="https://pub.dev/packages/provider"> provider</a>. It gives a simple and intuitive solution to state management. At the 
+                            root of my widget tree I set the widget as a ChangeNotifierProvider of type CategoryProvider which is 
+                            it's own class that notifiers any registered listeners when the user selects a different page to load. 
+                            This is minimal and lightweight as only the registered listeners act when they are notified of a change 
+                            and avoids the hell that is trying to share states between items in the widget tree by passing the state 
+                            variables up and down to reach where they're needed.
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

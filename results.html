@@ -535,11 +535,10 @@ Page generated on: <span id="generatedOn"></span>
 </p>
 
 <script>
-    // Tuesday, 21/06/2022 at: 17:05
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     const now = new Date();
-
-    document.getElementById("generatedOn").textContent = `${days[now.getDay()]}, ${now.getDate()}/${now.getMonth()+1}/${now.getFullYear()} at: ${now.getHours()}:${now.getMinutes()}`
+    const minsString = now.getMinutes() < 10 ? `0${now.getMinutes()}` : now.getMinutes();
+    document.getElementById("generatedOn").textContent = `${days[now.getDay()]}, ${now.getDate()}/${now.getMonth()+1}/${now.getFullYear()} at: ${now.getHours()}:${minsString}`
 </script>
 
 

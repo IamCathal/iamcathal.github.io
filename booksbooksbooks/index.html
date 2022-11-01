@@ -1,0 +1,3726 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/stylesheets/main.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <title>BooksBooksBooks</title>
+</head>
+
+<body class="vsc-initialized">
+    <div class="container mt-4">
+        <div class="row justify-content-md-center  pt-1 pb-1">
+            <a href="http://localhost:2945/">
+                <div class="col mr-2 text-center linkBox" id="availableLinkBox" style="border: 2px solid rgb(192, 192, 192);">
+                    Shelf
+                </div>
+            </a>
+            <a href="http://localhost:2945/available">
+                <div class="col ml-2 text-center linkBox" id="shelfLinkBox" style="border: 2px solid rgb(192, 192, 192); border-top-right-radius: 0.8rem; border-bottom-right-radius: 0.8rem;">
+                    Available
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="container mt-4 swankyBorders" style="border: 2px solid #c0c0c0">
+        <div class="row">
+            <div class="col">
+                <div class="col pl-3 pb-5" style="border-top-left-radius: 2rem; border-bottom-right-radius: 2rem;">
+                    <div class="row justify-content-md-center pl-3 pr-3 pt-2 pb-3">
+                        <input type="text" id="mainInputBox" value="https://www.goodreads.com/review/list/151819645-cathal?ref=nav_mybooks&amp;shelf=read">
+                     </div>
+                     <div class="row justify-content-md-center" id="recentCrawlButtons">
+
+                     
+                <a href="." class="mr-2">
+                    <div class="col text-center recentCrawlBox" style="border-top-right-radius: 0.5rem;border-bottom-right-radius: 0.5rem; border: 2px solid #c0c0c0; font-size: 0.8rem" data-shelfurl="https://www.goodreads.com/review/list/151819645-cathal?ref=nav_mybooks&amp;shelf=read"> 
+                        cathal-read 
+                    </div>
+                </a>
+            </div>
+                     <div class="row pl-3 pr-3">
+                         <div class="col text-center" id="crawlInfoBox" style="display: inline;">
+                             <div class="row justify-content-md-center pt-2 pb-2">
+                                <div class="col crawlInfoCol" style="border-bottom-left-radius: 0.6rem;">
+                                    <div class="row justify-content-md-center" style="font-size: 0.8rem">
+                                        GoodReads books found
+                                    </div>     
+                                    <div class="row justify-content-md-center bold" style="font-size: 2rem" id="statsBookFound">36</div>     
+                                </div>
+                                <div class="col crawlInfoCol" style="border-bottom-left-radius: 0.6rem;">
+                                    <div class="row justify-content-md-center" style="font-size: 0.8rem">
+                                        GoodReads books crawled
+                                    </div>     
+                                    <div class="row justify-content-md-center bold" style="font-size: 2rem" id="statsBooksCrawled">36</div>          
+                                </div>
+                                <div class="col crawlInfoCol" style="">
+                                    <div class="row justify-content-md-center" style="font-size: 0.8rem">
+                                        TheBookshop books searched
+                                    </div>     
+                                    <div class="row justify-content-md-center bold" style="font-size: 2rem" id="statsBooksSearched">36</div>         
+                                </div>
+                                <div class="col crawlInfoCol" style="border-bottom-right-radius: 0.6rem; border-top-left-radius: 0.6rem; border-bottom-left-radius: 0.6rem;">
+                                    <div class="row justify-content-md-center" style="font-size: 0.8rem">
+                                        TheBookshop matches found
+                                    </div>     
+                                    <div class="row justify-content-md-center bold" style="font-size: 2rem" id="statsBookMatchesFound">26</div>         
+                                </div>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="row crawlProgressBar mt-2 mb-2" id="crawlProgressDiv" style="background-color: rgb(225, 228, 232); display: none;">
+                        <span class="crawlProgressBarSpan" id="crawlProgressBarSpanID" style="width: 100%;"></span>
+                    </div>
+                    <div class="row pt-2 pb-2 justify-content-md-center" id="orderingButtons" style="display: flex;">
+                        <div class="col-2 mr-2 text-center toggleBox" id="naturalOrderToggle" style="border-bottom-right-radius: 0.6rem; border-top-left-radius: 0.6rem;">
+                            Natural Order
+                        </div>
+                        <div class="col-2 mr-2 text-center toggleBox" id="titleMatchOrderToggle" style="border-bottom-left-radius: 0.6rem;">
+                            Most Title Matches
+                        </div>
+                        <div class="col-2 mr-2 text-center toggleBox" id="authorMatchOrderToggle" style="border-bottom-right-radius: 0.6rem; border-top-left-radius: 0.6rem; border-bottom-left-radius: 0.6rem;">
+                            Most Author Matches
+                        </div>
+                    </div>
+                    <div class="row pl-3 pr-3" id="newBookMatchesDiv" style="display: flex;">
+                        <div class="col">
+                            <div class="row justify-content-md-center">
+                                <div class="col text-center">
+                                    Brand new books
+                                </div>
+                            </div>
+                            <div class="row pt-2 pb-2" id="newBookAvailableInsertPoint" style="border: 2px solid rgb(192, 192, 192); border-top-left-radius: 0.8rem;">
+                            
+                            
+                            <div class="col-3">
+                                <div class="row">
+                                    <div class="col-3 pl-2 pt-2">
+                                        <a href="https://thebookshop.ie/goyer-david-s-heavens-shadow-large-paperback/">
+                                            <img src="BooksBooksBooks_files/image__85842.webp" style="width: 3rem;" title="">
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <div class="row pt-1" style="font-weight: bold; font-size: 0.8rem">
+                                             Heaven's Shadow (Large Paperback)
+                                        </div>
+                                        <div class="row" style="font-size: 0.6rem">
+                                            
+                                        </div>
+                                        <div class="row" style="font-size: 0.6rem">
+                                            Goyer, David S. 
+                                        </div>
+                                        <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                            €3.50
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="col-3">
+                                <div class="row">
+                                    <div class="col-3 pl-2 pt-2">
+                                        <a href="https://thebookshop.ie/weir-andy-artemis/">
+                                            <img src="BooksBooksBooks_files/image__00666.webp" style="width: 3rem;" title="">
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <div class="row pt-1" style="font-weight: bold; font-size: 0.8rem">
+                                             Artemis
+                                        </div>
+                                        <div class="row" style="font-size: 0.6rem">
+                                            
+                                        </div>
+                                        <div class="row" style="font-size: 0.6rem">
+                                            Weir, Andy 
+                                        </div>
+                                        <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                            €2.50
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="col-3">
+                                <div class="row">
+                                    <div class="col-3 pl-2 pt-2">
+                                        <a href="https://thebookshop.ie/banks-iain-complicity/">
+                                            <img src="BooksBooksBooks_files/Banks-Iain-Complicity-82875-p__60476.jpg" style="width: 3rem;" title="">
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <div class="row pt-1" style="font-weight: bold; font-size: 0.8rem">
+                                             Complicity
+                                        </div>
+                                        <div class="row" style="font-size: 0.6rem">
+                                            
+                                        </div>
+                                        <div class="row" style="font-size: 0.6rem">
+                                            Banks, Iain 
+                                        </div>
+                                        <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                            €2.50
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="col-3">
+                                <div class="row">
+                                    <div class="col-3 pl-2 pt-2">
+                                        <a href="https://thebookshop.ie/tolkien-j-r-r-the-return-of-the-king-large-paperback/">
+                                            <img src="BooksBooksBooks_files/image__09240.webp" style="width: 3rem;" title="">
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <div class="row pt-1" style="font-weight: bold; font-size: 0.8rem">
+                                             The Return of the King (Large Paperback)
+                                        </div>
+                                        <div class="row" style="font-size: 0.6rem">
+                                            
+                                        </div>
+                                        <div class="row" style="font-size: 0.6rem">
+                                            Tolkien, J. R. R. 
+                                        </div>
+                                        <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                            €3.50
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="col-3">
+                                <div class="row">
+                                    <div class="col-3 pl-2 pt-2">
+                                        <a href="https://thebookshop.ie/dashner-james-the-kill-order-maze-runner-series-book-4/">
+                                            <img src="BooksBooksBooks_files/dashner-james-the-kill-order-417492-p__75646.1520136352.jpg" style="width: 3rem;" title="">
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <div class="row pt-1" style="font-weight: bold; font-size: 0.8rem">
+                                             The Kill Order ( Maze Runner Series - Book 4 )
+                                        </div>
+                                        <div class="row" style="font-size: 0.6rem">
+                                            
+                                        </div>
+                                        <div class="row" style="font-size: 0.6rem">
+                                            Dashner, James 
+                                        </div>
+                                        <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                            €2.50
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="col-3">
+                                <div class="row">
+                                    <div class="col-3 pl-2 pt-2">
+                                        <a href="https://thebookshop.ie/dashner-james-the-death-cure-maze-runner-series-book-3/">
+                                            <img src="BooksBooksBooks_files/dashner-james-the-death-cure-276136-p__01671.jpg" style="width: 3rem;" title="">
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <div class="row pt-1" style="font-weight: bold; font-size: 0.8rem">
+                                             The Death Cure  ( Maze Runner Series - Book 3 )
+                                        </div>
+                                        <div class="row" style="font-size: 0.6rem">
+                                            
+                                        </div>
+                                        <div class="row" style="font-size: 0.6rem">
+                                            Dashner, James 
+                                        </div>
+                                        <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                            €2.50
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="col-3">
+                                <div class="row">
+                                    <div class="col-3 pl-2 pt-2">
+                                        <a href="https://thebookshop.ie/lee-harper-to-kill-a-mockingbird/">
+                                            <img src="BooksBooksBooks_files/mockingbird__41540.jpg" style="width: 3rem;" title="">
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <div class="row pt-1" style="font-weight: bold; font-size: 0.8rem">
+                                             To Kill A Mockingbird
+                                        </div>
+                                        <div class="row" style="font-size: 0.6rem">
+                                            
+                                        </div>
+                                        <div class="row" style="font-size: 0.6rem">
+                                            Lee, Harper 
+                                        </div>
+                                        <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                            €2.50
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="col-3">
+                                <div class="row">
+                                    <div class="col-3 pl-2 pt-2">
+                                        <a href="https://thebookshop.ie/reeve-philip-railhead/">
+                                            <img src="BooksBooksBooks_files/image__63361.webp" style="width: 3rem;" title="">
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <div class="row pt-1" style="font-weight: bold; font-size: 0.8rem">
+                                             Railhead
+                                        </div>
+                                        <div class="row" style="font-size: 0.6rem">
+                                            
+                                        </div>
+                                        <div class="row" style="font-size: 0.6rem">
+                                            Reeve, Philip 
+                                        </div>
+                                        <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                            €2.50
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="col-3">
+                                <div class="row">
+                                    <div class="col-3 pl-2 pt-2">
+                                        <a href="https://thebookshop.ie/ahern-cecelia-flawed/">
+                                            <img src="BooksBooksBooks_files/ahern-cecelia-flawed-388686-p__17933.1520134219.jpg" style="width: 3rem;" title="">
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <div class="row pt-1" style="font-weight: bold; font-size: 0.8rem">
+                                             Flawed
+                                        </div>
+                                        <div class="row" style="font-size: 0.6rem">
+                                            
+                                        </div>
+                                        <div class="row" style="font-size: 0.6rem">
+                                            Ahern, Cecelia 
+                                        </div>
+                                        <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                            €2.50
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="col-3">
+                                <div class="row">
+                                    <div class="col-3 pl-2 pt-2">
+                                        <a href="https://thebookshop.ie/dashner-james-the-fever-code-hardback-maze-runner-series-prequel/">
+                                            <img src="BooksBooksBooks_files/9781910655160__33490.jpg" style="width: 3rem;" title="">
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <div class="row pt-1" style="font-weight: bold; font-size: 0.8rem">
+                                             The Fever Code (Hardback) ( Maze Runner Series - Prequel )
+                                        </div>
+                                        <div class="row" style="font-size: 0.6rem">
+                                            
+                                        </div>
+                                        <div class="row" style="font-size: 0.6rem">
+                                            Dashner, James 
+                                        </div>
+                                        <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                            €4.00
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="col-3">
+                                <div class="row">
+                                    <div class="col-3 pl-2 pt-2">
+                                        <a href="https://thebookshop.ie/dashner-james-the-scorch-trials-maze-runner-series-book-2/">
+                                            <img src="BooksBooksBooks_files/Dashner-James-Maze-Runner-2-The-Scorch-Trials-79111-p__87636.jpg" style="width: 3rem;" title="">
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <div class="row pt-1" style="font-weight: bold; font-size: 0.8rem">
+                                             The Scorch Trials ( Maze Runner Series - Book 2 )
+                                        </div>
+                                        <div class="row" style="font-size: 0.6rem">
+                                            
+                                        </div>
+                                        <div class="row" style="font-size: 0.6rem">
+                                            Dashner, James 
+                                        </div>
+                                        <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                            €2.50
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="col-3">
+                                <div class="row">
+                                    <div class="col-3 pl-2 pt-2">
+                                        <a href="https://thebookshop.ie/ness-patrick-the-ask-and-the-answer-chaos-walking-trilogy-book-2/">
+                                            <img src="BooksBooksBooks_files/Ness-Patrick-The-Ask-and-the-Answer-50254-p__80343.jpg" style="width: 3rem;" title="">
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <div class="row pt-1" style="font-weight: bold; font-size: 0.8rem">
+                                             The Ask and the Answer ( Chaos Walking Trilogy : Book 2 )
+                                        </div>
+                                        <div class="row" style="font-size: 0.6rem">
+                                            
+                                        </div>
+                                        <div class="row" style="font-size: 0.6rem">
+                                            Ness, Patrick 
+                                        </div>
+                                        <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                            €2.50
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="col-3">
+                                <div class="row">
+                                    <div class="col-3 pl-2 pt-2">
+                                        <a href="https://thebookshop.ie/ness-patrick-monsters-of-men-chaos-walking-trilogy-book-3/">
+                                            <img src="BooksBooksBooks_files/9781406344486__40670.jpg" style="width: 3rem;" title="">
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <div class="row pt-1" style="font-weight: bold; font-size: 0.8rem">
+                                             Monsters of Men ( Chaos Walking Trilogy : Book 3 )
+                                        </div>
+                                        <div class="row" style="font-size: 0.6rem">
+                                            
+                                        </div>
+                                        <div class="row" style="font-size: 0.6rem">
+                                            Ness, Patrick 
+                                        </div>
+                                        <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                            €2.50
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="col-3">
+                                <div class="row">
+                                    <div class="col-3 pl-2 pt-2">
+                                        <a href="https://thebookshop.ie/ness-patrick-the-knife-of-never-letting-go-chaos-walking-trilogy-book-1/">
+                                            <img src="BooksBooksBooks_files/Ness-Patrick-The-Knife-of-Never-Letting-Go-13656-p__21267.jpg" style="width: 3rem;" title="">
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <div class="row pt-1" style="font-weight: bold; font-size: 0.8rem">
+                                             The Knife of Never Letting Go ( Chaos Walking Trilogy : Book 1 )
+                                        </div>
+                                        <div class="row" style="font-size: 0.6rem">
+                                            
+                                        </div>
+                                        <div class="row" style="font-size: 0.6rem">
+                                            Ness, Patrick 
+                                        </div>
+                                        <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                            €2.50
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="col" id="goodReadsBooksCol" style="padding-top: 0.8rem">
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEi9b5YWYvIIyLDajMVfcKpZ-goodreadsInfo" style="border-bottom-right-radius: 0.8rem;border-bottom-left-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/866136.The_Dreaming_Void">
+                    <img src="BooksBooksBooks_files/866136._SY75_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                The Dreaming Void
+            </div>
+            <div class="row bookSeriesText">
+                
+            </div>
+            <div class="row bookAuthor">
+                Hamilton, Peter F.
+            </div>
+            <div class="row bookRating">
+                4.18 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEi9b5YWYvIIyLDajMVfcKpZ-theBookshopResults">
+    <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Possible Matches
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2 pt-2">
+                            <a href="">
+                                <img src="" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEg2RbHAJ85oo4p9F4PPQQMF-goodreadsInfo" style="border-top-right-radius: 0.8rem;border-bottom-right-radius: 0.8rem;border-bottom-left-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/18693360-a-dark-inheritance">
+                    <img src="BooksBooksBooks_files/18693360._SY75_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                A Dark Inheritance
+            </div>
+            <div class="row bookSeriesText">
+                (Unicorne Files, #1)
+            </div>
+            <div class="row bookAuthor">
+                d'Lacey, Chris
+            </div>
+            <div class="row bookRating">
+                3.79 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEg2RbHAJ85oo4p9F4PPQQMF-theBookshopResults">
+    <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Possible Matches
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2 pt-2">
+                            <a href="">
+                                <img src="" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+            <div class="row">
+                <div class="col text-center" style="font-size: 0.6rem">
+                    <details>
+                        <summary> More from d'Lacey, Chris </summary>
+                        
+        <a href="https://thebookshop.ie/dlacey-chris-dark-fire-book-5/">
+            <img src="BooksBooksBooks_files/image__83669.webp" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dlacey-chris-the-fire-eternal/">
+            <img src="BooksBooksBooks_files/d-Lacey-Chris-The-Fire-Eternal-101769-p__19510.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dlacey-chris-the-fire-within/">
+            <img src="BooksBooksBooks_files/9781841215334__07634.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dlacey-chris-icefire/">
+            <img src="BooksBooksBooks_files/d-lacey-chris-icefire-269085-p__77665.1520127054.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dlacey-chris-the-prompter/">
+            <img src="BooksBooksBooks_files/image__86854.webp" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dlacey-chris-the-last-dragon-chronicles-icefire-book-2-hardback/">
+            <img src="BooksBooksBooks_files/image__11702.webp" style="height: 5rem">
+        </a>
+        
+                    </details>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEcOQXsJqjdaMxsIWMcOyvVQ-goodreadsInfo" style="border-top-right-radius: 0.8rem;border-bottom-right-radius: 0.8rem;border-bottom-left-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/45258.Fallen_Dragon">
+                    <img src="BooksBooksBooks_files/45258._SY75_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                Fallen Dragon
+            </div>
+            <div class="row bookSeriesText">
+                
+            </div>
+            <div class="row bookAuthor">
+                Hamilton, Peter F.
+            </div>
+            <div class="row bookRating">
+                4.08 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEcOQXsJqjdaMxsIWMcOyvVQ-theBookshopResults">
+    <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Possible Matches
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2 pt-2">
+                            <a href="">
+                                <img src="" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEiWSJBYOppDqMCaGkQUckSf-goodreadsInfo" style="border-top-right-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/9435667-heaven-s-shadow">
+                    <img src="BooksBooksBooks_files/9435667._SY75_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                Heaven's Shadow
+            </div>
+            <div class="row bookSeriesText">
+                (Heaven's Shadow, #1)
+            </div>
+            <div class="row bookAuthor">
+                Goyer, David S.
+            </div>
+            <div class="row bookRating">
+                3.44 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEiWSJBYOppDqMCaGkQUckSf-theBookshopResults">
+    <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Possible Matches
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2 pt-2">
+                            <a href="https://thebookshop.ie/goyer-david-s-heavens-shadow-large-paperback/">
+                                <img src="BooksBooksBooks_files/image__85842.webp" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                                Heaven's Shadow (Large Paperback)
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                                Goyer, David S. 
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                €3.50
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+            <div class="row">
+                <div class="col text-center" style="font-size: 0.6rem">
+                    <details>
+                        <summary> More from Goyer, David S. </summary>
+                        
+        <a href="https://thebookshop.ie/goyer-david-s-heavens-shadow-large-paperback/">
+            <img src="BooksBooksBooks_files/image__85842.webp" style="height: 5rem">
+        </a>
+        
+                    </details>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEbis3EWS4ZdQ4ZnQ4C2sC1h-goodreadsInfo" style="border-top-left-radius: 0.8rem;border-bottom-left-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/34928122-artemis">
+                    <img src="BooksBooksBooks_files/34928122._SY75_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                Artemis
+            </div>
+            <div class="row bookSeriesText">
+                
+            </div>
+            <div class="row bookAuthor">
+                Weir, Andy
+            </div>
+            <div class="row bookRating">
+                3.69 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEbis3EWS4ZdQ4ZnQ4C2sC1h-theBookshopResults">
+    <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Possible Matches
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2 pt-2">
+                            <a href="https://thebookshop.ie/weir-andy-artemis/">
+                                <img src="BooksBooksBooks_files/image__00666.webp" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                                Artemis
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                                Weir, Andy 
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                €2.50
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+            <div class="row">
+                <div class="col text-center" style="font-size: 0.6rem">
+                    <details>
+                        <summary> More from Weir, Andy </summary>
+                        
+        <a href="https://thebookshop.ie/weir-andy-artemis/">
+            <img src="BooksBooksBooks_files/image__00666.webp" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/weir-andy-the-martian/">
+            <img src="BooksBooksBooks_files/weir-andy-the-martian-298465-p__05233.jpg" style="height: 5rem">
+        </a>
+        
+                    </details>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEd4kklWQ3TLbAcVME8sQRpB-goodreadsInfo" style="border-top-right-radius: 0.8rem;border-bottom-right-radius: 0.8rem;border-bottom-left-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/185825.The_Stone_Canal">
+                    <img src="BooksBooksBooks_files/185825._SY75_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                The Stone Canal
+            </div>
+            <div class="row bookSeriesText">
+                
+            </div>
+            <div class="row bookAuthor">
+                MacLeod, Ken
+            </div>
+            <div class="row bookRating">
+                3.89 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEd4kklWQ3TLbAcVME8sQRpB-theBookshopResults">
+    <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Possible Matches
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2 pt-2">
+                            <a href="">
+                                <img src="" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+            <div class="row">
+                <div class="col text-center" style="font-size: 0.6rem">
+                    <details>
+                        <summary> More from MacLeod, Ken </summary>
+                        
+        <a href="https://thebookshop.ie/macleod-ken-the-sky-road/">
+            <img src="BooksBooksBooks_files/image__81769.webp" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/macleod-ken-the-star-fraction-book-one-the-fall-revolution-series/">
+            <img src="BooksBooksBooks_files/image__06168.webp" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/macleod-ken-the-star-fraction/">
+            <img src="BooksBooksBooks_files/image__38855.webp" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/macleod-ken-the-web-cydonia/">
+            <img src="BooksBooksBooks_files/image__08347.webp" style="height: 5rem">
+        </a>
+        
+                    </details>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEfFzvUaBwOsXYAe5HfGaEgc-goodreadsInfo" style="border-top-right-radius: 0.8rem;border-bottom-right-radius: 0.8rem;border-bottom-left-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/30644153-the-three-towers-of-afranor">
+                    <img src="BooksBooksBooks_files/30644153._SY75_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                The Three Towers of Afranor
+            </div>
+            <div class="row bookSeriesText">
+                
+            </div>
+            <div class="row bookAuthor">
+                Larson, Scott R.
+            </div>
+            <div class="row bookRating">
+                4.67 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEfFzvUaBwOsXYAe5HfGaEgc-theBookshopResults">
+    <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Possible Matches
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2 pt-2">
+                            <a href="">
+                                <img src="" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEcIyuPbHZjxFfxVqCLSScdw-goodreadsInfo" style="border-bottom-right-radius: 0.8rem;border-bottom-left-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/43798285-the-institute">
+                    <img src="BooksBooksBooks_files/43798285._SY75_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                The Institute
+            </div>
+            <div class="row bookSeriesText">
+                
+            </div>
+            <div class="row bookAuthor">
+                King, Stephen
+            </div>
+            <div class="row bookRating">
+                4.2 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEcIyuPbHZjxFfxVqCLSScdw-theBookshopResults">
+    <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Possible Matches
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2 pt-2">
+                            <a href="">
+                                <img src="" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+            <div class="row">
+                <div class="col text-center" style="font-size: 0.6rem">
+                    <details>
+                        <summary> More from King, Stephen </summary>
+                        
+        <a href="https://thebookshop.ie/king-stephen-fruhling-sommer-herbst-und-tod-hb-german-edition-different-seasons/">
+            <img src="BooksBooksBooks_files/tod__83285.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/king-stephen-the-gunslinger-dark-tower-book-1/">
+            <img src="BooksBooksBooks_files/King-Stephen-The-Dark-Tower-The-Gunslinger-12765-p__65439.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/hawking-stephen-the-grand-design/">
+            <img src="BooksBooksBooks_files/9780553819229__29052.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/hawking-stephen-a-brief-history-of-time/">
+            <img src="BooksBooksBooks_files/Hawking-Stephen-A-Brief-History-of-Time-13933-p__13909.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/hawking-lucy-stephen-georges-secret-key-to-the-universe/">
+            <img src="BooksBooksBooks_files/9780552559584__32518.1575043279.jpg" style="height: 5rem">
+        </a>
+        
+                    </details>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEgUDlsRhSeocAFD0qyKZag3-goodreadsInfo" style="border-bottom-right-radius: 0.8rem;border-top-left-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/61439040-1984">
+                    <img src="BooksBooksBooks_files/61439040._SX50_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                1984
+            </div>
+            <div class="row bookSeriesText">
+                
+            </div>
+            <div class="row bookAuthor">
+                Orwell, George
+            </div>
+            <div class="row bookRating">
+                4.19 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEgUDlsRhSeocAFD0qyKZag3-theBookshopResults">
+    <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Possible Matches
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2 pt-2">
+                            <a href="">
+                                <img src="" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+            <div class="row">
+                <div class="col text-center" style="font-size: 0.6rem">
+                    <details>
+                        <summary> More from Orwell, George </summary>
+                        
+        <a href="https://thebookshop.ie/orwell-george-nineteen-eighty-four-1984-vintage-1983-penguin-edition/">
+            <img src="BooksBooksBooks_files/well1a3__97596.jpg" style="height: 5rem">
+        </a>
+        
+                    </details>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEf27z7FDbMrT5JYkQcNvEah-goodreadsInfo" style="border-bottom-right-radius: 0.8rem;border-top-left-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/23807.The_Silence_of_the_Lambs">
+                    <img src="BooksBooksBooks_files/23807._SY75_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                The Silence of the Lambs
+            </div>
+            <div class="row bookSeriesText">
+                (Hannibal Lecter, #2)
+            </div>
+            <div class="row bookAuthor">
+                Harris, Thomas
+            </div>
+            <div class="row bookRating">
+                4.23 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEf27z7FDbMrT5JYkQcNvEah-theBookshopResults">
+    <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Possible Matches
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2 pt-2">
+                            <a href="">
+                                <img src="" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+            <div class="row">
+                <div class="col text-center" style="font-size: 0.6rem">
+                    <details>
+                        <summary> More from Harris, Thomas </summary>
+                        
+        <a href="https://thebookshop.ie/harris-thomas-cari-mora-large-paperback/">
+            <img src="BooksBooksBooks_files/9781785152191__05022.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/harris-thomas-hannibal/">
+            <img src="BooksBooksBooks_files/Harris-Thomas-Hannibal-4260-p__76258.1520100382.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/harris-thomas-black-sunday/">
+            <img src="BooksBooksBooks_files/Harris-Thomas-Black-Sunday-29942-p__66540.1520115257.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/harris-thomas-hannibal-rising-large-hardback/">
+            <img src="BooksBooksBooks_files/harris-thomas-hannibal-rising-large-hardback--273018-p__0434.jpg" style="height: 5rem">
+        </a>
+        
+                    </details>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEi965Otsuhy1r1o5pYHtbG3-goodreadsInfo" style="border-top-right-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/216131.Secret_Prey">
+                    <img src="BooksBooksBooks_files/216131._SY75_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                Secret Prey
+            </div>
+            <div class="row bookSeriesText">
+                (Lucas Davenport, #9)
+            </div>
+            <div class="row bookAuthor">
+                Sandford, John
+            </div>
+            <div class="row bookRating">
+                4.27 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEi965Otsuhy1r1o5pYHtbG3-theBookshopResults">
+    <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Possible Matches
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2 pt-2">
+                            <a href="">
+                                <img src="" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+            <div class="row">
+                <div class="col text-center" style="font-size: 0.6rem">
+                    <details>
+                        <summary> More from Sandford, John </summary>
+                        
+        <a href="https://thebookshop.ie/sandford-john-golden-prey/">
+            <img src="BooksBooksBooks_files/image__66582.webp" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/sandford-john-twisted-prey-large-paperback/">
+            <img src="BooksBooksBooks_files/image__46879.webp" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/sandford-john-naked-prey/">
+            <img src="BooksBooksBooks_files/Sandford-John-Naked-Prey-6903-p__82348.jpg" style="height: 5rem">
+        </a>
+        
+                    </details>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEfgh0qdpBS5eivpXXSRN9nw-goodreadsInfo" style="border-top-right-radius: 0.8rem;border-bottom-right-radius: 0.8rem;border-top-left-radius: 0.8rem;border-bottom-left-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/375802.Ender_s_Game">
+                    <img src="BooksBooksBooks_files/375802._SY75_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                Ender's Game
+            </div>
+            <div class="row bookSeriesText">
+                (Ender's Saga, #1)
+            </div>
+            <div class="row bookAuthor">
+                Card, Orson Scott
+            </div>
+            <div class="row bookRating">
+                4.31 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEfgh0qdpBS5eivpXXSRN9nw-theBookshopResults">
+    <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Possible Matches
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2 pt-2">
+                            <a href="">
+                                <img src="" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+            <div class="row">
+                <div class="col text-center" style="font-size: 0.6rem">
+                    <details>
+                        <summary> More from Card, Orson Scott </summary>
+                        
+        <a href="https://thebookshop.ie/card-orson-scott-wyrms/">
+            <img src="BooksBooksBooks_files/61nFdxIzZRL._SX304_BO1204203200___38763.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/card-orson-scott-alvin-journeyman/">
+            <img src="BooksBooksBooks_files/image__65395.webp" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/card-orson-scott-red-prophet/">
+            <img src="BooksBooksBooks_files/image__75740.webp" style="height: 5rem">
+        </a>
+        
+                    </details>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEegARPXL2ApZ15WwyEeNwOK-goodreadsInfo" style="border-top-right-radius: 0.8rem;border-bottom-right-radius: 0.8rem;border-top-left-radius: 0.8rem;border-bottom-left-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/1215032.The_Wise_Man_s_Fear">
+                    <img src="BooksBooksBooks_files/1215032._SY75_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                The Wise Man's Fear
+            </div>
+            <div class="row bookSeriesText">
+                (The Kingkiller Chronicle, #2)
+            </div>
+            <div class="row bookAuthor">
+                Rothfuss, Patrick
+            </div>
+            <div class="row bookRating">
+                4.55 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEegARPXL2ApZ15WwyEeNwOK-theBookshopResults">
+    <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Possible Matches
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2 pt-2">
+                            <a href="">
+                                <img src="" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEj2j8JB85l0H81ksTNhhc4h-goodreadsInfo" style="border-top-right-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/25841767-11-harrow-house">
+                    <img src="BooksBooksBooks_files/25841767._SY75_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                11 Harrow House
+            </div>
+            <div class="row bookSeriesText">
+                
+            </div>
+            <div class="row bookAuthor">
+                Browne, Gerald A.
+            </div>
+            <div class="row bookRating">
+                3.77 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEj2j8JB85l0H81ksTNhhc4h-theBookshopResults">
+    <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Possible Matches
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2 pt-2">
+                            <a href="">
+                                <img src="" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEgEOrCfcMRGSVrSR0PstwUB-goodreadsInfo" style="border-top-left-radius: 0.8rem;border-bottom-left-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/216363.The_Man_in_the_High_Castle">
+                    <img src="BooksBooksBooks_files/216363._SY75_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                The Man in the High Castle
+            </div>
+            <div class="row bookSeriesText">
+                
+            </div>
+            <div class="row bookAuthor">
+                Dick, Philip K.
+            </div>
+            <div class="row bookRating">
+                3.61 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEgEOrCfcMRGSVrSR0PstwUB-theBookshopResults">
+    <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Possible Matches
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2 pt-2">
+                            <a href="">
+                                <img src="" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+            <div class="row">
+                <div class="col text-center" style="font-size: 0.6rem">
+                    <details>
+                        <summary> More from Dick, Philip K. </summary>
+                        
+        <a href="https://thebookshop.ie/dick-philip-k-flow-my-tears-the-policeman-said/">
+            <img src="BooksBooksBooks_files/Dick-Philip-K.-Flow-My-Tears-the-Policeman-Said-71322-p__416.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dick-philip-k-minority-report-brand-new-pb-science-fiction-short-stories/">
+            <img src="BooksBooksBooks_files/9781407213309-us-300__83773.1629388682.jpg" style="height: 5rem">
+        </a>
+        
+                    </details>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEgxyPAcFbzuzV2euRIVZs9i-goodreadsInfo" style="border-bottom-left-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/12014.Complicity">
+                    <img src="BooksBooksBooks_files/12014._SX50_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                Complicity
+            </div>
+            <div class="row bookSeriesText">
+                
+            </div>
+            <div class="row bookAuthor">
+                Banks, Iain
+            </div>
+            <div class="row bookRating">
+                3.91 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEgxyPAcFbzuzV2euRIVZs9i-theBookshopResults">
+    <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Possible Matches
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2 pt-2">
+                            <a href="https://thebookshop.ie/banks-iain-complicity/">
+                                <img src="BooksBooksBooks_files/Banks-Iain-Complicity-82875-p__60476.jpg" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                                Complicity
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                                Banks, Iain 
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                €2.50
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+            <div class="row">
+                <div class="col text-center" style="font-size: 0.6rem">
+                    <details>
+                        <summary> More from Banks, Iain </summary>
+                        
+        <a href="https://thebookshop.ie/banks-iain-complicity/">
+            <img src="BooksBooksBooks_files/Banks-Iain-Complicity-82875-p__60476.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/banks-iain-the-wasp-factory/">
+            <img src="BooksBooksBooks_files/Banks-Iain-The-Wasp-Factory-64509-p__33914.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/banks-iain-raw-spirit-in-search-of-the-perfect-dram/">
+            <img src="BooksBooksBooks_files/9780099460275__03871.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/banks-iain-a-song-of-stone-hardback/">
+            <img src="BooksBooksBooks_files/image__22740.webp" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/banks-iain-m-the-state-of-the-art/">
+            <img src="BooksBooksBooks_files/Banks-Iain-m.-The-State-of-the-Art-60561-p__05094.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/banks-iain-the-business-large-hardback/">
+            <img src="BooksBooksBooks_files/9780316648448__11800.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/banks-iain-stonemouth/">
+            <img src="BooksBooksBooks_files/image__30315.webp" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/banks-iain-whit/">
+            <img src="BooksBooksBooks_files/Banks-Iain-Whit-50338-p__31370.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/banks-iain-canal-dreams/">
+            <img src="BooksBooksBooks_files/banks-iain-canal-dreams-281304-p__54495.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/banks-iain-dead-air/">
+            <img src="BooksBooksBooks_files/Banks-Iain-Dead-Air-25500-p__43604.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/banks-iain-m-matter/">
+            <img src="BooksBooksBooks_files/Banks-Iain-M.-Matter-72508-p__27207.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/banks-iain-the-quarry-hardback/">
+            <img src="BooksBooksBooks_files/image__98352.webp" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/banks-iain-walking-on-glass/">
+            <img src="BooksBooksBooks_files/Banks-Iain-Walking-on-Glass-24308-p__73882.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/banks-iain-espedair-street/">
+            <img src="BooksBooksBooks_files/9780349102146__10744.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/banks-iain-m-inversions/">
+            <img src="BooksBooksBooks_files/banks-iain-m.-inversions-388656-p__80973.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/banks-iain-the-business/">
+            <img src="BooksBooksBooks_files/Banks-Iain-The-Business-7111-p__04076.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/banks-iain-a-song-of-stone/">
+            <img src="BooksBooksBooks_files/Banks-Iain-A-Song-of-stone-20543-p__38960.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/banks-iain-the-quarry/">
+            <img src="BooksBooksBooks_files/Banks-Iain-The-Quarry-71871-p__15825.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/banks-iain-the-bridge/">
+            <img src="BooksBooksBooks_files/9780349102153__13723.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/banks-iain-m-feersum-endjinn/">
+            <img src="BooksBooksBooks_files/Banks-Iain-M.-Feersum-Endjinn-25503-p__97959.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/banks-iain-the-quarry-large-paperback/">
+            <img src="BooksBooksBooks_files/9781408703953__25505.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/banks-iain-transition-large-paperback/">
+            <img src="BooksBooksBooks_files/9780316731089__65577.1534349274.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/banks-iain-m-use-of-weapons/">
+            <img src="BooksBooksBooks_files/Banks-Iain-M.-use-of-Weapons-25497-p__97074.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/banks-iain-the-steep-approach-to-garbadale/">
+            <img src="BooksBooksBooks_files/Banks-Iain-The-Steep-Approach-to-Garbadale-2923-p__72797.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/banks-iain-m-look-to-windward/">
+            <img src="BooksBooksBooks_files/Banks-Iain-M.-Look-To-Windward-84230-p__37868.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/banks-iain-raw-spirit-large-paperback/">
+            <img src="BooksBooksBooks_files/9781844131990__78261.jpg" style="height: 5rem">
+        </a>
+        
+                    </details>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEbibVnmms5yCUWKXooq67Ab-goodreadsInfo" style="border-bottom-right-radius: 0.8rem;border-top-left-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/222910.The_Two_Towers">
+                    <img src="BooksBooksBooks_files/222910._SY75_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                The Two Towers
+            </div>
+            <div class="row bookSeriesText">
+                (The Lord of the Rings, #2)
+            </div>
+            <div class="row bookAuthor">
+                Tolkien, J.R.R.
+            </div>
+            <div class="row bookRating">
+                4.47 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEbibVnmms5yCUWKXooq67Ab-theBookshopResults">
+    <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Possible Matches
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2 pt-2">
+                            <a href="">
+                                <img src="" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+            <div class="row">
+                <div class="col text-center" style="font-size: 0.6rem">
+                    <details>
+                        <summary> More from Tolkien, J.R.R. </summary>
+                        
+        <a href="https://thebookshop.ie/tolkien-j-r-r-the-return-of-the-king-large-paperback/">
+            <img src="BooksBooksBooks_files/image__09240.webp" style="height: 5rem">
+        </a>
+        
+                    </details>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEdIfAVNU6BXUb2ghSCW21H6-goodreadsInfo" style="border-bottom-right-radius: 0.8rem;border-top-left-radius: 0.8rem;border-bottom-left-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/33.The_Lord_of_the_Rings">
+                    <img src="BooksBooksBooks_files/33._SX50_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                The Lord of the Rings
+            </div>
+            <div class="row bookSeriesText">
+                
+            </div>
+            <div class="row bookAuthor">
+                Tolkien, J.R.R.
+            </div>
+            <div class="row bookRating">
+                4.52 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEdIfAVNU6BXUb2ghSCW21H6-theBookshopResults">
+    <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Possible Matches
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2 pt-2">
+                            <a href="">
+                                <img src="" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+            <div class="row">
+                <div class="col text-center" style="font-size: 0.6rem">
+                    <details>
+                        <summary> More from Tolkien, J.R.R. </summary>
+                        
+        <a href="https://thebookshop.ie/tolkien-j-r-r-the-return-of-the-king-large-paperback/">
+            <img src="BooksBooksBooks_files/image__09240.webp" style="height: 5rem">
+        </a>
+        
+                    </details>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEhqt3uSVdXWJgwV7zshXW2Y-goodreadsInfo" style="border-top-left-radius: 0.8rem;border-bottom-left-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/838729.The_Return_of_the_King">
+                    <img src="BooksBooksBooks_files/838729._SY75_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                The Return of the King
+            </div>
+            <div class="row bookSeriesText">
+                (The Lord of the Rings, #3)
+            </div>
+            <div class="row bookAuthor">
+                Tolkien, J.R.R.
+            </div>
+            <div class="row bookRating">
+                4.55 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEhqt3uSVdXWJgwV7zshXW2Y-theBookshopResults">
+    <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Possible Matches
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2 pt-2">
+                            <a href="https://thebookshop.ie/tolkien-j-r-r-the-return-of-the-king-large-paperback/">
+                                <img src="BooksBooksBooks_files/image__09240.webp" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                                The Return of the King (Large Paperback)
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                                Tolkien, J. R. R. 
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                €3.50
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+            <div class="row">
+                <div class="col text-center" style="font-size: 0.6rem">
+                    <details>
+                        <summary> More from Tolkien, J.R.R. </summary>
+                        
+        <a href="https://thebookshop.ie/tolkien-j-r-r-the-return-of-the-king-large-paperback/">
+            <img src="BooksBooksBooks_files/image__09240.webp" style="height: 5rem">
+        </a>
+        
+                    </details>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEbq3RW3HRveSGQvYOyoGSVw-goodreadsInfo" style="border-top-left-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/40381927-the-last">
+                    <img src="BooksBooksBooks_files/40381927._SX50_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                The Last
+            </div>
+            <div class="row bookSeriesText">
+                
+            </div>
+            <div class="row bookAuthor">
+                Jameson, Hanna
+            </div>
+            <div class="row bookRating">
+                3.53 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEbq3RW3HRveSGQvYOyoGSVw-theBookshopResults">
+    <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Possible Matches
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2 pt-2">
+                            <a href="">
+                                <img src="" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEcy1NSdeL3rgiZAYheO9BJK-goodreadsInfo" style="border-top-right-radius: 0.8rem;border-top-left-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/13089710-the-kill-order">
+                    <img src="BooksBooksBooks_files/13089710._SY75_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                The Kill Order
+            </div>
+            <div class="row bookSeriesText">
+                (The Maze Runner, #0.4)
+            </div>
+            <div class="row bookAuthor">
+                Dashner, James
+            </div>
+            <div class="row bookRating">
+                3.71 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEcy1NSdeL3rgiZAYheO9BJK-theBookshopResults">
+    <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Possible Matches
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2 pt-2">
+                            <a href="https://thebookshop.ie/dashner-james-the-kill-order-maze-runner-series-book-4/">
+                                <img src="BooksBooksBooks_files/dashner-james-the-kill-order-417492-p__75646.1520136352.jpg" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                                The Kill Order ( Maze Runner Series - Book 4 )
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                                Dashner, James 
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                €2.50
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+            <div class="row">
+                <div class="col text-center" style="font-size: 0.6rem">
+                    <details>
+                        <summary> More from Dashner, James </summary>
+                        
+        <a href="https://thebookshop.ie/dashner-james-the-kill-order-maze-runner-series-book-4/">
+            <img src="BooksBooksBooks_files/dashner-james-the-kill-order-417492-p__75646.1520136352.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dashner-james-the-fever-code-hardback-maze-runner-series-prequel/">
+            <img src="BooksBooksBooks_files/9781910655160__33490.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dashner-james-a-mutiny-in-time-book-1-hardback/">
+            <img src="BooksBooksBooks_files/image__59517.webp" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dashner-james-mortality-doctrine-the-game-of-lives/">
+            <img src="BooksBooksBooks_files/image__16261.webp" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dashner-james-the-scorch-trials-maze-runner-series-book-2/">
+            <img src="BooksBooksBooks_files/Dashner-James-Maze-Runner-2-The-Scorch-Trials-79111-p__87636.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dashner-james-the-death-cure-maze-runner-series-book-3/">
+            <img src="BooksBooksBooks_files/dashner-james-the-death-cure-276136-p__01671.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dashner-james-the-maze-runner-maze-runner-series-book-1/">
+            <img src="BooksBooksBooks_files/Dashner-James-The-Maze-Runner-84263-p__93907.1520123777.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dashner-james-the-death-cure-maze-runner-series-book-3-1/">
+            <img src="BooksBooksBooks_files/DEATHCURE__94900.1656840128.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dashner-james-the-scorch-trials-maze-runner-series-book-2-brand-new/">
+            <img src="BooksBooksBooks_files/Dashner-James-Maze-Runner-2-The-Scorch-Trials-79111-p__38376.jpg" style="height: 5rem">
+        </a>
+        
+                    </details>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEfzSAIVclXrxGBadDtaQzkC-goodreadsInfo" style="border-bottom-right-radius: 0.8rem;border-top-left-radius: 0.8rem;border-bottom-left-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/7864437-the-death-cure">
+                    <img src="BooksBooksBooks_files/7864437._SY75_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                The Death Cure
+            </div>
+            <div class="row bookSeriesText">
+                (The Maze Runner, #3)
+            </div>
+            <div class="row bookAuthor">
+                Dashner, James
+            </div>
+            <div class="row bookRating">
+                3.78 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEfzSAIVclXrxGBadDtaQzkC-theBookshopResults">
+
+        
+        <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Title Match
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2">
+                            <a href="https://thebookshop.ie/dashner-james-the-death-cure-maze-runner-series-book-3/">
+                                <img src="BooksBooksBooks_files/dashner-james-the-death-cure-276136-p__01671.jpg" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                                The Death Cure  ( Maze Runner Series - Book 3 )
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                                Dashner, James 
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                €2.50
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col"></div>
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2">
+                            <a href="https://thebookshop.ie/dashner-james-the-death-cure-maze-runner-series-book-3-1/">
+                                <img src="BooksBooksBooks_files/DEATHCURE__94900.1656840128.jpg" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                             The Death Cure  ( Maze Runner Series 
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                            
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                                Dashner, James 
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                €6.00
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            <div class="row">
+                <div class="col text-center" style="font-size: 0.6rem">
+                    <details>
+                        <summary> More from Dashner, James </summary>
+                        
+        <a href="https://thebookshop.ie/dashner-james-the-death-cure-maze-runner-series-book-3/">
+            <img src="BooksBooksBooks_files/dashner-james-the-death-cure-276136-p__01671.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dashner-james-the-death-cure-maze-runner-series-book-3-1/">
+            <img src="BooksBooksBooks_files/DEATHCURE__94900.1656840128.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dashner-james-the-kill-order-maze-runner-series-book-4/">
+            <img src="BooksBooksBooks_files/dashner-james-the-kill-order-417492-p__75646.1520136352.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dashner-james-the-fever-code-hardback-maze-runner-series-prequel/">
+            <img src="BooksBooksBooks_files/9781910655160__33490.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dashner-james-a-mutiny-in-time-book-1-hardback/">
+            <img src="BooksBooksBooks_files/image__59517.webp" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dashner-james-mortality-doctrine-the-game-of-lives/">
+            <img src="BooksBooksBooks_files/image__16261.webp" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dashner-james-the-scorch-trials-maze-runner-series-book-2/">
+            <img src="BooksBooksBooks_files/Dashner-James-Maze-Runner-2-The-Scorch-Trials-79111-p__87636.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dashner-james-the-maze-runner-maze-runner-series-book-1/">
+            <img src="BooksBooksBooks_files/Dashner-James-The-Maze-Runner-84263-p__93907.1520123777.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dashner-james-the-scorch-trials-maze-runner-series-book-2-brand-new/">
+            <img src="BooksBooksBooks_files/Dashner-James-Maze-Runner-2-The-Scorch-Trials-79111-p__38376.jpg" style="height: 5rem">
+        </a>
+        
+                    </details>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEfNVge4mvTeYVjjYuX8HyN5-goodreadsInfo" style="border-top-right-radius: 0.8rem;border-top-left-radius: 0.8rem;border-bottom-left-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/686651.The_Plough_and_the_Stars">
+                    <img src="BooksBooksBooks_files/686651._SY75_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                The Plough and the Stars
+            </div>
+            <div class="row bookSeriesText">
+                
+            </div>
+            <div class="row bookAuthor">
+                O'Casey, Seán
+            </div>
+            <div class="row bookRating">
+                3.63 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEfNVge4mvTeYVjjYuX8HyN5-theBookshopResults">
+    <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Possible Matches
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2 pt-2">
+                            <a href="">
+                                <img src="" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEiACcKKRIge6JKsnTkzmzPu-goodreadsInfo" style="border-bottom-right-radius: 0.8rem;border-bottom-left-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/890.Of_Mice_and_Men">
+                    <img src="BooksBooksBooks_files/890._SX50_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                Of Mice and Men
+            </div>
+            <div class="row bookSeriesText">
+                
+            </div>
+            <div class="row bookAuthor">
+                Steinbeck, John
+            </div>
+            <div class="row bookRating">
+                3.88 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEiACcKKRIge6JKsnTkzmzPu-theBookshopResults">
+    <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Possible Matches
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2 pt-2">
+                            <a href="">
+                                <img src="" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+            <div class="row">
+                <div class="col text-center" style="font-size: 0.6rem">
+                    <details>
+                        <summary> More from Steinbeck, John </summary>
+                        
+        <a href="https://thebookshop.ie/steinbeck-john-the-pearl/">
+            <img src="BooksBooksBooks_files/Steinbeck-John-The-Pearl-47888-p__03869.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/steinbeck-john-the-pearl-brand-new-pb/">
+            <img src="BooksBooksBooks_files/pearl__79522.1626258377.jpg" style="height: 5rem">
+        </a>
+        
+                    </details>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEj84uGAAwbIulmV6PZvx7lL-goodreadsInfo" style="border-top-left-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/2657.To_Kill_a_Mockingbird">
+                    <img src="BooksBooksBooks_files/2657._SY75_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                To Kill a Mockingbird
+            </div>
+            <div class="row bookSeriesText">
+                
+            </div>
+            <div class="row bookAuthor">
+                Lee, Harper
+            </div>
+            <div class="row bookRating">
+                4.27 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEj84uGAAwbIulmV6PZvx7lL-theBookshopResults">
+
+        
+        <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Title Match
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2">
+                            <a href="https://thebookshop.ie/lee-harper-to-kill-a-mockingbird/">
+                                <img src="BooksBooksBooks_files/mockingbird__41540.jpg" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                                To Kill A Mockingbird
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                                Lee, Harper 
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                €2.50
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col"></div>
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2">
+                            <a href="https://thebookshop.ie/lee-harper-to-kill-a-mockingbird-pb-brand-new/">
+                                <img src="BooksBooksBooks_files/mockingbird__39685.jpg" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                             To Kill a Mockingbird 
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                            
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                                Lee, Harper 
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                €7.50
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            <div class="row">
+                <div class="col text-center" style="font-size: 0.6rem">
+                    <details>
+                        <summary> More from Lee, Harper </summary>
+                        
+        <a href="https://thebookshop.ie/lee-harper-to-kill-a-mockingbird/">
+            <img src="BooksBooksBooks_files/mockingbird__41540.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/lee-harper-to-kill-a-mockingbird-pb-brand-new/">
+            <img src="BooksBooksBooks_files/mockingbird__39685.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/lee-harper-go-set-a-watchman-large-hardback/">
+            <img src="BooksBooksBooks_files/9781785150289__76156.jpg" style="height: 5rem">
+        </a>
+        
+                    </details>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEisaHyUckEDtdpWeksiZbtq-goodreadsInfo" style="border-top-right-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/5907.The_Hobbit">
+                    <img src="BooksBooksBooks_files/5907._SY75_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                The Hobbit
+            </div>
+            <div class="row bookSeriesText">
+                
+            </div>
+            <div class="row bookAuthor">
+                Tolkien, J.R.R.
+            </div>
+            <div class="row bookRating">
+                4.28 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEisaHyUckEDtdpWeksiZbtq-theBookshopResults">
+    <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Possible Matches
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2 pt-2">
+                            <a href="">
+                                <img src="" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+            <div class="row">
+                <div class="col text-center" style="font-size: 0.6rem">
+                    <details>
+                        <summary> More from Tolkien, J.R.R. </summary>
+                        
+        <a href="https://thebookshop.ie/tolkien-j-r-r-the-return-of-the-king-large-paperback/">
+            <img src="BooksBooksBooks_files/image__09240.webp" style="height: 5rem">
+        </a>
+        
+                    </details>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEeWCxjNv88lNhcbkMV9ZA3E-goodreadsInfo" style="border-top-right-radius: 0.8rem;border-top-left-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/23438288-flawed">
+                    <img src="BooksBooksBooks_files/23438288._SX50_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                Flawed
+            </div>
+            <div class="row bookSeriesText">
+                (Flawed, #1)
+            </div>
+            <div class="row bookAuthor">
+                Ahern, Cecelia
+            </div>
+            <div class="row bookRating">
+                4.12 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEeWCxjNv88lNhcbkMV9ZA3E-theBookshopResults">
+
+        
+        <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Title Match
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2">
+                            <a href="https://thebookshop.ie/ahern-cecelia-flawed/">
+                                <img src="BooksBooksBooks_files/ahern-cecelia-flawed-388686-p__17933.1520134219.jpg" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                                Flawed
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                                Ahern, Cecelia 
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                €2.50
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col"></div>
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2">
+                            <a href="https://thebookshop.ie/ahern-cecelia-flawed-large-paperback/">
+                                <img src="BooksBooksBooks_files/9780008126360__65204.jpg" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                             Flawed (Large Paperback)
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                            
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                                Ahern, Cecelia 
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                €3.50
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            <div class="row">
+                <div class="col text-center" style="font-size: 0.6rem">
+                    <details>
+                        <summary> More from Ahern, Cecelia </summary>
+                        
+        <a href="https://thebookshop.ie/ahern-cecelia-flawed/">
+            <img src="BooksBooksBooks_files/ahern-cecelia-flawed-388686-p__17933.1520134219.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ahern-cecelia-flawed-large-paperback/">
+            <img src="BooksBooksBooks_files/9780008126360__65204.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ahern-cecelia-roar-large-hardback/">
+            <img src="BooksBooksBooks_files/97800082834901__04402.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ahern-cecelia-the-book-of-tomorrow-large-paperback/">
+            <img src="BooksBooksBooks_files/ahern-cecelia-the-book-of-tomorrow-large-paperback--277365-p.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ahern-cecelia-the-time-of-my-life/">
+            <img src="BooksBooksBooks_files/Ahern-Cecelia-The-Time-of-My-Life-79259-p__94938.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ahern-cecelia-the-gift-hardback/">
+            <img src="BooksBooksBooks_files/ahern-cecelia-the-gift-hardback--300821-p__95998.1520131385.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ahern-cecelia-ps-i-love-you-brand-new-pb/">
+            <img src="BooksBooksBooks_files/PSILOVEU__20889.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ahern-cecelia-how-to-fall-in-love/">
+            <img src="BooksBooksBooks_files/Ahern-Cecelia-How-to-Fall-in-Love-65208-p__15669.1520120989.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ahern-cecelia-how-to-fall-in-love-large-paperback/">
+            <img src="BooksBooksBooks_files/ahern-cecelia-how-to-fall-in-love-large-paperback--246633-p_.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ahern-cecelia-postscript/">
+            <img src="BooksBooksBooks_files/image__51882.webp" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ahern-cecelia-the-book-of-tomorrow/">
+            <img src="BooksBooksBooks_files/Ahern-Cecelia-The-Book-of-Tomorrow-1287-p__72880.1520098017.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ahern-cecelia-thanks-for-the-memories/">
+            <img src="BooksBooksBooks_files/Ahern-Cecelia-Thanks-For-The-Memories-900-p__86605.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ahern-cecelia-the-gift/">
+            <img src="BooksBooksBooks_files/Ahern-Cecelia-The-Gift-1257-p__35728.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ahern-cecelia-the-marble-collector/">
+            <img src="BooksBooksBooks_files/ahern-cecelia-the-marble-collector-416798-p__46367.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ahern-cecelia-the-gift-hardback-1st-edition-2008/">
+            <img src="BooksBooksBooks_files/AHERNGIFT__23767.1653075035.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ahern-cecelia-thanks-for-the-memories-large-paperback/">
+            <img src="BooksBooksBooks_files/Ahern-Cecelia-Thanks-for-the-Memories-Large-Paperback--26153.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ahern-cecelia-if-you-could-see-me-now/">
+            <img src="BooksBooksBooks_files/Ahern-Cecelia-If-You-Could-See-Me-Now-685-p__82265.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ahern-cecelia-a-place-called-here/">
+            <img src="BooksBooksBooks_files/Ahern-Cecelia-A-Place-Called-Here-617-p__60438.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ahern-cecelia-postscript-large-paperback/">
+            <img src="BooksBooksBooks_files/image__82634.webp" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ahern-cecelia-where-rainbows-end/">
+            <img src="BooksBooksBooks_files/Ahern-Cecelia-Where-Rainbows-End-896-p__72914.1520097740.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ahern-cecelia-lyrebird-large-paperback/">
+            <img src="BooksBooksBooks_files/9780007501878__87919.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ahern-cecelia-ps-i-love-you/">
+            <img src="BooksBooksBooks_files/Ahern-Cecelia-PS-I-Love-You-642-p__94527.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ahern-cecelia-a-place-called-here-large-paperback/">
+            <img src="BooksBooksBooks_files/ahern-cecelia-a-place-called-here-large-paperback--368769-p_.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ahern-cecelia-girl-in-the-mirror-two-stories-hardback/">
+            <img src="BooksBooksBooks_files/9780007425037__82461.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ahern-cecelia-the-time-of-my-life-large-paperback/">
+            <img src="BooksBooksBooks_files/ahern-cecelia-the-time-of-my-life-large-paperback--263952-p_.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ahern-cecelia-the-year-i-met-you/">
+            <img src="BooksBooksBooks_files/Ahern-Cecelia-The-Year-I-met-You-30461-p__38114.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ahern-cecelia-where-rainbows-end-large-paperback/">
+            <img src="BooksBooksBooks_files/Ahern-Cecelia-Where-Rainbows-End-Large-Paperback--261495-p__.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ahern-cecelia-if-you-could-see-me-now-large-paperback/">
+            <img src="BooksBooksBooks_files/Ahern-Cecelia-If-You-Could-See-Me-Now-Large-Paperback--26152.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ahern-cecelia-ps-i-love-you-large-paperback/">
+            <img src="BooksBooksBooks_files/ahern-cecelia-ps-i-love-you-large-paperback--368757-p__98000.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ahern-cecelia-the-year-i-met-you-large-paperback/">
+            <img src="BooksBooksBooks_files/ahern-cecelia-the-year-i-met-you-large-paperback--246349-p__.jpg" style="height: 5rem">
+        </a>
+        
+                    </details>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEcUf08m0xwGQDsZGHHEJVvw-goodreadsInfo" style="border-top-left-radius: 0.8rem;border-bottom-left-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/23532981-railhead">
+                    <img src="BooksBooksBooks_files/23532981._SX50_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                Railhead
+            </div>
+            <div class="row bookSeriesText">
+                
+            </div>
+            <div class="row bookAuthor">
+                Reeve, Philip
+            </div>
+            <div class="row bookRating">
+                3.98 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEcUf08m0xwGQDsZGHHEJVvw-theBookshopResults">
+
+        
+        <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Title Match
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2">
+                            <a href="https://thebookshop.ie/reeve-philip-railhead/">
+                                <img src="BooksBooksBooks_files/image__63361.webp" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                                Railhead
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                                Reeve, Philip 
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                €2.50
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col"></div>
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2">
+                            <a href="https://thebookshop.ie/reeve-philip-the-teachers-tales-of-terror-traction-city-a-world-book-day-flip-book/">
+                                <img src="BooksBooksBooks_files/reeve-philip-the-teacher-s-tales-of-terror-traction-city-a-w.jpg" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                            Reeve, Philip / The Teacher's Tales of Terror / Traction City: A World Book Day Flip Book
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                            
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                                Reeve, Philip / The Teacher's Tales of Terror / Traction City: A World Book Day Flip Book
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                €2.00
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            <div class="row">
+                <div class="col text-center" style="font-size: 0.6rem">
+                    <details>
+                        <summary> More from Reeve, Philip </summary>
+                        
+        <a href="https://thebookshop.ie/reeve-philip-railhead/">
+            <img src="BooksBooksBooks_files/image__63361.webp" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/reeve-philip-goblin-quest/">
+            <img src="BooksBooksBooks_files/image__59696.webp" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/reeve-philip-goblins/">
+            <img src="BooksBooksBooks_files/9781407115276__14480.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/reeve-philip-cakes-in-space/">
+            <img src="BooksBooksBooks_files/image__62371.webp" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/reeve-philip-oliver-and-the-seawigs-hardback/">
+            <img src="BooksBooksBooks_files/image__90260.webp" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/reeve-philip-fever-crumb-2-web-of-air/">
+            <img src="BooksBooksBooks_files/image__23441.webp" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/reeve-philip-mortal-engines-mortal-engines-series-book-1/">
+            <img src="BooksBooksBooks_files/Reeve-Philip-Mortal-Engines-73514-p__10473.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/reeve-philip-here-lies-arthur-hardback/">
+            <img src="BooksBooksBooks_files/image__76772.webp" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/reeve-philip-no-such-thing-as-dragons-large-paperback/">
+            <img src="BooksBooksBooks_files/image__33882.webp" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/reeve-philip-predators-gold-mortal-engines-series-book-2/">
+            <img src="BooksBooksBooks_files/reeve-philip-predator-s-gold-413309-p__27649.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/reeve-philip-horribly-famous-horatio-nelson-and-his-valiant-victory/">
+            <img src="BooksBooksBooks_files/9781407124070__99306.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/reeve-philip-larklight-or-the-revenge-of-the-white-spiders-or-to-saturns-rings-and-back-hardback/">
+            <img src="BooksBooksBooks_files/9780747582403__33411.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/reeve-philip-the-teachers-tales-of-terror-traction-city-a-world-book-day-flip-book/">
+            <img src="BooksBooksBooks_files/reeve-philip-the-teacher-s-tales-of-terror-traction-city-a-w.jpg" style="height: 5rem">
+        </a>
+        
+                    </details>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEeu3bBwRs7ZKdXgckk2MYvX-goodreadsInfo" style="border-top-right-radius: 0.8rem;border-top-left-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/89185.Chasm_City">
+                    <img src="BooksBooksBooks_files/89185._SY75_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                Chasm City
+            </div>
+            <div class="row bookSeriesText">
+                
+            </div>
+            <div class="row bookAuthor">
+                Reynolds, Alastair
+            </div>
+            <div class="row bookRating">
+                4.13 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEeu3bBwRs7ZKdXgckk2MYvX-theBookshopResults">
+    <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Possible Matches
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2 pt-2">
+                            <a href="">
+                                <img src="" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEiT2GBOVvtfG3JlBR86OaiF-goodreadsInfo" style="border-top-right-radius: 0.8rem;border-bottom-right-radius: 0.8rem;border-top-left-radius: 0.8rem;border-bottom-left-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/27833670-dark-matter">
+                    <img src="BooksBooksBooks_files/27833670._SY75_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                Dark Matter
+            </div>
+            <div class="row bookSeriesText">
+                
+            </div>
+            <div class="row bookAuthor">
+                Crouch, Blake
+            </div>
+            <div class="row bookRating">
+                4.13 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEiT2GBOVvtfG3JlBR86OaiF-theBookshopResults">
+    <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Possible Matches
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2 pt-2">
+                            <a href="">
+                                <img src="" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjExN1A54Qbn7kOFfywVaRWVK-goodreadsInfo" style="border-bottom-right-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/7631105-the-scorch-trials">
+                    <img src="BooksBooksBooks_files/7631105._SY75_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                The Scorch Trials
+            </div>
+            <div class="row bookSeriesText">
+                (The Maze Runner, #2)
+            </div>
+            <div class="row bookAuthor">
+                Dashner, James
+            </div>
+            <div class="row bookRating">
+                3.9 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjExN1A54Qbn7kOFfywVaRWVK-theBookshopResults">
+
+        
+        <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Title Match
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2">
+                            <a href="https://thebookshop.ie/dashner-james-the-scorch-trials-maze-runner-series-book-2/">
+                                <img src="BooksBooksBooks_files/Dashner-James-Maze-Runner-2-The-Scorch-Trials-79111-p__87636.jpg" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                                The Scorch Trials ( Maze Runner Series - Book 2 )
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                                Dashner, James 
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                €2.50
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col"></div>
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2">
+                            <a href="https://thebookshop.ie/dashner-james-the-scorch-trials-maze-runner-series-book-2-brand-new/">
+                                <img src="BooksBooksBooks_files/Dashner-James-Maze-Runner-2-The-Scorch-Trials-79111-p__38376.jpg" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                             The Scorch Trials ( Maze Runner Series 
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                            
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                                Dashner, James 
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                €6.50
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            <div class="row">
+                <div class="col text-center" style="font-size: 0.6rem">
+                    <details>
+                        <summary> More from Dashner, James </summary>
+                        
+        <a href="https://thebookshop.ie/dashner-james-the-scorch-trials-maze-runner-series-book-2/">
+            <img src="BooksBooksBooks_files/Dashner-James-Maze-Runner-2-The-Scorch-Trials-79111-p__87636.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dashner-james-the-scorch-trials-maze-runner-series-book-2-brand-new/">
+            <img src="BooksBooksBooks_files/Dashner-James-Maze-Runner-2-The-Scorch-Trials-79111-p__38376.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dashner-james-the-kill-order-maze-runner-series-book-4/">
+            <img src="BooksBooksBooks_files/dashner-james-the-kill-order-417492-p__75646.1520136352.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dashner-james-the-fever-code-hardback-maze-runner-series-prequel/">
+            <img src="BooksBooksBooks_files/9781910655160__33490.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dashner-james-a-mutiny-in-time-book-1-hardback/">
+            <img src="BooksBooksBooks_files/image__59517.webp" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dashner-james-the-death-cure-maze-runner-series-book-3/">
+            <img src="BooksBooksBooks_files/dashner-james-the-death-cure-276136-p__01671.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dashner-james-the-death-cure-maze-runner-series-book-3-1/">
+            <img src="BooksBooksBooks_files/DEATHCURE__94900.1656840128.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dashner-james-mortality-doctrine-the-game-of-lives/">
+            <img src="BooksBooksBooks_files/image__16261.webp" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dashner-james-the-maze-runner-maze-runner-series-book-1/">
+            <img src="BooksBooksBooks_files/Dashner-James-The-Maze-Runner-84263-p__93907.1520123777.jpg" style="height: 5rem">
+        </a>
+        
+                    </details>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEtKFFYbMesik2lAbT0WnK0X-goodreadsInfo" style="border-top-right-radius: 0.8rem;border-bottom-right-radius: 0.8rem;border-bottom-left-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/6186357-the-maze-runner">
+                    <img src="BooksBooksBooks_files/6186357._SY75_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                The Maze Runner
+            </div>
+            <div class="row bookSeriesText">
+                (The Maze Runner, #1)
+            </div>
+            <div class="row bookAuthor">
+                Dashner, James
+            </div>
+            <div class="row bookRating">
+                4.04 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEtKFFYbMesik2lAbT0WnK0X-theBookshopResults">
+
+        
+        <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Title Match
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2">
+                            <a href="https://thebookshop.ie/dashner-james-the-fever-code-hardback-maze-runner-series-prequel/">
+                                <img src="BooksBooksBooks_files/9781910655160__33490.jpg" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                                The Fever Code (Hardback) ( Maze Runner Series - Prequel )
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                                Dashner, James 
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                €4.00
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col"></div>
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2">
+                            <a href="https://thebookshop.ie/dashner-james-the-maze-runner-maze-runner-series-book-1/">
+                                <img src="BooksBooksBooks_files/Dashner-James-The-Maze-Runner-84263-p__93907.1520123777.jpg" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                             The Maze Runner ( Maze Runner Series - Book 1 )
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                            
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                                Dashner, James 
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                €2.00
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            <div class="row">
+                <div class="col text-center" style="font-size: 0.6rem">
+                    <details>
+                        <summary> More from Dashner, James </summary>
+                        
+        <a href="https://thebookshop.ie/dashner-james-the-fever-code-hardback-maze-runner-series-prequel/">
+            <img src="BooksBooksBooks_files/9781910655160__33490.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dashner-james-the-maze-runner-maze-runner-series-book-1/">
+            <img src="BooksBooksBooks_files/Dashner-James-The-Maze-Runner-84263-p__93907.1520123777.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dashner-james-the-scorch-trials-maze-runner-series-book-2/">
+            <img src="BooksBooksBooks_files/Dashner-James-Maze-Runner-2-The-Scorch-Trials-79111-p__87636.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dashner-james-the-kill-order-maze-runner-series-book-4/">
+            <img src="BooksBooksBooks_files/dashner-james-the-kill-order-417492-p__75646.1520136352.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dashner-james-the-scorch-trials-maze-runner-series-book-2-brand-new/">
+            <img src="BooksBooksBooks_files/Dashner-James-Maze-Runner-2-The-Scorch-Trials-79111-p__38376.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dashner-james-the-death-cure-maze-runner-series-book-3/">
+            <img src="BooksBooksBooks_files/dashner-james-the-death-cure-276136-p__01671.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dashner-james-the-death-cure-maze-runner-series-book-3-1/">
+            <img src="BooksBooksBooks_files/DEATHCURE__94900.1656840128.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dashner-james-mortality-doctrine-the-game-of-lives/">
+            <img src="BooksBooksBooks_files/image__16261.webp" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/dashner-james-a-mutiny-in-time-book-1-hardback/">
+            <img src="BooksBooksBooks_files/image__59517.webp" style="height: 5rem">
+        </a>
+        
+                    </details>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEtbr1sbjLvWHwoSNNtJIrCo-goodreadsInfo" style="border-top-left-radius: 0.8rem;border-bottom-left-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/20758103-the-ask-and-the-answer">
+                    <img src="BooksBooksBooks_files/20758103._SY75_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                The Ask and the Answer
+            </div>
+            <div class="row bookSeriesText">
+                (Chaos Walking, #2)
+            </div>
+            <div class="row bookAuthor">
+                Ness, Patrick
+            </div>
+            <div class="row bookRating">
+                4.19 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEtbr1sbjLvWHwoSNNtJIrCo-theBookshopResults">
+
+        
+        <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Title Match
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2">
+                            <a href="https://thebookshop.ie/ness-patrick-the-ask-and-the-answer-chaos-walking-trilogy-book-2/">
+                                <img src="BooksBooksBooks_files/Ness-Patrick-The-Ask-and-the-Answer-50254-p__80343.jpg" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                                The Ask and the Answer ( Chaos Walking Trilogy : Book 2 )
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                                Ness, Patrick 
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                €2.50
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col"></div>
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2">
+                            <a href="https://thebookshop.ie/ness-patrick-the-ask-and-the-answer-chaos-walking-trilogy-book-2-brand-new/">
+                                <img src="BooksBooksBooks_files/ask_answer__88281.jpg" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                             The Ask and the Answer ( Chaos Walking Trilogy 
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                            
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                                Ness, Patrick 
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                €9.00
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            <div class="row">
+                <div class="col text-center" style="font-size: 0.6rem">
+                    <details>
+                        <summary> More from Ness, Patrick </summary>
+                        
+        <a href="https://thebookshop.ie/ness-patrick-the-ask-and-the-answer-chaos-walking-trilogy-book-2/">
+            <img src="BooksBooksBooks_files/Ness-Patrick-The-Ask-and-the-Answer-50254-p__80343.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ness-patrick-the-ask-and-the-answer-chaos-walking-trilogy-book-2-brand-new/">
+            <img src="BooksBooksBooks_files/ask_answer__88281.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ness-patrick-monsters-of-men-chaos-walking-trilogy-book-3/">
+            <img src="BooksBooksBooks_files/9781406344486__40670.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/hennessey-patrick-the-junior-officers-reading-club-killing-time-and-fighting-wars/">
+            <img src="BooksBooksBooks_files/hennessey-patrick-the-junior-officers-reading-club-killing-t.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ness-patrick-the-knife-of-never-letting-go-chaos-walking-trilogy-book-1/">
+            <img src="BooksBooksBooks_files/Ness-Patrick-The-Knife-of-Never-Letting-Go-13656-p__21267.jpg" style="height: 5rem">
+        </a>
+        
+                    </details>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEuvK4f1fGE3thHQeQ6CwXMs-goodreadsInfo" style="border-top-left-radius: 0.8rem;border-bottom-left-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/20758105-monsters-of-men">
+                    <img src="BooksBooksBooks_files/20758105._SY75_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                Monsters of Men
+            </div>
+            <div class="row bookSeriesText">
+                (Chaos Walking, #3)
+            </div>
+            <div class="row bookAuthor">
+                Ness, Patrick
+            </div>
+            <div class="row bookRating">
+                4.23 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEuvK4f1fGE3thHQeQ6CwXMs-theBookshopResults">
+    <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Possible Matches
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2 pt-2">
+                            <a href="https://thebookshop.ie/ness-patrick-monsters-of-men-chaos-walking-trilogy-book-3/">
+                                <img src="BooksBooksBooks_files/9781406344486__40670.jpg" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                                Monsters of Men ( Chaos Walking Trilogy : Book 3 )
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                                Ness, Patrick 
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                €2.50
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+            <div class="row">
+                <div class="col text-center" style="font-size: 0.6rem">
+                    <details>
+                        <summary> More from Ness, Patrick </summary>
+                        
+        <a href="https://thebookshop.ie/ness-patrick-monsters-of-men-chaos-walking-trilogy-book-3/">
+            <img src="BooksBooksBooks_files/9781406344486__40670.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ness-patrick-the-ask-and-the-answer-chaos-walking-trilogy-book-2/">
+            <img src="BooksBooksBooks_files/Ness-Patrick-The-Ask-and-the-Answer-50254-p__80343.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/hennessey-patrick-the-junior-officers-reading-club-killing-time-and-fighting-wars/">
+            <img src="BooksBooksBooks_files/hennessey-patrick-the-junior-officers-reading-club-killing-t.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ness-patrick-the-knife-of-never-letting-go-chaos-walking-trilogy-book-1/">
+            <img src="BooksBooksBooks_files/Ness-Patrick-The-Knife-of-Never-Letting-Go-13656-p__21267.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ness-patrick-the-ask-and-the-answer-chaos-walking-trilogy-book-2-brand-new/">
+            <img src="BooksBooksBooks_files/ask_answer__88281.jpg" style="height: 5rem">
+        </a>
+        
+                    </details>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjEw2sZbYYN7gNbEGCwUFDRg1-goodreadsInfo" style="border-bottom-left-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/20758104-the-knife-of-never-letting-go">
+                    <img src="BooksBooksBooks_files/20758104._SY75_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                The Knife of Never Letting Go
+            </div>
+            <div class="row bookSeriesText">
+                (Chaos Walking, #1)
+            </div>
+            <div class="row bookAuthor">
+                Ness, Patrick
+            </div>
+            <div class="row bookRating">
+                3.97 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjEw2sZbYYN7gNbEGCwUFDRg1-theBookshopResults">
+    <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Possible Matches
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2 pt-2">
+                            <a href="https://thebookshop.ie/ness-patrick-the-knife-of-never-letting-go-chaos-walking-trilogy-book-1/">
+                                <img src="BooksBooksBooks_files/Ness-Patrick-The-Knife-of-Never-Letting-Go-13656-p__21267.jpg" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                                The Knife of Never Letting Go ( Chaos Walking Trilogy : Book 1 )
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                                Ness, Patrick 
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                €2.50
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+            <div class="row">
+                <div class="col text-center" style="font-size: 0.6rem">
+                    <details>
+                        <summary> More from Ness, Patrick </summary>
+                        
+        <a href="https://thebookshop.ie/ness-patrick-the-knife-of-never-letting-go-chaos-walking-trilogy-book-1/">
+            <img src="BooksBooksBooks_files/Ness-Patrick-The-Knife-of-Never-Letting-Go-13656-p__21267.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ness-patrick-monsters-of-men-chaos-walking-trilogy-book-3/">
+            <img src="BooksBooksBooks_files/9781406344486__40670.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ness-patrick-the-ask-and-the-answer-chaos-walking-trilogy-book-2/">
+            <img src="BooksBooksBooks_files/Ness-Patrick-The-Ask-and-the-Answer-50254-p__80343.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/hennessey-patrick-the-junior-officers-reading-club-killing-time-and-fighting-wars/">
+            <img src="BooksBooksBooks_files/hennessey-patrick-the-junior-officers-reading-club-killing-t.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ness-patrick-the-ask-and-the-answer-chaos-walking-trilogy-book-2-brand-new/">
+            <img src="BooksBooksBooks_files/ask_answer__88281.jpg" style="height: 5rem">
+        </a>
+        
+                    </details>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    
+    <div class="row goodReadsBookBox mt-2 pr-2" id="2GxjErl9WlMPO75n4uJlAOrL0ew-goodreadsInfo" style="border-top-left-radius: 0.8rem;">
+        <div class="col-1 text-center pt-2">
+                <a href="https://www.goodreads.com/book/show/21969786-more-than-this">
+                    <img src="BooksBooksBooks_files/21969786._SY75_.jpg" style="width: 4rem">
+                </a>
+        </div>
+        <div class="col-4 pt-1">
+            <div class="row bookTitle bold">
+                More Than This
+            </div>
+            <div class="row bookSeriesText">
+                
+            </div>
+            <div class="row bookAuthor">
+                Ness, Patrick
+            </div>
+            <div class="row bookRating">
+                3.96 stars
+            </div>
+        </div>
+        <div class="col pr-3" id="2GxjErl9WlMPO75n4uJlAOrL0ew-theBookshopResults">
+    <div class="row">
+        <div class="col">
+            <div class="row justify-content-md-center titleMatch">
+                Possible Matches
+            </div>
+            <div class="row" style="height: 6rem">
+                <div class="col-5 searchResultBook">
+                    <div class="row">
+                        <div class="col-3 pl-2 pt-2">
+                            <a href="">
+                                <img src="" style="width: 3rem">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="row" style="font-weight: bold; font-size: 0.8rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-size: 0.6rem">
+                               
+                            </div>
+                            <div class="row" style="font-weight: bold; font-size: 0.7rem">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+            <div class="row">
+                <div class="col text-center" style="font-size: 0.6rem">
+                    <details>
+                        <summary> More from Ness, Patrick </summary>
+                        
+        <a href="https://thebookshop.ie/ness-patrick-monsters-of-men-chaos-walking-trilogy-book-3/">
+            <img src="BooksBooksBooks_files/9781406344486__40670.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ness-patrick-the-ask-and-the-answer-chaos-walking-trilogy-book-2/">
+            <img src="BooksBooksBooks_files/Ness-Patrick-The-Ask-and-the-Answer-50254-p__80343.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/hennessey-patrick-the-junior-officers-reading-club-killing-time-and-fighting-wars/">
+            <img src="BooksBooksBooks_files/hennessey-patrick-the-junior-officers-reading-club-killing-t.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ness-patrick-the-knife-of-never-letting-go-chaos-walking-trilogy-book-1/">
+            <img src="BooksBooksBooks_files/Ness-Patrick-The-Knife-of-Never-Letting-Go-13656-p__21267.jpg" style="height: 5rem">
+        </a>
+        
+        <a href="https://thebookshop.ie/ness-patrick-the-ask-and-the-answer-chaos-walking-trilogy-book-2-brand-new/">
+            <img src="BooksBooksBooks_files/ask_answer__88281.jpg" style="height: 5rem">
+        </a>
+        
+                    </details>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="BooksBooksBooks_files/main.js"></script>
+
+    <style>
+        * {
+  font-family: 'Grotesk Regular';
+  color: white;
+}
+
+/* .col {
+  border: 1px solid aqua;
+}
+
+.row {
+  border: 1px solid orange;
+} */
+
+body {
+  background-color: #22242f;
+}
+
+.bold {
+  font-family: 'Grotesk Bold';
+}
+
+.linkBox {
+  font-weight: bold; 
+  font-size: 1.4rem;
+  border: 2px solid #c0c0c0;
+}
+
+#mainInputBox {
+    border: 1px solid #c0c0c0; 
+    /* border-radius: 0.3rem;  */
+    padding: 0.4rem;
+    background-color: #22242f;
+    color: #c0c0c0;
+    
+    width: 60%; 
+    font-size: 1.1rem
+}
+
+.automatedCheckShelfURLInput {
+  border: 1px solid #c0c0c0; 
+  /* border-radius: 0.3rem;  */
+  padding: 0.4rem;
+  background-color: #22242f;
+  color: #c0c0c0;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  width: 100%; 
+  font-size: 0.8rem;
+}
+
+.toggleBox {
+  border: 2px solid #c0c0c0;
+}
+
+#newBookMatchRow {
+  color: #22242f;
+}
+
+.skeleton {
+  opacity: 0.6;
+  animation: skeleton-loading 0.56s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: #c0c0c0;
+  }
+  100% {
+    background-color: #74797b;
+  }
+}
+
+/* Crawl progress bar */
+.crawlProgressBar {
+    margin: 0rem 0.2rem;
+    height: 0.7rem;
+    background: #22242f;
+    /* background: #e1e4e8; */
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  
+  .crawlProgressBarSpan{
+    /* width: 12%; */
+    display: block;
+    height: 100%;
+    background: linear-gradient(32deg,#ffd33d,#ea4aaa 20%,#b34bff 30%,#4787dc 50%,#ffd33d 70%,#ea4aaa 80%,#b34bff);
+    background-size: 300% 100%;
+    animation: progress-animation 3s linear infinite;
+  }
+  
+  @keyframes progress-animation {
+    0% {
+      background-position: 100%;
+    }
+    100% {
+      background-position: 0;
+    }
+  }
+
+.crawlInfoCol {
+  font-size: 1.4rem;
+  font-size: bold;
+  margin-right: 0.15rem;
+  margin-left: 0.15rem;
+
+  border: 2px solid #c0c0c0;
+}
+
+
+.goodReadsBookBox {
+    border: 2px solid #c0c0c0;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+}
+
+.bookTitle {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.bookSeriesText {
+    font-size: 1rem;
+}
+
+.bookAuthor, .bookRating {
+    font-size: 0.9rem;
+}
+
+.titleMatch, .authorMatch {
+  font-size: 0.6rem;
+}
+
+.searchResultBook {
+  width: 2rem;
+}
+
+@font-face {
+  font-family: 'Grotesk Regular';
+  /* src: url(../fonts/NotoSansKR-Regular.otf); */
+  src: local('Grotesk Regular'), url(BooksBooksBooks_files/fonts/FamiljenGrotesk-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Grotesk Bold';
+  /* src: url(../fonts/NotoSansKR-Regular.otf); */
+  src: local('Grotesk Bold'), url(BooksBooksBooks_files/fonts/FamiljenGrotesk-Bold.ttf);
+}
+
+    </style>
+
+
+</body></html>

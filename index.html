@@ -374,17 +374,15 @@
                 <hr class="mt-0 mb-1" />
                 <div class="row">
                     <div  class="col-5">
-                        So I'm standing there at Charlie Byrnes browsing for some new books and when I pick one up most of the time 
-                        I'm completely lost when it comes to important details like the genres a book consists of and if its the 
-                        first in a possible series. Of course it just so happens that my data is horrendous when I'm there so 
-                        looking up books on GoodReads directly takes an eternity.
-
+                        So I'm standing there at Charlie Byrnes looking for some new book. I pick one up and all I can 
+                        go off of is the blurb on the back and maybe the picture on the front. Not something that I like
+                        doing. Looking up the book on GoodReads takes too long since my data there is always horrendous.
                         <br /> <br />
-                        To fix this I've made this little application. I pop in the ISBN (found on the barcode of all books) 
-                        and the backend then queries GoodReads and sends back a tiny JSON object with the key points that I 
-                        want to know. No data is wasted on loading UI, js frameworks or images that I don't care about and 
-                        I can therefore query more books faster. It also visually highlights the genres that I love and 
-                        the ones that I hate
+                        To fix this I've made this little application. I scan the barcode (which is the ISBN) and the backend
+                        then queries GoodReads and sends back a tiny response with the key points that I want to know 
+                        (genres and overall rating etc). No data is wasted on loading UI, js frameworks or images that 
+                        I don't care about and I can therefore query more books faster. It also visually highlights 
+                        the genres that I love and the ones that I hate
                        
                         <div class="row justify-content-md-center ml-1 mr-1 mb-2 mt-2 box lightBorder">
                             <img  src="static/images/goLogo.webp" class="ml-3" style="width: 1.7rem" alt="go logo" data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-perspective="500" data-tilt-scale="1.2">

@@ -7,3 +7,22 @@
     color: #8c8c8c;
     text-shadow: none;
 }
+
+.blogTitle {
+    font-weight: bold;
+    font-size: 4rem;
+    line-height: 105%;
+}
+
+.blogText, li {
+    font-size: 1.35rem;
+    line-height: 120%;
+}
+
+/* .col {
+    border: 1px solid red;
+}
+
+.row {
+    border: 1px solid green;
+} */

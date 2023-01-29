@@ -50,71 +50,114 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col">
-                <div tabindex="1" class="col boxWithBorder pl-3" style="border-top-left-radius: 2rem; border-bottom-right-radius: 2rem;">
+                <div tabindex="1" class="col pl-3">
                     <div class="row justify-content-md-center pl-3 pr-3">
-                        <h1 tabindex="1" style="font-weight: bold; font-size: 2.7rem;">Shrinking my site with magic(k)</h1>
+                        <div class="col-8 pt-2 pb-2">
+                            <p class="blogTitle" tabindex="1">Shrinking my site with magic(k)</p>
+                        </div>
+                        <div class="col-4">
+                            <img 
+                                src="../static/images/wizardHacking.webp"
+                                style="width: 100%"
+                            >
+                        </div>
                      </div>
-    
+
+                     <div>
+                        <div class="row">
+                            <div class="col pl-5">
+                                April 30th 2022
+                            </div>
+                        </div>
+                     </div>
                    
                      <div class="row pt-3">
                         <div class="col pl-5 pr-5">
-                            <span style="font-weight: bold;">TLDR: </span> I used 
-                            <a href="https://github.com/ImageMagick/ImageMagick">image magick</a> to convert all images to webp
-                            format and downsized images that were only being displayed in small resolutions on the site which
-                            brought the total static content payload used down to 2.1MB from 6.6MB originally 
+                            <p class="blogText">
+                                <span style="font-weight: bold;">TLDR: </span> I used 
+                                <a href="https://github.com/ImageMagick/ImageMagick">image magick</a> to convert all images to webp
+                                format and downsized images that were only being displayed in small resolutions on the site which
+                                brought the total static content payload used down to 2.1MB from 6.6MB originally 
+                            </p>       
+                                <hr class="mt-2 mb-2" />
+                            
+                            <p class="blogText">    
+                                I'm not primarily a web developer so when I read comments in the past about websites with unreasonably
+                                large payloads I didn't really pay much attention to them. It was only when my own internet connection
+                                at home started to suffer when I realised how slow and poorly optimised my own site was with regards
+                                to all of the content such as images and videos that it was loading. So right after I did a massive
+                                overhaul of my I took on the task of slimming it down as much as I could. 
 
-                            <hr class="mt-2 mb-2" />
-                            I'm not primarily a web developer so when I read comments in the past about websites with unreasonably
-                            large payloads I didn't really pay much attention to them. It was only when my own internet connection
-                            at home started to suffer when I realised how slow and poorly optimised my own site was with regards
-                            to all of the content such as images and videos that it was loading. So right after I did a massive
-                            overhaul of my I took on the task of slimming it down as much as I could. 
+                                <br /><br />
 
-                            <br /><br />
-                            As a reference all of the static content (images and videos) that were being in the beginning totalled
-                            <span style="font-weight: bold">6.6MB</span> over 52 files. I often noticed that larger images like the 
-                            background were the last to be fetched and that meant that the background was a blank white wall until 
-                            that happened. Of course I could've just used some background-color tricks to smooth that out but it
-                            conveyed the bigger issue of my bloated site. To get started I knew that in order to keep the content
-                            that I was happy with and lower the total payload I'd have to resize and compress it to some degree
-                            that I would be happy with the final payload size. 
+                                As a reference all of the static content (images and videos) that were being in the beginning totalled
+                                <span style="font-weight: bold">6.6MB</span> over 52 files. I often noticed that larger images like the 
+                                background were the last to be fetched and that meant that the background was a blank white wall until 
+                                that happened. 
+                                
+                                <br /><br />
+                                
+                                Of course I could've just used some background-color tricks to smooth that out but it
+                                conveyed the bigger issue of my bloated site. To get started I knew that in order to keep the content
+                                that I was happy with and lower the total payload I'd have to resize and compress it to some degree
+                                that I would be happy with the final payload size. 
 
-                            <br /><br />
+                                <br /><br />
 
-                            I got the idea to convert all my images to .webp format after reading a blog and thread on hackernews:
-                            <a href="https://news.ycombinator.com/item?id=31010659">Webp is such a goated format</a> by sandyuraz.
-                            Before I was using mostly png with a small amount of svg and even fewer jpg images. I used the mentioned
-                            <a href="https://github.com/ImageMagick/ImageMagick">image magick</a> cli to convert all my content since
-                            it was so easy. With <span class="code">magick file.png file.webp</span> I could convert a png into a webp
-                            without any more configuration necessary. While the lossless functionality of PNGs are nice the compression
-                            that webp applies is definitely not noticeable most of the time for smaller images.
+                                I was loading in images that were massive compared to the actual size that they were being showing
+                                which is a complete waste. Why load a 1080p picture if its only going to be shown as a tiny icon?
 
-                            <br /><br />
+                                <br /><br />
+    
+                                I also got the idea to convert all my images to .webp format after reading a blog and thread on hackernews:
+                                <a href="https://news.ycombinator.com/item?id=31010659">Webp is such a goated format</a> by sandyuraz.
+                                Before I was using mostly png with a small amount of svg and even fewer jpg images. I used the mentioned
+                                <a href="https://github.com/ImageMagick/ImageMagick">image magick</a> cli to convert all my content since
+                                it was so easy. 
+                                
+                                <br /><br />
+                                
+                                With <span class="code">'magick file.png file.webp'</span> I could convert a png into a webp
+                                without any more configuration necessary. While the lossless functionality of PNGs are nice the compression
+                                that webp applies is definitely not noticeable most of the time for smaller images.
 
-                            I don't have an exact figure for how effective this step was but from the few checks I made during converting
-                            images nearly all came out looking nearly identical to their PNG originals at a fraction of the size. In 
-                            addition to converting to webp for a fair few images I reduced its actual size significantly as I was using
-                            them for tiny icons when the original sizes were often 400x500. This was slightly tedious and I didn't automate
-                            the process and instead used <a href="https://www.photopea.com/">photopea</a>, an online photoshop clone to resize
-                            the images as I'm quite used to the interface. The process for most images (that needed resizing) went like:
-                            <ul>
-                                <li>Drag the original PNG into photopea</li>
-                                <li>Resize it to roughly 200x200 and export as PNG</li>
-                                <li>Use magick to then convert this downsized PNG into webp</li>
-                            </ul>
+                                <br /><br />
+    
+                                I don't have an exact figure for how effective this step was but from the few checks I made during converting
+                                images nearly all came out looking nearly identical to their PNG originals at a fraction of the size. In 
+                                addition to converting to webp for a fair few images I reduced its actual size (as I mentioned earlier) 
+                                significantly as I was using them for tiny icons when the original sizes were often 400x500. This was slightly tedious 
+                                and I didn't automate the process and instead used <a href="https://www.photopea.com/">photopea</a>, an online 
+                                photoshop clone to resize the images as I'm quite used to the interface. The process for most images 
+                                (that needed resizing) went like:
 
-                            I left the few videos alone and for the gifs I utilised <a href="https://ezgif.com/optimize">ezgif</a> to cleverly 
-                            shave down more and more bytes from each gif. It was very applied and wasn't automated but most of the time I was
-                            able to make significant gains without sacrificing too much quality. The tricks that I applied mostly were reducing 
-                            the color range available, removing every 3rd/4th frames and adding lossy compression until it became noticeable.
+                                <ul>
+                                    <li>Drag the original PNG into photopea</li>
+                                    <li>Resize it to roughly 200x200 and export as PNG</li>
+                                    <li>Use magick to then convert this downsized PNG into webp</li>
+                                </ul>
+                            </p>   
+                            <p class="blogText">    
 
-                            In the end all images and videos were reduced to a meer <span style="font-weight: bold">2.1MB</span>. Thats a 3.1x 
-                            reduction. WOWZA. The quality of the images and videos from a users perspective barely even changed and the 
-                            performance was greatly increased so I'd consider it a complete success.
+                                I left the few videos alone and for the gifs I utilised <a href="https://ezgif.com/optimize">ezgif</a> to cleverly 
+                                shave down more and more bytes from each gif. It was very applied and wasn't automated but most of the time I was
+                                able to make significant gains without sacrificing too much quality. 
+                                
+                                <br /><br />
+
+                                The tricks that I applied mostly were reducing 
+                                the color range available, removing every 3rd/4th frames and adding lossy compression until it became noticeable.
+    
+                                In the end all images and videos were reduced to a meer <span style="font-weight: bold">2.1MB</span>. Thats a 3.1x 
+                                reduction.
+                                
+                                <br /><br />
+                                
+                                The quality of the images and videos from a users perspective barely even changed and the 
+                                performance was greatly increased so I'd consider it a complete success.
+                            </p>
                         </div>
                     </div>
-                    
-
                 </div>
             </div>
         </div>

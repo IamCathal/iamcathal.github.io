@@ -169,4 +169,15 @@ div[aria-label="Carousel Pagination"] button[data-action="stop"] {
     border: 2px solid orange;
     top: 15px;
     right: 15px;
-  }
+}
+
+.maxWidthSpanText {
+    text-align: justify;
+    font-size:  130%;
+}
+/* 
+.maxWidthSpanText::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+} */

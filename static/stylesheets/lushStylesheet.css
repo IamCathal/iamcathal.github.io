@@ -1,0 +1,92 @@
+body {
+    background-color: #ffffff;
+    font-family: Tahoma, sans-serif;
+}
+
+.corporationLushList {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.listListItems {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.itemNameBox {
+    line-height: 90%;
+}
+
+.item {
+    width: 7rem;
+    height: 7rem;
+    text-align: center;
+
+    /* display: inline; */
+    margin: 0.5rem;
+
+    /* border: 1px solid black; */
+}
+
+.itemImg {
+    width: 80px;
+    height: 80px;
+}
+
+.mainInfoText {
+    text-align: center;
+    font-size: 2.5rem;
+    font-size: bold;
+}
+
+.corporationLushTypeBox {
+    border: 3px solid rgb(82, 82, 82);
+    margin-top: 2rem;
+}
+
+.corporationInfoBox {
+    padding-left: 0.5rem;
+    margin: 0;
+    background-color: #d4d4d5;
+}
+
+.corporationTitle {
+    font-size: 2rem;
+    font-weight: bold;
+
+    margin: 0;
+}
+
+.brandPickerBox {
+    text-align: center;
+    padding: 2rem;
+}
+
+.brandOrTypePickerDiv {
+    display: inline-flex;
+    padding: 0.5rem;
+}
+
+.brandOrTypePickerSelect {
+    font-size: 1.5rem;
+}
+
+.corporationLushList {
+    display: block;
+}
+
+.corporationLushListCategory {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.categoryTitle {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.lushName {
+    font-weight: bold;
+}

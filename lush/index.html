@@ -1,0 +1,705 @@
+<html lang="en"><head></head><body class="vsc-initialized">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="../static/stylesheets/lushStylesheet.css" rel="stylesheet" type="text/css">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="../static/favicons/apple-icon-57x57.webp">
+    <link rel="apple-touch-icon" sizes="60x60" href="../static/favicons/apple-icon-60x60.webp">
+    <link rel="apple-touch-icon" sizes="72x72" href="../static/favicons/apple-icon-72x72.webp">
+    <link rel="apple-touch-icon" sizes="76x76" href="../static/favicons/apple-icon-76x76.webp">
+    <link rel="apple-touch-icon" sizes="114x114" href="../static/favicons/apple-icon-114x114.webp">
+    <link rel="apple-touch-icon" sizes="120x120" href="../static/favicons/apple-icon-120x120.webp">
+    <link rel="apple-touch-icon" sizes="144x144" href="../static/favicons/apple-icon-144x144.webp">
+    <link rel="apple-touch-icon" sizes="152x152" href="../static/favicons/apple-icon-152x152.webp">
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/favicons/apple-icon-180x180.webp">
+    <link rel="icon" type="image/png" sizes="192x192" href="../static/favicons/android-icon-192x192.webp">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/favicons/favicon-32x32.webp">
+    <link rel="icon" type="image/png" sizes="96x96" href="../static/favicons/favicon-96x96.webp">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/favicons/favicon-16x16.webp">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/ms-icon-144x144.webp">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta property="og:image" content="https://avatars0.githubusercontent.com/u/6561327?s=460&amp;v=4">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cathaloc.dev">
+    <meta property="og:title" content="Lush List">
+    <meta property="og:description" content="Track the big lads">
+
+    <title>Lush List</title>
+
+    <div class="container">
+
+        <div class="brandPickerBox">
+            <div class="brandOrTypePickerDiv">
+               <select class="brandOrTypePickerSelect" id="corporationSelect">
+                   <option>All</option>
+                </select>
+            </div>
+
+            <div class="brandOrTypePickerDiv">
+                <select class="brandOrTypePickerSelect" id="typeSelect">
+                    <option>All</option>
+                 </select>
+             </div>
+        </div>
+
+        <div>
+            <div class="mainInfoText">
+                <span id="beersTotal"></span> beers, <span id="corporationsTotal"></span> corporations
+            </div>
+           
+        </div>
+
+        <div id="contentOutput">
+
+        </div>
+
+        <!-- <div class="corporationLushTypeBox">
+            <div class="corporationInfoBox">
+                <span class="corporationTitle">Diageo</span>
+            </div>
+
+            <div class="corporationLushList">
+
+                <div class="corporationLushListCategory">
+                    <div class="corporationInfoBox">
+                        <span class="categoryTitle">Beer</span>
+                    </div>
+
+                    <div class="item">
+                        Guinness
+                    </div>
+                </div>
+
+                <div class="corporationLushListCategory">
+                    <div class="corporationInfoBox">
+                        <span class="categoryTitle">Wine</span>
+                    </div>
+
+                    <div class="item">
+                        Guinness
+                    </div>
+                </div>
+
+            </div>
+        </div> -->
+      </div>
+
+    <script>
+         const lushList = 
+         [
+    {
+        "name": "Guinness",
+        "corporation": "Diageo",
+        "type": "beer",
+        "img": "static/images/lush/guinness.png"
+    },
+    {
+        "name": "Heineken",
+        "corporation": "Heineken",
+        "type": "beer",
+        "img": "static/images/lush/heineken.png"
+    },
+    {
+        "name": "Amstel",
+        "corporation": "Heineken",
+        "type": "beer",
+        "img": "static/images/lush/amstel.png"
+    },
+    {
+        "name": "Birra Moretti",
+        "corporation": "Heineken",
+        "type": "beer",
+        "img": "static/images/lush/birraMoretti.png"
+    },
+    {
+        "name": "Tiger",
+        "corporation": "Heineken",
+        "type": "beer",
+        "img": "static/images/lush/tigerbeer.png"
+    },
+    {
+        "name": "Desperados",
+        "corporation": "Heineken",
+        "type": "beer",
+        "img": "static/images/lush/desperados.png"
+    },
+    {
+        "name": "Edelweiss",
+        "corporation": "Heineken",
+        "type": "beer",
+        "img": "static/images/lush/edelweisss_1.png"
+    },
+    {
+        "name": "Lagunitas",
+        "corporation": "Heineken",
+        "type": "beer",
+        "img": "static/images/lush/lagunitas.png"
+    },
+    {
+        "name": "WindHoek",
+        "corporation": "Heineken",
+        "type": "beer",
+        "img": "static/images/lush/windhoek.png"
+    },
+    {
+        "name": "Dos Equis",
+        "corporation": "Heineken",
+        "type": "beer",
+        "img": "static/images/lush/dosEquis.png"
+    },
+    {
+        "name": "Red Stripe",
+        "corporation": "Heineken",
+        "type": "beer",
+        "img": "static/images/lush/redStripe.png"
+    },
+    {
+        "name": "Kingfisher",
+        "corporation": "Heineken",
+        "type": "beer",
+        "img": "static/images/lush/kingfisher.png"
+    },
+    {
+        "name": "Bintang",
+        "corporation": "Heineken",
+        "type": "beer",
+        "img": "static/images/lush/bintang.png"
+    },
+    {
+        "name": "Gosser",
+        "corporation": "Heineken",
+        "type": "beer",
+        "img": "static/images/lush/gosser.png"
+    },
+    {
+        "name": "Affligem",
+        "corporation": "Heineken",
+        "type": "beer",
+        "img": "static/images/lush/affligem.png"
+    },
+    {
+        "name": "Mort Subite",
+        "corporation": "Heineken",
+        "type": "beer",
+        "img": "static/images/lush/mort-subite-kriek.png"
+    },
+    {
+        "name": "Strongbow",
+        "corporation": "Heineken",
+        "type": "beer",
+        "img": "static/images/lush/strongbow.png"
+    },
+    {
+        "name": "Stassen",
+        "corporation": "Heineken",
+        "type": "beer",
+        "img": "static/images/lush/stassen-photo-text-3.png"
+    },
+    {
+        "name": "Bulmers",
+        "corporation": "Heineken",
+        "type": "beer",
+        "img": "static/images/lush/bulmers.png"
+    },
+    {
+        "name": "Old Mout",
+        "corporation": "Heineken",
+        "type": "beer",
+        "img": "static/images/lush/oldMout.png"
+    },
+    {
+        "name": "Savanna",
+        "corporation": "Heineken",
+        "type": "beer",
+        "img": "static/images/lush/savanna.png"
+    },
+    {
+        "name": "Turbo King",
+        "corporation": "Heineken",
+        "type": "beer",
+        "img": "static/images/lush/turboking-bottle.png"
+    },
+    {
+        "name": "Tecate",
+        "corporation": "Heineken",
+        "type": "beer",
+        "img": "static/images/lush/tecate_twelve_1.png"
+    },
+    {
+        "name": "Bia vet",
+        "corporation": "Heineken",
+        "type": "beer",
+        "img": "static/images/lush/biaViet.png"
+    },
+    {
+        "name": "Tiger Crystal",
+        "corporation": "Heineken",
+        "type": "beer",
+        "img": "static/images/lush/tigerCrystal.png"
+    },
+    {
+        "name": "Budweiser",
+        "corporation": "Annheiser Busch",
+        "type": "beer",
+        "img": "static/images/lush/budweiser.png"
+    },
+    {
+        "name": "Bud Light",
+        "corporation": "Annheiser Busch",
+        "type": "beer",
+        "img": "static/images/lush/bud-light.png"
+    },
+    {
+        "name": "Kona Big wave",
+        "corporation": "Annheiser Busch",
+        "type": "beer",
+        "img": "static/images/lush/konaBigWave.png"
+    },
+    {
+        "name": "Michelob Ultra",
+        "corporation": "Annheiser Busch",
+        "type": "beer",
+        "img": "static/images/lush/michelbobUltra.png"
+    },
+    {
+        "name": "Stella Artois",
+        "corporation": "Annheiser Busch",
+        "type": "beer",
+        "img": "static/images/lush/stellaArtois.png"
+    },
+    {
+        "name": "Estrella",
+        "corporation": "Annheiser Busch",
+        "type": "beer",
+        "img": "static/images/lush/Estrella-Damm-Lager-lrg.png"
+    },
+    {
+        "name": "Busch",
+        "corporation": "Annheiser Busch",
+        "type": "beer",
+        "img": "static/images/lush/busch.png"
+    },
+    
+    {
+        "name": "Landshark",
+        "corporation": "Annheiser Busch",
+        "type": "beer",
+        "img": "static/images/lush/landshark.png"
+    },
+    {
+        "name": "Presidente",
+        "corporation": "Annheiser Busch",
+        "type": "beer",
+        "img": "static/images/lush/presidente.png"
+    },
+    {
+        "name": "Hoegaarden",
+        "corporation": "Annheiser Busch",
+        "type": "beer",
+        "img": "static/images/lush/hoegaarden.png"
+    },
+    {
+        "name": "Corona",
+        "corporation": "Annheiser Busch",
+        "type": "beer",
+        "img": "static/images/lush/corona.png"
+    },
+    {
+        "name": "Harp",
+        "corporation": "Diageo",
+        "type": "beer",
+        "img": "static/images/lush/harp.png"
+    },
+    {
+        "name": "Smithwicks",
+        "corporation": "Diageo",
+        "type": "beer",
+        "img": "static/images/lush/smithwicks-red-ale.png"
+    },
+    {
+        "name": "Kilkenny",
+        "corporation": "Diageo",
+        "type": "beer",
+        "img": "static/images/lush/kilkenny-draught.png"
+    },
+    {
+        "name": "Carlsberg",
+        "corporation": "Carlsberg",
+        "type": "beer",
+        "img": "static/images/lush/carlsberg.png"
+    },
+    {
+        "name": "Tuborg",
+        "corporation": "Carlsberg",
+        "type": "beer",
+        "img": "static/images/lush/tuborg.png"
+    },
+    {
+        "name": "Murphys",
+        "corporation": "Heineken",
+        "type": "beer",
+        "img": "static/images/lush/murphys.png"
+    },
+    {
+        "name": "Beamish",
+        "corporation": "Heineken",
+        "type": "beer",
+        "img": "static/images/lush/beamish-pint.png"
+    },
+    {
+        "name": "Bavaria",
+        "corporation": "Molson Coors",
+        "type": "beer",
+        "img": "static/images/lush/bavaria-2.png"
+    },
+    {
+        "name": "Blue moon",
+        "corporation": "Molson Coors",
+        "type": "beer",
+        "img": "static/images/lush/blueMoon.png"
+    },
+    {
+        "name": "Carling",
+        "corporation": "Molson Coors",
+        "type": "beer",
+        "img": "static/images/lush/carling.png"
+    },
+    {
+        "name": "Coors",
+        "corporation": "Molson Coors",
+        "type": "beer",
+        "img": "static/images/lush/coorslight-can.png"
+    },
+    {
+        "name": "Fosters",
+        "corporation": "Molson Coors",
+        "type": "beer",
+        "img": "static/images/lush/fosters.png"
+    },
+    {
+        "name": "Grolsch",
+        "corporation": "Molson Coors",
+        "type": "beer",
+        "img": "static/images/lush/Grolsch_premium_lager_bottle_unopened.png"
+    },
+    {
+        "name": "Lech",
+        "corporation": "Molson Coors",
+        "type": "beer",
+        "img": "static/images/lush/lech.png"
+    },
+    {
+        "name": "Madri",
+        "corporation": "Molson Coors",
+        "type": "beer",
+        "img": "static/images/lush/madri.png"
+    },
+    {
+        "name": "Miller",
+        "corporation": "Molson Coors",
+        "type": "beer",
+        "img": "static/images/lush/miller.png"
+    },
+    {
+        "name": "Peroni",
+        "corporation": "Molson Coors",
+        "type": "beer",
+        "img": "static/images/lush/peroni.png"
+    },
+    {
+        "name": "Pislner Urquell",
+        "corporation": "Molson Coors",
+        "type": "beer",
+        "img": "static/images/lush/pilsnerUrquell.png"
+    },
+    {
+        "name": "Sol",
+        "corporation": "Molson Coors",
+        "type": "beer",
+        "img": "static/images/lush/sol.png"
+    },
+    {
+        "name": "Staropramen",
+        "corporation": "Molson Coors",
+        "type": "beer",
+        "img": "static/images/lush/staropramen.png"
+    },
+    {
+        "name": "Tyskie",
+        "corporation": "Molson Coors",
+        "type": "beer",
+        "img": "static/images/lush/tyskie.png"
+    },
+    {
+        "name": "Tsingtao",
+        "corporation": "Tsingtao",
+        "type": "beer",
+        "img": "static/images/lush/tsingtao.png"
+    },
+    {
+        "name": "Asahi",
+        "corporation": "Asahi",
+        "type": "beer",
+        "img": "static/images/lush/asahi.png"
+    },
+    {
+        "name": "Pislner Urquell",
+        "corporation": "Asahi",
+        "type": "beer",
+        "img": "static/images/lush/pilsnerUrquell.png"
+    },
+    {
+        "name": "Kozel",
+        "corporation": "Asahi",
+        "type": "beer",
+        "img": "static/images/lush/kozel.png"
+    },
+    {
+        "name": "Grolsch",
+        "corporation": "Asahi",
+        "type": "beer",
+        "img": "static/images/lush/Grolsch_premium_lager_bottle_unopened.png"
+    },
+    {
+        "name": "Peroni",
+        "corporation": "Asahi",
+        "type": "beer",
+        "img": "static/images/lush/peroni.png"
+    },
+    {
+        "name": "Lech",
+        "corporation": "Asahi",
+        "type": "beer",
+        "img": "static/images/lush/lech.png"
+    },
+    {
+        "name": "Tyskie",
+        "corporation": "Asahi",
+        "type": "beer",
+        "img": "static/images/lush/tyskie.png"
+    },
+    {
+        "name": "Dreher",
+        "corporation": "Asahi",
+        "type": "beer",
+        "img": "static/images/lush/Dreher.png"
+    },
+    {
+        "name": "Zubr",
+        "corporation": "Asahi",
+        "type": "beer",
+        "img": "static/images/lush/zubr.png"
+    },
+    {
+        "name": "Orchard Thieves",
+        "corporation": "Heineken",
+        "type": "beer",
+        "img": "static/images/lush/orchardThieves.png"
+    },
+    {
+        "name": "Natural Light",
+        "corporation": "Annheiser Busch",
+        "type": "beer",
+        "img": "static/images/lush/naturalLight.png"
+    },
+    {
+        "name": "Cobra Beer",
+        "corporation": "Molson Coors",
+        "type": "beer",
+        "img": "static/images/lush/cobra.png"
+    }
+]
+        let selectedCorporation = "";
+        let selectedType = "";
+
+
+        getAndRenderCorporationOptions(lushList)
+        getAndRenderLushTypeOptions(lushList)
+
+        fillInBeerAndCorporationCount(lushList)
+        renderFor(lushList, "all", "All")
+
+
+
+        document.getElementById("corporationSelect").addEventListener("change", function() {
+            const corporationChoice = document.getElementById("corporationSelect").value
+            const lushTypeChoice = document.getElementById("typeSelect").value
+
+            renderFor(lushList, corporationChoice, lushTypeChoice)
+        });
+        document.getElementById("typeSelect").addEventListener("change", function() {
+            const corporationChoice = document.getElementById("corporationSelect").value
+            const lushTypeChoice = document.getElementById("typeSelect").value
+
+            renderFor(lushList, corporationChoice, lushTypeChoice)
+        });
+
+        function renderFor(list, corporationChoice, lushTypeChoice) {
+            const filteredLushList = getLushSplitByCorporation(lushList);
+            const filteredByCorporationLushList = getLushListFilteredByCorporation(filteredLushList, corporationChoice)
+            const filteredByTypeLushList = getLushListFilteredByType(filteredLushList, lushTypeChoice)
+
+            console.log(`Rendering ${corporationChoice} - ${lushTypeChoice}`)
+            console.log(filteredByTypeLushList)
+
+            document.getElementById("contentOutput").innerHTML = "";
+
+            for (const [corporation, theirLush] of Object.entries(filteredLushList)) {
+                const content = generateHTMLForCorporation(corporation, theirLush)
+                document.getElementById("contentOutput").innerHTML += content
+            }
+        }
+
+        function getLushSplitByCorporation(list) {
+            return Object.groupBy(list, ({corporation}) => corporation);
+        }
+
+        function getLushSplitByType(list) {
+            return Object.groupBy(list, ({type}) => type);
+        }
+
+        function getLushListFilteredByType(list, type) {
+            if (type.toLowerCase() == "all") {
+                return list;
+            }
+
+            for (let [corporation, theirLush] of Object.entries(list)) {
+                list[corporation] = theirLush.filter((lush) => lush.type.toLowerCase() == type.toLowerCase())
+            }
+
+            const listWithNoEmptyCorporations = deleteEmptyCorporations(list)
+            return listWithNoEmptyCorporations;
+        }
+
+        function getLushListFilteredByCorporation(list, corporationToUse) {
+            if (corporationToUse.toLowerCase() == "all") {
+                return list;
+            }
+
+            Object.keys(list).forEach(corporation => {
+                if (corporationToUse.toLowerCase() != corporation.toLowerCase()) {
+                    delete list[corporation]
+                }
+            })
+            return list;
+        }
+
+        function deleteEmptyCorporations(list) {
+            Object.keys(list).forEach(corporation => {
+                if (list[corporation].length < 1) {
+                    delete list[corporation]
+                }
+            })
+            return list;
+        }
+
+        function getAllLushBasedOnSelections(selectedCorporation, selectedType, lustList) {
+            let lushListSplitByCorporation = getLushSplitByCorporation(lushList);
+
+            if (selectedCorporation == "all" && selectedType == "all") {
+                return lushListSplitByCorporation;
+            }
+
+            if (selectedCorporation == "all" && selectedType != "all") {
+                let lushListSplitByCorporationWithOnlyType = get
+            }
+        }
+
+        function generateHTMLForCorporation(corporation, theirLush) {
+            let lushItems = ""
+
+            // Alphabetically sort the names A-Z
+            theirLush = theirLush.sort(
+                (k, m) => (k.name > m.name) ? 1 : ((m.name > k.name) ? -1 : 0)
+            )
+
+            for (let lushItem of theirLush) {
+                // need to split into sections eventually
+                lushItems += 
+                `
+                <div class="item">
+                   <!-- <div class="lushImage">
+                        <img src=../${lushItem.img} style="height: 75px; width: 75px;">
+                    </div>
+                    <div class="lushName">
+                        ${lushItem.name}
+                    </div> -->
+
+
+                    <div class="item-box">
+                        <div class="itemImgBox">
+                            <img src=../${lushItem.img} class="itemImg"/>
+                        </div>
+                        <div class="itemNameBox">
+                            ${lushItem.name}
+                        </div>
+                    </div>
+
+                </div>
+                `
+            }
+
+            return `
+            <div class="corporationLushTypeBox">
+                <div class="corporationInfoBox">
+                    <span class="corporationTitle">${corporation}</span>
+                </div>
+
+                <div class="corporationLushList">
+
+                    <div class="corporationLushListCategory">
+                        <!-- <div class="corporationInfoBox">
+                            <span class="categoryTitle">Beer</span>
+                        </div> -->
+
+                        <div class="listListItems">
+                            ${lushItems}
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+            `
+        }
+
+        function getAndRenderCorporationOptions(list) {
+            let allCorporations = list.map((elem) => elem.corporation)
+            allCorporations = [... new Set(allCorporations)]
+            allCorporations = allCorporations.sort()
+
+            for (let corporation of allCorporations) {
+                document.getElementById("corporationSelect").add(new Option(corporation))
+            }
+        }
+
+        function getAndRenderLushTypeOptions(list) {
+            let allTypes = list.map((elem) => elem.type)
+            allTypes = [... new Set(allTypes)]
+            allTypes = allTypes.sort()
+
+            
+            for (let type of allTypes) {
+                document.getElementById("typeSelect").add(new Option(type))
+            }
+        }
+
+        function fillInBeerAndCorporationCount(list) {
+            document.getElementById("beersTotal").innerText = countAllBeers(list);
+            document.getElementById("corporationsTotal").innerText = Object.keys(getLushSplitByCorporation(list, "all")).length;
+        }
+
+        function countAllBeers(list) {
+            let count = 0;
+            Object.keys(list).forEach(corporation => {
+                count += 1
+            })
+            return count;
+        }
+
+    </script>
+</body></html>

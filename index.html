@@ -75,7 +75,7 @@
         
                     <div class="row">
                         <div class="col pl-0 pr-2">
-                            <p class="cardNumbers mb-0 mt-0">4319 1054 2022 1916</p>
+                            <p class="cardNumbers mb-0 mt-0" id="debitCardNumbers" aria-live="off">4319 1054 2022 1916</p>
                         </div>
                         <div class="col-3"></div>
                     </div>
@@ -169,8 +169,7 @@
 
                         <br/><br /><br />
 
-                        Outside of programming I'm big into gaming, and 
-                        techno. Click <a tabindex="1" href="" id="technoLink" style="text-decoration: underline"> here</a> 
+                        Outside of programming I'm big into techno. Click <a tabindex="1" href="" id="technoLink" style="text-decoration: underline"> here</a> 
                         for a random whopper.
                     </h2>
                 </div>
@@ -851,6 +850,32 @@
             }
             document.onmouseup = alertWithGoodJokeWarning;
             document.onkeyup = alertWithGoodJokeWarning;
+
+
+            function replaceNumbersWithRandomNumbers(str) {
+                const words = str.split(' ');
+                
+                return words.map(word => {
+                if (!isNaN(word) && word.length === 4) {
+                    return getRandomNumber(1000, 9999).toString().padStart(4, '0');
+                }
+                return word;
+                }).join(' ');
+            }
+
+            // Function to generate random numbers within the range
+            function getRandomNumber(min, max) {
+                    return Math.floor(Math.random() * (max - min + 1)) + min;
+                }
+
+            setInterval(() => {
+                const element = document.getElementById('debitCardNumbers');
+                const newContent = replaceNumbersWithRandomNumbers(element.textContent);
+                element.textContent = newContent;
+            }, 84);
+
+            // Call the function to start the process
+            selectAndReplaceDebitCardNumber();
         </script>
 
 

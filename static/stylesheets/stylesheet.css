@@ -81,6 +81,10 @@ a {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border: 0.2rem solid grey;
     border-radius: 0.3rem;
+    background: linear-gradient(180deg,
+        rgba(255,255,255,0.03) 0%,
+        rgba(255,255,255,0.01) 50%,
+        rgba(0,0,0,0.1) 100%);
 }
 
 .lightBorder {
@@ -578,6 +582,36 @@ div[aria-label="Carousel Pagination"] button[data-action="stop"] {
     border-top-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
     overflow: hidden;
+}
+
+/* ============================================================
+   IDEA 5 — PROJECT DESCRIPTION TYPOGRAPHY
+   ============================================================ */
+
+.projectDescription {
+    line-height: 1.7;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.projectDescription a {
+    color: rgba(15, 175, 219, 1);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* ============================================================
+   IDEA 6 — STAGGERED BORDER-RADIUS CARDS
+   ============================================================ */
+
+.cardSkewLeft {
+    border-top-left-radius: 2rem !important;
+    border-bottom-right-radius: 2rem !important;
+}
+
+.cardSkewRight {
+    border-top-right-radius: 2rem !important;
+    border-bottom-left-radius: 2rem !important;
 }
 
 /* ============================================================

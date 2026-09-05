@@ -13,6 +13,18 @@ body {
     background-color:#141314;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 a {
     color: white;
     text-decoration: underline;
@@ -170,3 +182,427 @@ div[aria-label="Carousel Pagination"] button[data-action="stop"] {
     top: 15px;
     right: 15px;
   }
+
+/* ============================================================
+   CUSTOM GRID SYSTEM (replaces Bootstrap grid)
+   ============================================================ */
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+.col    { flex: 1 0 0%;         max-width: 100%;       }
+.col-1  { flex: 0 0 8.333333%;  max-width: 8.333333%;  }
+.col-2  { flex: 0 0 16.666667%; max-width: 16.666667%; }
+.col-3  { flex: 0 0 25%;        max-width: 25%;        }
+.col-4  { flex: 0 0 33.333333%; max-width: 33.333333%; }
+.col-5  { flex: 0 0 41.666667%; max-width: 41.666667%; }
+.col-6  { flex: 0 0 50%;        max-width: 50%;        }
+.col-7  { flex: 0 0 58.333333%; max-width: 58.333333%; }
+.col-8  { flex: 0 0 66.666667%; max-width: 66.666667%; }
+.col-9  { flex: 0 0 75%;        max-width: 75%;        }
+.col-10 { flex: 0 0 83.333333%; max-width: 83.333333%; }
+.col-11 { flex: 0 0 91.666667%; max-width: 91.666667%; }
+.col-12 { flex: 0 0 100%;       max-width: 100%;       }
+
+/* ============================================================
+   CONTAINER
+   ============================================================ */
+
+.container {
+    width: 100%;
+    max-width: 1140px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+/* ============================================================
+   SPACING UTILITIES (mimics Bootstrap m-*, p-*)
+   ============================================================ */
+
+/* margin all sides */
+.m-0 { margin: 0 !important; }
+.m-1 { margin: 0.25rem !important; }
+.m-2 { margin: 0.5rem !important; }
+.m-3 { margin: 1rem !important; }
+.m-4 { margin: 1.5rem !important; }
+.m-5 { margin: 3rem !important; }
+
+/* margin top */
+.mt-0 { margin-top: 0 !important; }
+.mt-1 { margin-top: 0.25rem !important; }
+.mt-2 { margin-top: 0.5rem !important; }
+.mt-3 { margin-top: 1rem !important; }
+.mt-4 { margin-top: 1.5rem !important; }
+.mt-5 { margin-top: 3rem !important; }
+
+/* margin bottom */
+.mb-0 { margin-bottom: 0 !important; }
+.mb-1 { margin-bottom: 0.25rem !important; }
+.mb-2 { margin-bottom: 0.5rem !important; }
+.mb-3 { margin-bottom: 1rem !important; }
+.mb-4 { margin-bottom: 1.5rem !important; }
+.mb-5 { margin-bottom: 3rem !important; }
+
+/* margin left */
+.ml-0 { margin-left: 0 !important; }
+.ml-1 { margin-left: 0.25rem !important; }
+.ml-2 { margin-left: 0.5rem !important; }
+.ml-3 { margin-left: 1rem !important; }
+.ml-4 { margin-left: 1.5rem !important; }
+.ml-5 { margin-left: 3rem !important; }
+
+/* margin right */
+.mr-0 { margin-right: 0 !important; }
+.mr-1 { margin-right: 0.25rem !important; }
+.mr-2 { margin-right: 0.5rem !important; }
+.mr-3 { margin-right: 1rem !important; }
+.mr-4 { margin-right: 1.5rem !important; }
+.mr-5 { margin-right: 3rem !important; }
+
+/* padding all sides */
+.p-0 { padding: 0 !important; }
+.p-1 { padding: 0.25rem !important; }
+.p-2 { padding: 0.5rem !important; }
+.p-3 { padding: 1rem !important; }
+.p-4 { padding: 1.5rem !important; }
+.p-5 { padding: 3rem !important; }
+
+/* padding top */
+.pt-0 { padding-top: 0 !important; }
+.pt-1 { padding-top: 0.25rem !important; }
+.pt-2 { padding-top: 0.5rem !important; }
+.pt-3 { padding-top: 1rem !important; }
+.pt-4 { padding-top: 1.5rem !important; }
+.pt-5 { padding-top: 3rem !important; }
+
+/* padding bottom */
+.pb-0 { padding-bottom: 0 !important; }
+.pb-1 { padding-bottom: 0.25rem !important; }
+.pb-2 { padding-bottom: 0.5rem !important; }
+.pb-3 { padding-bottom: 1rem !important; }
+.pb-4 { padding-bottom: 1.5rem !important; }
+.pb-5 { padding-bottom: 3rem !important; }
+
+/* padding left */
+.pl-0 { padding-left: 0 !important; }
+.pl-1 { padding-left: 0.25rem !important; }
+.pl-2 { padding-left: 0.5rem !important; }
+.pl-3 { padding-left: 1rem !important; }
+.pl-4 { padding-left: 1.5rem !important; }
+.pl-5 { padding-left: 3rem !important; }
+
+/* padding right */
+.pr-0 { padding-right: 0 !important; }
+.pr-1 { padding-right: 0.25rem !important; }
+.pr-2 { padding-right: 0.5rem !important; }
+.pr-3 { padding-right: 1rem !important; }
+.pr-4 { padding-right: 1.5rem !important; }
+.pr-5 { padding-right: 3rem !important; }
+
+/* ============================================================
+   ALIGNMENT UTILITIES
+   ============================================================ */
+
+.justify-content-md-center { justify-content: center !important; }
+.justify-content-md-end    { justify-content: flex-end !important; }
+.text-center               { text-align: center !important; }
+
+/* ============================================================
+   RESPONSIVE BREAKPOINTS
+   ============================================================ */
+
+/* Tablet and below: stack all columns vertically */
+@media (max-width: 768px) {
+    .row {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-right: 8px;
+        padding-left: 8px;
+    }
+
+    .container {
+        padding-right: 8px;
+        padding-left: 8px;
+    }
+
+    /* Reduce large spacing on mobile */
+    .mt-5, .mb-5, .pt-5, .pb-5 { margin-top: 1.5rem !important; margin-bottom: 1.5rem !important; padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+    .mt-4, .mb-4, .pt-4, .pb-4 { margin-top: 1rem !important; margin-bottom: 1rem !important; padding-top: 1rem !important; padding-bottom: 1rem !important; }
+
+    /* Make the debit card scale down */
+    .progress-bar-debitcard {
+        height: auto !important;
+        width: 90vw !important;
+        max-width: 20rem !important;
+    }
+
+    /* Stack the title area */
+    h1.styledTitleText {
+        font-size: 3.6rem !important;
+        line-height: 50% !important;
+    }
+    h1.styledTitleText span {
+        font-size: 2rem !important;
+    }
+
+    /* Make divider text bars smaller */
+    .dividerTextBar {
+        font-size: 3rem !important;
+    }
+
+    /* Reduce project title sizes */
+    .boxWithBorder h2 {
+        font-size: 1.8rem !important;
+    }
+
+    /* Make the tools & tech section scroll horizontally instead of wrapping awkwardly */
+    #loveGroup .row.justify-content-md-center,
+    #hateGroup .row.justify-content-md-center {
+        flex-wrap: wrap;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    h1.styledTitleText {
+        font-size: 2.4rem !important;
+    }
+    h1.styledTitleText span {
+        font-size: 1.5rem !important;
+    }
+
+    .dividerTextBar {
+        font-size: 2rem !important;
+    }
+
+    .boxWithBorder h2 {
+        font-size: 1.4rem !important;
+    }
+
+    .progress-bar-debitcard {
+        width: 95vw !important;
+    }
+}
+
+/* ============================================================
+   IDEA 1 — SPLIT HERO: Animated gradient border tools box
+   ============================================================ */
+
+.splitHeroToolsBox {
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background: #141314;
+    position: relative;
+    overflow: hidden;
+}
+
+.splitHeroToolsBox::before {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    border-radius: 10px;
+    background: linear-gradient(256deg, rgba(13,94,201,1) 0%, rgba(0,134,23,1) 31%, rgba(15,175,219,1) 50%, rgba(103,0,129,0.5676471272102591) 74%, rgba(212,0,184,1) 100%);
+    background-size: 300% 100%;
+    animation: progress-animation 12s linear alternate infinite;
+    z-index: -1;
+}
+
+.splitHeroToolsHeader {
+    background: radial-gradient(circle, rgba(125,13,175,1) 0%, rgba(1,176,210,1) 100%);
+    background-size: 300% 100%;
+    animation: progress-animation 11s linear alternate infinite;
+    padding: 0.5rem;
+}
+
+/* ============================================================
+   IDEA 2 — TERMINAL / CLI AESTHETIC
+   ============================================================ */
+
+.terminalWindow {
+    background: #0d0d0d;
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.terminalTitleBar {
+    background: #1a1a1a;
+    padding: 0.6rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid #333;
+}
+
+.terminalDot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.terminalTitle {
+    color: #888;
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+}
+
+.terminalBody {
+    padding: 1.2rem 1.5rem;
+    font-family: 'Courier New', monospace;
+}
+
+.terminalLine {
+    color: #0f0;
+    margin: 0.3rem 0;
+    font-size: 0.9rem;
+}
+
+.terminalPrompt {
+    color: #0f0;
+    margin-right: 0.5rem;
+}
+
+.terminalOutput {
+    color: #ccc;
+    margin: 0.2rem 0 0.8rem 1.2rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.terminalCursor {
+    color: #0f0;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* ============================================================
+   IDEA 3 — CARDS & CHIPS
+   ============================================================ */
+
+.chipGroup {
+    margin-bottom: 1.5rem;
+}
+
+.chipLabel {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.7;
+    margin-bottom: 0.6rem;
+}
+
+.chipContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.techChip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.75rem;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: white;
+    background: rgba(255,255,255,0.05);
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.techChip:hover {
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.4);
+}
+
+.techChip img {
+    width: 1rem;
+    height: 1rem;
+}
+
+.hateChip {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.hateChip:hover {
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.2);
+}
+
+/* ============================================================
+   IDEA 4 — MAGAZINE LAYOUT
+   ============================================================ */
+
+.magazineHeader {
+    border-top-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    overflow: hidden;
+}
+
+.magazineLead {
+    font-weight: 300;
+    color: rgba(255,255,255,0.9);
+}
+
+.magazineSidebar {
+    border-top-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    overflow: hidden;
+}
+
+/* ============================================================
+   RESPONSIVE: Terminal & Magazine tweaks
+   ============================================================ */
+
+@media (max-width: 768px) {
+    .terminalWindow {
+        max-width: 100%;
+    }
+    .terminalBody {
+        padding: 0.8rem;
+    }
+    .terminalOutput {
+        margin-left: 0.5rem;
+        font-size: 0.75rem;
+    }
+    .magazineLead {
+        font-size: 1.05rem !important;
+    }
+    .chipContainer {
+        gap: 0.35rem;
+    }
+    .techChip {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.7rem;
+    }
+}

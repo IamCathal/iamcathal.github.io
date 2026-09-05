@@ -678,3 +678,57 @@ div[aria-label="Carousel Pagination"] button[data-action="stop"] {
         font-size: 0.7rem;
     }
 }
+
+/* ============================================================
+   IRELAND OUTLINE — self-drawing SVG animation
+   ============================================================ */
+
+.irelandOutlineContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 0;
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+.irelandOutline {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.irelandOutline path {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.25);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 7216;
+    stroke-dashoffset: 7216;
+    animation: drawIreland 4s ease-in-out 0.5s forwards;
+    transition: stroke 0.8s ease 4.5s;
+}
+
+@keyframes drawIreland {
+    0% {
+        stroke-dashoffset: 7216;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.irelandOutlineContainer:hover .irelandOutline path {
+    stroke: rgba(255, 255, 255, 0.6);
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.15));
+}
+
+/* Mobile: slightly smaller */
+@media (max-width: 768px) {
+    .irelandOutlineContainer {
+        max-width: 280px;
+        padding: 0.5rem 0;
+    }
+}

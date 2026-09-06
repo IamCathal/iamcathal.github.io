@@ -439,6 +439,29 @@ div[aria-label="Carousel Pagination"] button[data-action="stop"] {
 }
 
 /* ============================================================
+   BRUTALIST NAME TEXT — concrete texture clipped to text
+   ============================================================ */
+
+.brutalistNameText {
+    background-image: url('../images/BrualistBacking5.webp');
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+    padding-top: 0.08em;
+    margin-top: -0.08em;
+}
+
+@supports (-webkit-background-clip: text) {
+    .brutalistNameText {
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+/* ============================================================
    IDEA 2 — TERMINAL / CLI AESTHETIC
    ============================================================ */
 

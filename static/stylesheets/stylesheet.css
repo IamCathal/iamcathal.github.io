@@ -770,3 +770,29 @@ div[aria-label="Carousel Pagination"] button[data-action="stop"] {
         padding: 0.5rem 0;
     }
 }
+/* ---- Scroll-down indicator ---- */
+.scrollIndicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2rem;
+    height: 2rem;
+    opacity: 0.4;
+    animation: scrollBounce 2s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 10;
+}
+.scrollIndicator::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-right: 2px solid rgba(255,255,255,0.6);
+    border-bottom: 2px solid rgba(255,255,255,0.6);
+    transform: rotate(45deg);
+}
+@keyframes scrollBounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50%      { transform: translateX(-50%) translateY(8px); }
+}

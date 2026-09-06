@@ -707,18 +707,22 @@ div[aria-label="Carousel Pagination"] button[data-action="stop"] {
    ============================================================ */
 
 .irelandOutlineContainer {
+    position: absolute;
+    top: 10vh;
+    right: 0;
+    width: 60%;
+    height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    padding: 1rem 0;
-    margin: 0 auto;
-    max-width: 400px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.2;
 }
 
 .irelandOutline {
     width: 100%;
-    height: auto;
+    height: 100%;
     overflow: visible;
 }
 
@@ -726,7 +730,7 @@ div[aria-label="Carousel Pagination"] button[data-action="stop"] {
 .irelandDraw {
     fill: none;
     stroke: rgba(255, 255, 255, 0.8);
-    stroke-width: 3;
+    stroke-width: 2;
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-dasharray: 7216;
@@ -742,7 +746,7 @@ div[aria-label="Carousel Pagination"] button[data-action="stop"] {
 /* ---- Phase 2: flag-colour stripes (JS-driven animation) ---- */
 .irelandFlag {
     fill: none;
-    stroke-width: 3;
+    stroke-width: 2;
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-dashoffset: 0;
@@ -766,8 +770,9 @@ div[aria-label="Carousel Pagination"] button[data-action="stop"] {
 /* Mobile: slightly smaller */
 @media (max-width: 768px) {
     .irelandOutlineContainer {
-        max-width: 280px;
-        padding: 0.5rem 0;
+        width: 80%;
+        height: 40vh;
+        opacity: 0.15;
     }
 }
 /* ---- Scroll-down indicator ---- */

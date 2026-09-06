@@ -34,7 +34,7 @@ O CALLAGHAN, CATHAL
 <b>ID Number:</b>
 </td>
 <td>
-25995836
+<span id="idNumber">25995836</span>
 </td>
 </tr>
 
@@ -539,6 +539,62 @@ Page generated on: <span id="generatedOn"></span>
     const now = new Date();
     const minsString = now.getMinutes() < 10 ? `0${now.getMinutes()}` : now.getMinutes();
     document.getElementById("generatedOn").textContent = `${days[now.getDay()]}, ${now.getDate()}/${now.getMonth()+1}/${now.getFullYear()} at: ${now.getHours()}:${minsString}`
+
+    function getRandomDigit() {
+        return Math.floor(Math.random() * 10);
+    }
+
+    function scrambleIdNumber(str) {
+        return str.split('').map(ch => {
+            if (!isNaN(ch) && ch !== ' ') {
+                return getRandomDigit().toString();
+            }
+            return ch;
+        }).join('');
+    }
+
+    setInterval(() => {
+        const el = document.getElementById('idNumber');
+        el.textContent = scrambleIdNumber(el.textContent);
+    }, 84);
+
+    // === Sine-wave oscillating Marks (%) column (module rows only) ===
+    (function() {
+        const marksSlots = [];
+
+        document.querySelectorAll('td[valign="top"][align="right"]').forEach(td => {
+            if (td.textContent.trim() === '') {
+                const span = document.createElement('span');
+                span.className = 'marksSlot';
+                span.textContent = '--';
+                td.appendChild(span);
+                marksSlots.push(span);
+            }
+        });
+
+        const RANGE = 80;
+        const GLOBAL_MIN = 0;
+        const GLOBAL_MAX = 115;
+
+        const mids = marksSlots.map(() => {
+            const lo = GLOBAL_MIN + RANGE / 2;
+            const hi = GLOBAL_MAX - RANGE / 2;
+            return lo + Math.random() * (hi - lo);
+        });
+        const phases = marksSlots.map((_, i) => i * 0.73);
+        const speeds = marksSlots.map((_, i) => 0.08 + i * 0.012);
+
+        function oscillate(timestamp) {
+            const seconds = timestamp / 1000;
+            marksSlots.forEach((slot, i) => {
+                const val = mids[i] + (RANGE / 2) * Math.sin(speeds[i] * seconds + phases[i]);
+                slot.textContent = Math.round(val) + '%';
+            });
+            requestAnimationFrame(oscillate);
+        }
+
+        requestAnimationFrame(oscillate);
+    })();
 </script>
 
 

@@ -1,6 +1,6 @@
 # [cathaloc.dev](https://cathaloc.dev)
 
-My portfolio website built using bootstrap.
+My portfolio website
 
-![landing page screenshot](https://i.imgur.com/s59qsT5.png)
+![landing page screenshot](https://i.imgur.com/DOU6h6w.png)
 
